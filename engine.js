@@ -23,28 +23,38 @@ window.initLesson = function(data) {
 
 function startEngine() {
     console.log("Engine Started...");
-    const mainContainer = document.getElementById('lesson-content'); 
+    const mainContainer = document.getElementById('lesson-content');
 
     try {
         if (!lessonData) throw new Error("No Lesson Data found. Did sample.js load?");
         
-        // 1. Render Metadata (Basic Setup)
-        renderMetadata();
-
-        // 2. CHECK: IS THIS THE HOME DASHBOARD?
+        // --- FIX START: Logic to actually render the content ---
+        
         if (lessonData.isHome) {
-            console.log("Starting in HOME DASHBOARD Mode...");
-            renderHomeMode(); // Use special Home renderer
+            // If it is the Home Dashboard
+            renderHomeMode();
         } else {
-            // STANDARD LESSON MODE
-            console.log("Starting in STANDARD LESSON Mode...");
+            // If it is a Lesson (Like Lesson 10)
+            
+            // 1. Render Top Header & Sidebar Labels
+            // (There is a duplicate renderMetadata definition in your file, 
+            // but calling it here uses the global one or the local one if present)
+            if (typeof renderMetadata === 'function') renderMetadata(); 
+            
+            // 2. Render the Sidebar Menu
             renderMenu();
+
+            // 3. Render the Lesson Steps/Pages
             renderPages();
-            setupGlossary();
+            setupGlossary(); // <--- ADD THIS LINE HERE
+
+            // 4. Show the first page (Cover)
             showPage(0);
         }
+
+        // --- FIX END ---
         
-        // 3. Attach Listeners (Runs for BOTH modes so menu always works)
+        // 5. Attach Listeners (Runs for BOTH modes so menu always works)
         attachExerciseListeners(); 
 
     } catch (error) {
@@ -65,7 +75,6 @@ function startEngine() {
             </div>
         `;
     }
-
 }
 
 // ========================================================
@@ -73,60 +82,36 @@ function startEngine() {
 // ========================================================
 
 function renderHomeMode() {
-    // 1. Hide Standard UI Elements
+    // 1. Hide Standard UI
     document.getElementById('prev-btn').style.display = 'none';
     document.getElementById('next-btn').style.display = 'none';
     document.getElementById('glossary-btn').style.display = 'none';
-    
-    // 2. Clear Specific Header Info (Leave Title)
-    document.getElementById('display-bimester').textContent = "";
-    document.getElementById('display-chapter').textContent = "";
-    document.getElementById('menu-grade-label').textContent = "SELECT GRADE";
-    document.getElementById('menu-chapter-label').textContent = "Dashboard";
+    document.getElementById('menu-toggle').style.display = 'none'; // Hide sidebar trigger
 
-    // 3. Render the Home Menu (Grades List)
-    const navList = document.getElementById('nav-list');
-    navList.innerHTML = '';
-    
-    lessonData.grades.forEach((grade) => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = "#";
-        a.className = "nav-sub-link";
-        a.textContent = grade.label;
-        // Style to look like main buttons
-        a.style.fontSize = "1.1rem";
-        a.style.fontWeight = "700";
-        a.style.padding = "15px";
-        a.style.borderBottom = "1px solid #eee";
-        
-        a.onclick = (e) => { 
-            e.preventDefault(); 
-            loadGradeDashboard(grade); // Load the specific grade content
-            
-            // Close menu after selection
-            document.getElementById('slide-menu').classList.remove('active');
-            document.getElementById('menu-toggle').classList.remove('open');
-        };
-        
-        li.appendChild(a);
-        navList.appendChild(li);
-    });
+    // 2. Clear Header
+    document.getElementById('display-block').textContent = "HOME";
+    document.getElementById('display-topic').textContent = "Course Outline";
 
-    // 4. Force Menu OPEN by default
-    setTimeout(() => {
-        document.getElementById('slide-menu').classList.add('active');
-        document.getElementById('menu-toggle').classList.add('open');
-    }, 100);
-
-    // 5. Show "Blank" Start Page
     const container = document.getElementById('lesson-content');
+    
+    // 3. Render Tabs (5 Blocks)
+    let tabsHtml = '<div class="dashboard-tabs" style="justify-content:center; margin-bottom:30px;">';
+    // We assume 5 blocks
+    for(let i=1; i<=5; i++) {
+        tabsHtml += `<button class="dash-tab-btn ${i===1?'active':''}" onclick="loadBlockContent(${i})">BLOCK ${i}</button>`;
+    }
+    tabsHtml += '</div>';
+
+    // 4. Container for Lessons
+    let contentHtml = `<div id="block-content-area">${buildBlockGrid(1)}</div>`; // Load Block 1 by default
+
     container.innerHTML = `
-        <div style="text-align: center; margin-top: 100px; color: #888;">
-            <h2 style="color: var(--accent-orange); font-size: 2rem;">Welcome!</h2>
-            <p>Please select a grade from the menu to begin.</p>
-            <p style="font-size: 3rem;">👈</p>
+        <div style="text-align:center; padding: 40px 0;">
+            <h1 style="color:var(--primary-blue); margin-bottom:10px;">ENGLISH BLOCK ASSEMBLING</h1>
+            <p style="color:#666;">Select a Block to begin building your skills.</p>
         </div>
+        ${tabsHtml}
+        ${contentHtml}
     `;
 }
 
@@ -166,6 +151,85 @@ function loadGradeDashboard(gradeObj) {
         </div>
     `;
 }
+
+window.loadBlockContent = function(blockNum) {
+    // Update active tab UI
+    document.querySelectorAll('.dash-tab-btn').forEach((btn, index) => {
+        if (index + 1 === blockNum) btn.classList.add('active');
+        else btn.classList.remove('active');
+    });
+    
+    // Inject Grid
+    document.getElementById('block-content-area').innerHTML = buildBlockGrid(blockNum);
+};
+
+function buildBlockGrid(blockNum) {
+    const blockData = lessonData.blocks ? lessonData.blocks[blockNum] : null;
+    if (!blockData) return '<div style="text-align:center; padding:20px;">No data for this block.</div>';
+
+    let html = `
+        <div style="text-align:center; margin-bottom:20px;">
+            <h2 style="color:var(--accent-red); margin-bottom:5px;">${blockData.title}</h2>
+        </div>
+        <div class="bimester-grid" id="grid-${blockNum}" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+    `;
+
+    // We build the cards, but we don't know yet if they are active.
+    // We add a unique class/ID to each so we can update them once the check finishes.
+    blockData.topics.forEach(topic => {
+        html += `
+            <div class="bimester-box" id="card-${topic.id}" style="border-top: 5px solid var(--accent-red); opacity: 0.5;">
+                <div class="bimester-title" style="color:var(--primary-blue); font-size:0.85rem;">${topic.title}</div>
+                <div class="chapter-list">
+                    <a id="btn-${topic.id}" class="chapter-btn" style="width:100%; text-align:center; background:#eee; color:#aaa; cursor:wait;">
+                        CHECKING...
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+
+    // Now, trigger the "Check" process asynchronously
+    setTimeout(() => {
+        blockData.topics.forEach(topic => {
+            checkLessonAvailability(topic.id);
+        });
+    }, 100);
+
+    return html;
+}
+
+// The Background Checker
+async function checkLessonAvailability(lessonId) {
+    try {
+        const response = await fetch(`data/${lessonId}.js`, { method: 'HEAD' });
+        const btn = document.getElementById(`btn-${lessonId}`);
+        const card = document.getElementById(`card-${lessonId}`);
+
+        if (response.ok) {
+            // FILE EXISTS
+            card.style.opacity = '1';
+            btn.style.background = 'var(--bg-light)';
+            btn.style.color = 'var(--text-dark)';
+            btn.style.cursor = 'pointer';
+            btn.textContent = 'START LESSON ➔';
+            btn.href = `index.html?lesson=${lessonId}`;
+        } else {
+            // FILE DOES NOT EXIST
+            btn.textContent = 'LOCKED 🔒';
+            btn.style.cursor = 'not-allowed';
+        }
+    } catch (e) {
+        console.error("Could not check file:", lessonId);
+    }
+}
+
+
+
+
+
 
 function buildBimesterBoxes(gradeObj) {
     let html = '';
@@ -337,25 +401,56 @@ window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices(
 
 // 2. RENDER FUNCTIONS
 function renderMetadata() {
-    // If loading home, we might not have 'grade' or 'chapter' yet, so we handle safely
+    // Safety check: if lessonData isn't loaded, stop.
+    if (!lessonData) return;
+
     if (lessonData.isHome) {
-        document.getElementById('display-grade').textContent = "REACH DIGITAL";
-        // Bimester/Chapter cleared in renderHomeMode
-    } else {
-        document.getElementById('display-grade').textContent = lessonData.grade;
-        document.getElementById('display-bimester').textContent = `Bimester ${lessonData.bimester}`;
-        document.getElementById('display-chapter').textContent = `Chapter ${lessonData.chapter}`;
+        // Handle Home Dashboard Mode
+        const blockDisplay = document.getElementById('display-block');
+        const topicDisplay = document.getElementById('display-topic');
         
-        document.getElementById('menu-grade-label').innerHTML = `<span style="color:var(--accent-orange)">${lessonData.grade.toUpperCase()}</span>`;
-        document.getElementById('menu-chapter-label').textContent = lessonData.chapterTitle;
+        if(blockDisplay) blockDisplay.textContent = "HOME";
+        if(topicDisplay) topicDisplay.textContent = "Course Outline";
+        
+    } else {
+        // Handle Lesson Mode (e.g., Lesson 10)
+        
+        // 1. Calculate Block Number (Lesson 10 is in Block 2)
+        // We strip "lesson-" from the ID to get the number
+        const lessonNum = parseInt(lessonData.lessonId.replace('lesson-', '')) || 1;
+        const blockNum = Math.ceil(lessonNum / 7); 
+        
+        // 2. Update the Top Sticky Header
+        // The HTML has id="display-block" and id="display-topic"
+        const blockDisplay = document.getElementById('display-block');
+        const topicDisplay = document.getElementById('display-topic');
+
+        if (blockDisplay) blockDisplay.textContent = `BLOCK ${blockNum}`;
+        if (topicDisplay) topicDisplay.textContent = lessonData.topicTitle.toUpperCase();
+        
+        // 3. Update the Sidebar Menu Header
+        // The HTML has id="menu-block-label" and id="menu-topic-label"
+        const menuBlockLabel = document.getElementById('menu-block-label');
+        const menuTopicLabel = document.getElementById('menu-topic-label'); // This was causing the error!
+
+        if (menuBlockLabel) menuBlockLabel.innerHTML = `<span class="red-text">BLOCK ${blockNum}</span>`;
+        if (menuTopicLabel) menuTopicLabel.textContent = lessonData.topicTitle;
     }
 }
 
 function renderMenu() {
-    const stepLabels = {
-        0: "Welcome", 1: "In Context", 4: "Shadowing", 5: "Listening", 
-        6: "Reading", 7: "Drills", 8: "Writing", 9: "Flashcards"
-    };
+const stepLabels = {
+    0: "Intro & Can-Do",
+    1: "Context Dialogue",
+    2: "Topic Vocabulary",
+    3: "Expressions & Phrases",
+    4: "Speaking Practice",
+    5: "Listening Practice",
+    6: "Reading Practice",
+    7: "Mixed Exercises",
+    8: "Writing Practice",
+    9: "Flashcards"
+};
 
     const navList = document.getElementById('nav-list');
     navList.innerHTML = '';
@@ -1047,21 +1142,26 @@ function buildStepHTML(index, step) {
     // ======================================================
     // STEP 0: COVER
     // ======================================================
-    if (index === 0) {
-        html += `<p style="color:var(--accent-orange); font-weight:900; margin-top:-15px; margin-bottom:25px; font-size:1.4rem;">CHAPTER ${lessonData.chapter}: ${lessonData.chapterTitle.toUpperCase()}</p>`;
-        html += `
-            <div class="area-box" style="position:relative">
-                ${createAudioPlayer(step.audio.objectives)}
-                <h3>Can-Do Objectives</h3>
-                <p>${step.objectives}</p>
-            </div>
-            <div class="area-box" style="position:relative">
-                ${createAudioPlayer(step.audio.welcome)}
-                <h3>Welcome from Mr.D</h3>
-                <p>${step.welcome}</p>
-            </div>`;
-    }
+if (index === 0) {
+    // Parse Objectives into a list if they are separated by bullets or breaks
+    let objectivesList = step.objectives.split('•').filter(s => s.trim().length > 0)
+        .map(s => `<li style="margin-bottom:8px;">✅ ${s.trim()}</li>`).join('');
 
+    html += `
+        <div class="area-box" style="border-left: 5px solid var(--primary-blue);">
+            <h3 style="color:var(--primary-blue);">Can-Do Objectives</h3>
+            <ul style="list-style:none; padding-left:0; margin-top:15px;">
+                ${objectivesList}
+            </ul>
+            ${createAudioPlayer(step.audio.objectives)}
+        </div>
+        
+        <div class="area-box" style="position:relative; margin-top:30px;">
+            ${createAudioPlayer(step.audio.welcome)}
+            <h3 style="color:var(--accent-red);">Introduction</h3>
+            <p>${step.welcome}</p>
+        </div>`;
+}
     // ======================================================
     // STEP 1: CONTEXT
     // ======================================================

@@ -1,16 +1,16 @@
-/* --- ROOT VARIABLES --- */
+/* --- ROOT VARIABLES (Updated Palette) --- */
 :root {
-    --primary-blue: #0077b6;
-    --accent-orange: #FF8C42;
-    --bg-alice-blue: #f0f8ff;
+    --primary-blue: #003366;      /* Navy Blue */
+    --accent-red: #D32F2F;        /* Vivid Red */
+    --bg-light: #f8f9fa;          /* Clean White/Gray Background */
     --white: #ffffff;
     --text-dark: #0D1B2A;
     --gray-light: #dee2e6;
     
-    --success-green: #28a745;
-    --error-red: #dc3545;
-    --selected-orange: #ffe0b2;
-    --paired-blue: #bbdefb;
+    --success-green: #2e7d32;
+    --error-red: #c62828;
+    --selected-red: #ffebee;      /* Very light red for selection backgrounds */
+    --paired-blue: #e3f2fd;       /* Very light blue for matching pairs */
     
     --shadow: 0 4px 12px rgba(0,0,0,0.08);
     --header-height: 60px;
@@ -21,8 +21,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Body font */
-    background-color: var(--bg-alice-blue);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -35,7 +35,6 @@ h1, h2, h3, h4, .menu-logo, .step-title {
 
 h2 { color: var(--primary-blue); margin-bottom: 1rem; }
 
-/* Visibility Padding as per Blueprint */
 #main-container {
     padding-top: 80px;
     padding-bottom: 120px;
@@ -44,7 +43,9 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
     width: 95%;
 }
 
-.orange-text { color: var(--accent-orange); font-weight: 900; }
+/* Updated Text Class */
+.red-text { color: var(--accent-red); font-weight: 900; }
+.orange-text { color: var(--accent-red); font-weight: 900; } /* Fallback mapping */
 
 /* --- STICKY METADATA HEADER --- */
 #metadata-header {
@@ -70,7 +71,7 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
     top: 12px;
     left: 15px;
     z-index: 1002;
-    width: 35px; /* Blueprint spec */
+    width: 35px;
     height: 35px;
     background: var(--primary-blue);
     border: none;
@@ -84,11 +85,10 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
 
 #menu-toggle .bar { width: 100%; height: 3px; background: white; transition: 0.3s; }
 
-/* --- RETRACTABLE MENU (Default for index.html) --- */
 #slide-menu {
     position: fixed;
     top: 0;
-    left: -280px; /* Hidden off-screen by default */
+    left: -280px;
     width: var(--menu-width);
     height: 100%;
     background: var(--white);
@@ -100,21 +100,20 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
     padding: 20px;
 }
 
-#slide-menu.active {
-    left: 0; /* Slides in only when active */
-}
+#slide-menu.active { left: 0; }
 
-.menu-header { margin-top: 10px; padding-bottom: 20px; border-bottom: 2px solid var(--bg-alice-blue); }
+.menu-header { margin-top: 10px; padding-bottom: 20px; border-bottom: 2px solid var(--bg-light); }
 .menu-logo {
-    font-size: 1.4rem; /* Slightly smaller to fit the longer name */
+    font-size: 1.4rem;
     letter-spacing: -0.5px;
     margin-bottom: 10px;
-    text-transform: uppercase; /* Optional: makes REACH ENGLISH look more like a brand */
+    text-transform: uppercase;
 }
-#menu-grade-label { color: var(--accent-orange); font-weight: 900; font-size: 0.8rem; }
+#menu-block-label { color: var(--accent-red); font-weight: 900; font-size: 0.8rem; }
 
 #nav-list { list-style: none; margin-top: 20px; overflow-y: auto; flex-grow: 1; }
 .nav-step-item { font-weight: 700; color: #666; margin-top: 15px; display: block; }
+
 .nav-sub-link { 
     display: block; 
     padding: 8px 15px; 
@@ -123,17 +122,17 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
     font-size: 0.9rem;
     border-radius: 5px;
 }
-.nav-sub-link:hover { background: var(--bg-alice-blue); color: var(--primary-blue); }
-.nav-sub-link.active { background: var(--selected-orange); border-left: 4px solid var(--accent-orange); }
+.nav-sub-link:hover { background: var(--bg-light); color: var(--primary-blue); }
+.nav-sub-link.active { background: var(--selected-red); border-left: 4px solid var(--accent-red); }
 
 .home-link { 
-    display: block;              /* Ensures it sits on its own line */
-    margin-top: 60px;            /* Pushes it down so it doesn't overlap the X/Menu button */
-    margin-bottom: 10px;         /* Adds a little space before the Logo */
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 10px;
     text-decoration: none; 
     color: var(--primary-blue); 
     font-weight: 700; 
-    font-size: 1.1rem;           /* Made slightly larger for visibility */
+    font-size: 1.1rem;
 }
 
 
@@ -292,7 +291,9 @@ body.exercise-mode #ex-header {
     margin-bottom: 30px;
     box-shadow: var(--shadow);
     position: relative;
+    border-top: 4px solid transparent; /* Placeholder for accents */
 }
+
 
 /* --- STEP 2 & 3 COMPONENTS --- */
 .card-header-audio {
@@ -315,7 +316,7 @@ body.exercise-mode #ex-header {
 /* --- TOOLTIPS --- */
 .tooltip {
     color: var(--primary-blue);
-    text-decoration: underline dotted var(--accent-orange);
+    text-decoration: underline dotted var(--accent-red);
     cursor: help;
     position: relative;
     font-weight: 600;
@@ -517,17 +518,19 @@ body.exercise-mode #ex-header {
 }
 
 /* --- NEW TOOLTIP SYSTEM --- */
+/* Tooltips Update */
 .tooltip {
     color: var(--primary-blue);
-    text-decoration: underline dotted var(--accent-orange);
+    text-decoration: underline dotted var(--accent-red);
     cursor: help;
+    position: relative;
     font-weight: 600;
 }
 
 .tooltip-box {
-    position: fixed; /* Fixed so it stays relative to screen */
+    position: fixed;
     display: none;
-    background: #333;
+    background: var(--primary-blue);
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
@@ -535,9 +538,10 @@ body.exercise-mode #ex-header {
     z-index: 3000;
     max-width: 250px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    pointer-events: none; /* Prevents flickering when moving mouse */
+    pointer-events: none;
     line-height: 1.4;
 }
+
 
 /* Definition part */
 .tooltip-def {
@@ -550,7 +554,7 @@ body.exercise-mode #ex-header {
 /* Translation part - Blue color as requested */
 .tooltip-trans {
     display: block;
-    color: #4fc3f7; /* Light Blue for contrast on dark background */
+    color: #81d4fa; /* Light Blue for contrast on dark background */
     font-style: italic;
 }
 
@@ -646,7 +650,7 @@ body.exercise-mode #ex-header {
     display: block;
     width: fit-content;
     margin: 20px 0 0 auto; /* Aligns to the right of the card */
-    background: linear-gradient(135deg, #FF8C42 0%, #FF6B10 100%);
+    background: linear-gradient(135deg, var(--accent-red) 0%, #b71c1c 100%);
     color: white;
     border: none;
     padding: 12px 35px;
@@ -657,7 +661,7 @@ body.exercise-mode #ex-header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -673,13 +677,17 @@ body.exercise-mode #ex-header {
 /* Click Effect: Pushes the button down */
 .btn:active {
     transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(255, 140, 66, 0.3);
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
 }
 
 /* Special state for "Try Again" to make it visually distinct */
 .btn.try-again-state {
     background: linear-gradient(135deg, var(--primary-blue) 0%, #005f91 100%);
     box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+}
+.sub-nav-btn.active {
+    background: var(--accent-red);
+    color: white;
 }
 
 
@@ -1014,13 +1022,14 @@ body.exercise-mode #ex-header {
 }
 
 /* Toggle Tabs (Top Right) */
+/* Dashboard Tabs */
 .dashboard-tabs {
     display: flex;
-    justify-content: flex-end;
     gap: 10px;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--bg-alice-blue);
+    border-bottom: 2px solid var(--bg-light);
     padding-bottom: 10px;
+    flex-wrap: wrap;
 }
 .dash-tab-btn {
     background: transparent;
@@ -1037,21 +1046,20 @@ body.exercise-mode #ex-header {
     color: white;
 }
 
-/* Bimester Grid */
+
+/* Bimester/Topic Box */
 .bimester-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-
 .bimester-box {
     background: white;
     border-radius: 12px;
     padding: 20px;
     box-shadow: var(--shadow);
-    border-top: 5px solid var(--accent-orange);
+    border-top: 5px solid var(--accent-red); /* Red Border */
 }
-
 .bimester-title {
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-blue);
@@ -1060,18 +1068,11 @@ body.exercise-mode #ex-header {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
-
-.chapter-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
 .chapter-btn {
-    flex: 1;
-    min-width: 45%;
+    display: block;
+    width: 100%;
     padding: 10px;
-    background: var(--bg-alice-blue);
+    background: var(--bg-light);
     border: 1px solid var(--gray-light);
     border-radius: 8px;
     text-align: center;
@@ -1083,8 +1084,8 @@ body.exercise-mode #ex-header {
 .chapter-btn:hover {
     background: var(--primary-blue);
     color: white;
-    transform: translateY(-2px);
 }
+
 
 /* Mobile: 1 column instead of 2 */
 @media (max-width: 768px) {
@@ -1289,36 +1290,36 @@ body.exercise-mode #ex-header {
 
 
 /* --- STICKY UI CLUSTER (Bottom Right) --- */
+/* --- UI CLUSTER --- */
 #ui-cluster {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* Fixed to Right */
-    left: auto;  /* Ensure Left is unset */
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 15px;
     z-index: 1000;
 }
-
 #glossary-btn {
     width: 60px; height: 60px; border-radius: 50%;
-    background: var(--accent-orange); border: none;
-    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+    background: var(--accent-red); /* Red */
+    border: none;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
     cursor: pointer; display: flex; align-items: center; justify-content: center;
     font-size: 1.8rem;
+    color: white;
 }
-
 .nav-buttons {
     display: flex; gap: 5px; background: var(--white);
     padding: 5px; border-radius: 30px; box-shadow: var(--shadow);
 }
-
 .nav-arrow {
     width: 50px; height: 50px; border-radius: 50%; border: none;
     background: var(--primary-blue); color: white; font-size: 1.2rem;
     cursor: pointer; transition: 0.2s;
 }
 .nav-arrow:disabled { background: var(--gray-light); cursor: not-allowed; }
+
 
 /* --- BACK TO TOP BUTTON (Bottom Center) --- */
 #back-to-top-btn {
