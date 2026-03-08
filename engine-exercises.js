@@ -1081,71 +1081,70 @@ function getExerciseTitle(n) { const t = ["Unscramble the Sentences", "Unscrambl
 function renderExerciseDashboard() {
     const container = document.getElementById('lesson-content');
     
-    let html = `
-        <div class="dashboard-intro" style="padding-top: 15px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <h2 style="margin:0; color:var(--primary-blue); font-size:1.2rem;">Practice Portal</h2>
-                <a href="index.html?lesson=home" class="btn" style="background:var(--text-dark); margin:0; font-size:0.7rem; padding: 6px 12px;">⬅ Exit</a>
-            </div>
-        </div>
+    // Render Tabs
+    let tabsHtml = '<div class="dashboard-tabs" style="justify-content:center; margin-bottom:30px;">';
+    for(let i=1; i<=5; i++) {
+        tabsHtml += `<button class="dash-tab-btn ${i===1?'active':''}" onclick="loadExerciseBlock(${i})">BLOCK ${i}</button>`;
+    }
+    tabsHtml += '</div>';
 
-        <!-- STICKY WRAPPING TABS -->
-        <div class="sticky-tabs-wrapper">
-            <div class="dashboard-tabs">
-                ${exData.grades.map((g, i) => `
-                    <button class="dash-tab-btn ${i===0?'active':''}" onclick="switchGradeTab(this, '${g.id}')">${g.label}</button>
-                `).join('')}
-            </div>
+    container.innerHTML = `
+        <div style="text-align:center; padding: 40px 0;">
+            <h1 style="color:var(--primary-blue);">PRACTICE PORTAL</h1>
+            <p style="color:#666;">Select a Block to access extra drills.</p>
         </div>
-
-        <div id="grade-content" class="area-box" style="margin-top: 15px;">
-            ${renderGradeBimesters(exData.grades[0])}
-        </div>
+        ${tabsHtml}
+        <div id="exercise-block-area">${buildExerciseGrid(1)}</div>
     `;
-    container.innerHTML = html;
 }
 
-window.switchGradeTab = function(btn, gradeId) {
-    document.querySelectorAll('.dash-tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    
-    const grade = exData.grades.find(g => g.id === gradeId);
-    const grid = document.getElementById('grade-content');
-    grid.innerHTML = renderGradeBimesters(grade);
-
-    // Scroll slightly so the user sees the top of the grid after switching
-    const wrapper = document.querySelector('.sticky-tabs-wrapper');
-    window.scrollTo({
-        top: grid.offsetTop - wrapper.offsetHeight - 10,
-        behavior: 'smooth'
+window.loadExerciseBlock = function(blockNum) {
+    document.querySelectorAll('.dash-tab-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', index + 1 === blockNum);
     });
+    document.getElementById('exercise-block-area').innerHTML = buildExerciseGrid(blockNum);
 };
 
-function renderGradeBimesters(grade) {
-    const chaptersPerBim = exData.structure[grade.type].chaptersPerBimester;
-    let html = `<div class="bimester-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">`;
-
-    for (let b = 1; b <= 4; b++) {
+function buildExerciseGrid(blockNum) {
+    const blockData = exData.blocks[blockNum];
+    let html = `<div class="bimester-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">`;
+    
+    blockData.topics.forEach(topicId => {
+        // Get the name from the dictionary, or fallback to the ID number
+        const lessonNum = topicId.split('-')[1];
+        const lessonName = exData.lessonNames[topicId] || `Lesson ${lessonNum}`;
+        
         html += `
-            <div class="bimester-box" style="background:var(--bg-alice-blue); padding:15px; border-radius:10px; border-top:4px solid var(--accent-orange);">
-                <h4 style="color:var(--primary-blue); margin-bottom:10px;">Bimester ${b}</h4>
-                <div style="display:flex; flex-direction:column; gap:8px;">
+            <div class="bimester-box" style="border-top: 5px solid var(--accent-red); min-height: 140px;">
+                <div class="bimester-title" style="color:var(--primary-blue); font-size: 0.9rem; margin-bottom:10px;">
+                    ${lessonName}
+                </div>
+                <div class="chapter-list">
+                    <a id="btn-${topicId}" class="chapter-btn" style="width:100%; text-align:center; background:#eee; color:#aaa; cursor:wait;">
+                        CHECKING...
+                    </a>
+                </div>
+            </div>
         `;
+        setTimeout(() => checkExerciseAvailability(topicId), 100);
+    });
+    return html + '</div>';
+}
 
-        for (let c = 1; c <= chaptersPerBim; c++) {
-            // NEW NAMING CONVENTION:
-            // This produces strings like "6-1-2" or "em1-2-5"
-            const fileId = `${grade.id}-${b}-${c}`;
-            
-            // Note: Using 'id' as the URL parameter to match your exercises.html loader
-            const link = `exercises.html?id=${fileId}`;
-            
-            html += `<a href="${link}" class="chapter-btn" style="text-decoration:none; background:white; padding:10px; border-radius:5px; border:1px solid var(--gray-light); color:var(--text-dark); font-weight:700; font-size:0.85rem; text-align:center;">Chapter ${c}</a>`;
+async function checkExerciseAvailability(id) {
+    const btn = document.getElementById(`btn-${id}`);
+    if (!btn) return;
+    try {
+        const response = await fetch(`data/exercises/ex-${id}.js`, { method: 'HEAD' });
+        if (response.ok) {
+            btn.href = `exercises.html?id=ex-${id}`;
+            btn.style.background = 'var(--bg-light)';
+            btn.style.color = 'var(--text-dark)';
+            btn.style.cursor = 'pointer';
+            btn.textContent = 'START PRACTICE ➔';
+        } else {
+            btn.textContent = 'LOCKED 🔒';
+            btn.style.cursor = 'not-allowed';
         }
-
-        html += `</div></div>`;
-    }
-
-    html += `</div>`;
-    return html;
+    } catch(e) { btn.textContent = 'LOCKED'; }
 }

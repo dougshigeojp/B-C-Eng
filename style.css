@@ -140,6 +140,47 @@ h2 { color: var(--primary-blue); margin-bottom: 1rem; }
 
 
 
+
+
+
+/* --- MODE SWITCHER BUTTON --- */
+.mode-switch-btn {
+    position: absolute;
+    left: 15px;
+    background: var(--primary-blue);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.mode-switch-btn:hover {
+    background: var(--accent-red);
+    transform: scale(1.05);
+}
+
+/* Ensure the header content doesn't overlap the button on small screens */
+@media (max-width: 480px) {
+    .mode-switch-btn { padding: 4px 8px; font-size: 0.6rem; }
+    .header-content { font-size: 0.75rem; margin-left: 50px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================================
    EXERCISE MODE OVERRIDES (Only for exercises.html)
    ============================================================ */
@@ -160,11 +201,13 @@ body.exercise-mode #slide-menu.active {
 
 /* 2. Push content to the right */
 body.exercise-mode #main-container {
-    padding-left: 80px;
-    margin-left: 0;
-    width: 100%;
-    transition: padding-left 0.3s ease;
+    padding-top: 80px; /* Consistent with index.html */
+    padding-left: 20px; /* Let it breathe like the index page */
+    margin: 0 auto;
+    width: 95%;
+    max-width: 900px;
 }
+
 
 /* 3. Hide text when collapsed */
 body.exercise-mode .menu-header,
