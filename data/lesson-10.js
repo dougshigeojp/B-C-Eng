@@ -414,10 +414,10 @@ window.initLesson({
                     instruction: "Listen to the conversation at the train station.",
                     audio: "TTS: Agent: Next please. Traveler: I need a ticket to Oxford. Agent: One way or round trip? Traveler: Round trip. How much is it? Agent: It's 20 pounds. The train leaves from Platform 4.",
                     questions:[
-                        { q: "Traveler: I need a [ticket* | map | schedule] to Oxford.", a: "ticket" },
+                        { q: "Agent: Next please. <br>Traveler: I need a [ticket* | map | schedule] to Oxford.", a: "ticket" },
                         { q: "Agent: One way or [round trip* | long trip | short trip]?", a: "round trip" },
-                        { q: "Traveler: How much [is* | does | are] it?", a: "is" },
-                        { q: "Agent: The train leaves from [Platform* | Gate | Bus Stop] 4.", a: "Platform" }
+                        { q: "Traveler: Round trip. How much [is* | does | are] it?", a: "is" },
+                        { q: "Agent: It's 20 pounds. The train leaves from [Platform* | Gate | Bus Stop] 4.", a: "Platform" }
                     ]
                 },
                 // Drill 3: Audio Choice - A Missed Connection

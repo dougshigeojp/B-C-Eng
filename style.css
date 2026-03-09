@@ -1936,3 +1936,59 @@ body.dashboard-view #ui-cluster {
     display: flex;
     align-items: center;
 }
+
+
+
+
+/* Ensure the text inside options doesn't "steal" the click */
+.option, .tf-btn, .clickable-word {
+    cursor: pointer;
+}
+.option *, .tf-btn *, .clickable-word * {
+    pointer-events: none; /* Forces the parent DIV to catch the click */
+}
+
+
+
+/* FORCE ORANGE SELECTION */
+.option.selected, 
+.tf-btn.selected {
+    background-color: #ffe0b2 !important; /* Soft Orange */
+    border-color: #fb8c00 !important;      /* Darker Orange */
+    color: #e65100 !important;             /* Text color */
+    box-shadow: inset 0 0 0 2px #fb8c00 !important;
+    transition: all 0.2s ease;
+}
+/* Ensure Green (Correct) and Red (Incorrect) override Orange (Selected) */
+.option.correct, 
+.tf-btn.correct {
+    background-color: #d4edda !important; /* Green */
+    border-color: #28a745 !important;
+    color: #155724 !important;
+    box-shadow: none !important;
+}
+
+.option.incorrect, 
+.tf-btn.incorrect {
+    background-color: #f8d7da !important; /* Red */
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+    box-shadow: none !important;
+}
+
+/* Update these styles in style.css */
+.area-box {
+    position: relative;
+    padding: 20px;
+    /* Ensure the box creates a block formatting context */
+    display: flow-root; 
+}
+
+/* Force the audio controller to be a block element */
+.audio-controller {
+    position: static !important; /* Forces it into the document flow */
+    width: 100% !important;      /* Takes full width */
+    margin-bottom: 20px !important;
+    display: flex !important;
+}
+

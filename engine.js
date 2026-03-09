@@ -636,6 +636,10 @@ window.toggleRecording = async function(btn, audioId) {
         mediaRecorder.onstop = () => {
             const audioBlob = new Blob(audioChunks, { type: 'audio/mpeg' });
             const url = URL.createObjectURL(audioBlob);
+            
+            // ---> NEW LINE: Save the URL so "Play All" can find it later
+            playBtn.dataset.audioUrl = url; 
+            
             playBtn.onclick = () => { const a = new Audio(url); a.play(); };
             playBtn.style.display = 'flex';
         };
@@ -679,22 +683,29 @@ function attachExerciseListeners() {
         }
     });
 
-    // B. SELECTION LOGIC
-    document.addEventListener('click', e => {
-        const option = e.target.closest('.option, .image-option, .clickable-word, .tf-btn, .memory-card');
-        if (!option) return;
-        const parent = option.parentElement;
+// B. UNIVERSAL SELECTION LOGIC
+document.addEventListener('click', function(e) {
+    // 1. Identify the clicked target
+    const target = e.target.closest('.option, .tf-btn');
+    if (!target) return;
 
-        if (option.classList.contains('memory-card')) { window.handleMemoryClick(option); return; }
-        if (option.classList.contains('clickable-word')) { option.classList.toggle('selected'); return; }
+    // 2. Stop if this exercise is already finished (checked)
+    if (target.closest('.disabled-mode') || target.closest('.question-block.disabled-mode')) {
+        return;
+    }
 
-        if (parent.classList.contains('multiple')) {
-            option.classList.toggle('selected');
-        } else {
-            parent.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
-            option.classList.add('selected');
-        }
-    });
+    // 3. Find the container (where siblings live)
+    const container = target.closest('.options-container, .tf-buttons, .multiple');
+
+    // 4. If it's NOT a multi-choice, remove 'selected' from all siblings
+    if (!container.classList.contains('multiple')) {
+        const siblings = container.querySelectorAll('.option, .tf-btn');
+        siblings.forEach(s => s.classList.remove('selected'));
+    }
+
+    // 5. Toggle the class
+    target.classList.toggle('selected');
+});    
 
     // C. DRAG & DROP
     document.addEventListener('dragstart', e => { if (e.target.classList.contains('draggable')) window.draggedItem = e.target; });
@@ -1163,13 +1174,47 @@ if (index === 0) {
         </div>`;
 }
     // ======================================================
-    // STEP 1: CONTEXT
+    // STEP 1: CONTEXT DIALOGUE
     // ======================================================
     if (index === 1) {
         html += `<div class="area-box" style="position:relative">
-                ${createAudioPlayer(step.contextAudio)}
-            <p><i>${step.context}</i></p><br>
-            ${step.dialogue.map(line => `<p><b>${line.speaker}:</b> ${line.text}</p>`).join('')}
+            <!-- 1. Full MP3 Audio Player at the Top -->
+            ${createAudioPlayer(step.contextAudio)}
+            
+            <h3 style="color:var(--primary-blue);">Context</h3>
+            <p style="margin-bottom:20px;"><i>${step.context}</i></p>
+            
+            <div class="dialogue-container">`;
+            
+        step.dialogue.forEach((line, i) => {
+            // Strip the tooltip markup like[museum](tooltip:museum) so the TTS reads normal English
+            const cleanText = line.text.replace(/\[(.*?)\]\(tooltip:.*?\)/g, '$1').replace(/'/g, "\\'");
+            
+            html += `
+                <div class="shadow-box" style="display:flex; align-items:center; gap:10px; margin-bottom:10px; padding:6px 10px; border-radius:8px; border:1px solid var(--bg-alice-blue);">
+                    
+                    <!-- 2. Discreet Play Button (TTS) -->
+                    <button class="btn-circle compact" onclick="toggleTTS('TTS: ${cleanText}', this)" title="Listen">▶️</button>
+                    
+                    <!-- Dialogue Text -->
+                    <div style="flex-grow:1; font-size:0.95rem;">
+                        <b>${line.speaker}:</b> ${line.text}
+                    </div>
+                    
+                    <!-- 3. Discreet Record System -->
+                    <div style="display:flex; gap:5px; flex-shrink:0;">
+                        <button class="btn-circle compact record-btn" onclick="toggleRecording(this, 'step1-${i}')" title="Record" style="border:none;">🎤</button>
+                        <button class="btn-circle compact stop-btn" onclick="stopRecording(this)" title="Stop" style="display:none; border:none;">⏹️</button>
+                        <button class="btn-circle compact play-rec-btn" title="Play Recording" style="display:none; border:none;">🎧</button>
+                    </div>
+                </div>`;
+        });
+        
+        html += `
+            </div>
+            
+            <!-- 4. Play All Recordings Button -->
+            <button class="btn" style="margin-top:20px; background:var(--success-green);" onclick="playAllRecordings(this)">🎧 PLAY ALL MY RECORDINGS</button>
         </div>`;
     }
 
@@ -1766,7 +1811,42 @@ window.scrubAudio = function(rangeInput) {
 }
 
 
+// --- PLAY ALL RECORDINGS SEQUENTIALLY ---
+window.playAllRecordings = async function(btn) {
+    // Isolate the buttons to just the current exercise box
+    const container = btn.closest('.area-box');
+    const playBtns = container.querySelectorAll('.play-rec-btn');
+    
+    // Change the main button state so the user knows it's working
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "⏳ PLAYING...";
+    btn.style.pointerEvents = "none";
 
+    for (let playBtn of playBtns) {
+        // Play only if the user actually recorded something for this line
+        if (playBtn.style.display !== 'none' && playBtn.dataset.audioUrl) {
+            await new Promise(resolve => {
+                const audio = new Audio(playBtn.dataset.audioUrl);
+                
+                // Visually highlight the play button while it plays
+                const originalBg = playBtn.style.backgroundColor;
+                playBtn.style.backgroundColor = "var(--accent-orange)";
+                
+                audio.onended = () => {
+                    playBtn.style.backgroundColor = originalBg; // Restore color
+                    resolve(); // Move to the next recording
+                };
+                
+                audio.onerror = resolve; // Skip if there's an error
+                audio.play();
+            });
+        }
+    }
+    
+    // Restore the main button when finished
+    btn.innerHTML = originalText;
+    btn.style.pointerEvents = "auto";
+};
 
 
 // ========================================================
