@@ -15,21 +15,21 @@ window.initLesson({
             title: "Foundation & Daily Life",
             description: "Essential vocabulary and grammar for everyday interactions.",
             topics: [
-                { id: "lesson-1", title: "1 - Introductions & Greetings" },
-                { id: "lesson-2", title: "2 - Family & Relationships" },
-                { id: "lesson-3", title: "3 - My House & Furniture" },
-                { id: "lesson-4", title: "4 - Daily Routines & Time" },
-                { id: "lesson-5", title: "5 - Jobs & Occupations" },
-                { id: "lesson-6", title: "6 - Hobbies & Free Time" },
-                { id: "lesson-7", title: "7 - Food & Drink" }
+                { id: "lesson-01", title: "1 - Introductions & Greetings" },
+                { id: "lesson-02", title: "2 - Family & Relationships" },
+                { id: "lesson-03", title: "3 - My House & Furniture" },
+                { id: "lesson-04", title: "4 - Daily Routines & Time" },
+                { id: "lesson-05", title: "5 - Jobs & Occupations" },
+                { id: "lesson-06", title: "6 - Hobbies & Free Time" },
+                { id: "lesson-07", title: "7 - Food & Drink" }
             ]
         },
         2: {
             title: "Community & The World",
             description: "Navigating the city, traveling, and taking care of yourself.",
             topics: [
-                { id: "lesson-8", title: "8 - Places in the City" },
-                { id: "lesson-9", title: "9 - Shopping & Money" },
+                { id: "lesson-08", title: "8 - Places in the City" },
+                { id: "lesson-09", title: "9 - Shopping & Money" },
                 { id: "lesson-10", title: "10 - Travel & Transportation" }, // <-- Matches your Lesson 10
                 { id: "lesson-11", title: "11 - Health & The Body" },
                 { id: "lesson-12", title: "12 - Clothes & Fashion" },

@@ -1143,8 +1143,8 @@ async function checkExerciseAvailability(id) {
             btn.style.cursor = 'pointer';
             btn.textContent = 'START PRACTICE ➔';
         } else {
-            btn.textContent = 'LOCKED 🔒';
+            btn.textContent = 'in development';
             btn.style.cursor = 'not-allowed';
         }
-    } catch(e) { btn.textContent = 'LOCKED'; }
+    } catch(e) { btn.textContent = 'in development'; }
 }

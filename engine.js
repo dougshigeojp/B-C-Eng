@@ -218,7 +218,7 @@ async function checkLessonAvailability(lessonId) {
             btn.href = `index.html?lesson=${lessonId}`;
         } else {
             // FILE DOES NOT EXIST
-            btn.textContent = 'LOCKED 🔒';
+            btn.textContent = 'COMING SOON';
             btn.style.cursor = 'not-allowed';
         }
     } catch (e) {
