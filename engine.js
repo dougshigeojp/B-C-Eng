@@ -684,28 +684,31 @@ function attachExerciseListeners() {
     });
 
 // B. UNIVERSAL SELECTION LOGIC
-document.addEventListener('click', function(e) {
-    // 1. Identify the clicked target
-    const target = e.target.closest('.option, .tf-btn');
-    if (!target) return;
+    document.addEventListener('click', function(e) {
+        // 1. Identify the clicked target (ADDED .clickable-word)
+        const target = e.target.closest('.option, .tf-btn, .clickable-word');
+        if (!target) return;
 
-    // 2. Stop if this exercise is already finished (checked)
-    if (target.closest('.disabled-mode') || target.closest('.question-block.disabled-mode')) {
-        return;
-    }
+        // 2. Stop if this exercise is already finished (checked)
+        if (target.closest('.disabled-mode') || target.closest('.question-block.disabled-mode')) {
+            return;
+        }
 
-    // 3. Find the container (where siblings live)
-    const container = target.closest('.options-container, .tf-buttons, .multiple');
+        // 3. Find the container (ADDED .mistake-text-container)
+        const container = target.closest('.options-container, .tf-buttons, .multiple, .mistake-text-container');
 
-    // 4. If it's NOT a multi-choice, remove 'selected' from all siblings
-    if (!container.classList.contains('multiple')) {
-        const siblings = container.querySelectorAll('.option, .tf-btn');
-        siblings.forEach(s => s.classList.remove('selected'));
-    }
+        // 4. If it's NOT a multi-choice, remove 'selected' from all siblings
+        if (container && !container.classList.contains('multiple')) {
+            const siblings = container.querySelectorAll('.option, .tf-btn, .clickable-word');
+            siblings.forEach(s => {
+                // Ensure we don't instantly remove the class from the item we are trying to toggle
+                if (s !== target) s.classList.remove('selected'); 
+            });
+        }
 
-    // 5. Toggle the class
-    target.classList.toggle('selected');
-});    
+        // 5. Toggle the class
+        target.classList.toggle('selected');
+    });   
 
     // C. DRAG & DROP
     document.addEventListener('dragstart', e => { if (e.target.classList.contains('draggable')) window.draggedItem = e.target; });

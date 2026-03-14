@@ -2,6 +2,8 @@
 :root {
     --primary-blue: #003366;      /* Navy Blue */
     --accent-red: #D32F2F;        /* Vivid Red */
+    --accent-orange: #FF8C42;     /* ADDED: Missing Accent Orange */
+    --selected-orange: #ffe0b2;   /* ADDED: Missing Selected Orange */
     --bg-light: #f8f9fa;          /* Clean White/Gray Background */
     --white: #ffffff;
     --text-dark: #0D1B2A;
