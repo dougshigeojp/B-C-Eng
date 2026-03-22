@@ -1667,16 +1667,38 @@ if (step.dialogueGroups) {
     }
 
     // ======================================================
-    // STEP 8: WRITING
+    // STEP 8: WRITING (Fixed Recording Version)
     // ======================================================
     if (index === 8) {
-        html += `<div class="area-box">
+        html += `
+        <div class="area-box">
             <p><b>${step.instruction}</b></p>
-            <div class="example-box" style="background:#f9f9f9; padding:10px; border-left:4px solid var(--primary-blue)">
+            <div class="example-box" style="background:#f9f9f9; padding:10px; border-left:4px solid var(--primary-blue); margin-bottom:15px;">
                 <p><i>Example: ${step.example}</i></p>
             </div>
-            <textarea placeholder="Write your text here..." style="width:100%; height:150px; margin-top:20px; padding:10px;"></textarea>
-            <p><small>* The student MUST HAND IN the answer in paper to the teacher.</small></p>
+
+            <!-- Writing Box -->
+            <textarea placeholder="Write your text here..." style="width:100%; height:150px; padding:15px; border-radius:10px; border:1px solid #ddd; font-family:inherit;"></textarea>
+            
+            <!-- Controls Container -->
+            <div style="margin-top:20px; padding:15px; background:var(--bg-alice-blue); border-radius:10px; display:flex; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center;">
+                
+                <!-- 1. TTS Button -->
+                <button class="btn" style="background:var(--accent-orange); font-size:0.85rem;" onclick="listenToWriting(this)">🔊 Listen to my Writing</button>
+
+                <!-- 2. Recording Interface (NOW WITH shadow-box CLASS) -->
+                <div class="shadow-box" style="display:flex; align-items:center; gap:8px; border-left:1px solid #ccc; padding-left:15px;">
+                    <span style="font-size:0.8rem; font-weight:bold; color:#666;">PRACTICE SPEAKING:</span>
+                    <button class="btn-circle record-btn" onclick="toggleRecording(this, 'step8-writing')">🎤</button>
+                    <button class="btn-circle stop-btn" onclick="stopRecording(this)" style="display:none;">⏹️</button>
+                    <button class="btn-circle play-rec-btn" style="display:none;">🎧</button>
+                    
+                    <!-- 3. Download Button -->
+                    <button class="btn download-btn-step8" style="background:var(--primary-blue); font-size:0.8rem; display:none;" onclick="downloadStep8Recording(this)">⬇️ Download My Voice</button>
+                </div>
+            </div>
+
+            <p style="margin-top:20px;"><small>* The student MUST HAND IN the answer in paper to the teacher.</small></p>
         </div>`;
     }
 
@@ -1895,6 +1917,54 @@ window.playAllRecordings = async function(btn) {
     btn.innerHTML = originalText;
     btn.style.pointerEvents = "auto";
 };
+
+
+
+
+
+
+
+
+
+// --- NEW FUNCTIONS FOR STEP 8 ---
+
+// 1. Converts the text inside the textarea into Speech
+window.listenToWriting = function(btn) {
+    const textarea = btn.closest('.area-box').querySelector('textarea');
+    const text = textarea.value.trim();
+    
+    if (!text) {
+        alert("Please write something in the box first! (Por favor, escreva algo no campo primeiro!)");
+        return;
+    }
+    
+    // We reuse our existing TTS engine
+    window.toggleTTS("TTS: " + text, btn);
+};
+
+// 2. Downloads the recording specifically for Step 8
+window.downloadStep8Recording = function(btn) {
+    const playBtn = btn.closest('.area-box').querySelector('.play-rec-btn');
+    const url = playBtn.dataset.audioUrl;
+    
+    if (!url) return;
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = "My-Writing-Practice.mp3";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
+
+
+
+
+
+
+
+
 
 
 // ========================================================
