@@ -1259,37 +1259,56 @@ if (index === 0) {
         };
 
         // --- 2A: New Words (Tabbed) ---
-        let html2a = buildInternalTabs(step.areas, 's2a', (area) => 
-            area.items.map(item => {
-                const safeTerm = item.term.replace(/'/g, "\\'");
-                // Using the Step 4 button style with our new 'compact' class
-                return `<div class="learning-card with-tts">
-                            <div>
-                                <span class="term-en">${item.term}</span>
-                                <span class="term-pt">${item.trans}</span>
-                            </div>
-                            <button class="btn-circle compact" onclick="toggleTTS('TTS: ${safeTerm}', this)">▶️</button>
-                        </div>`;
-            }).join('')
-        );
+let html2a = buildInternalTabs(step.areas, 's2a', (area) => {
+    let listHtml = area.items.map((item, i) => {
+        const safeTerm = item.term.replace(/'/g, "\\'");
+        return `
+        <div class="shadow-box" style="display:flex; align-items:center; gap:10px; margin-bottom:8px; padding:8px 12px; border-radius:8px;">
+            <button class="btn-circle compact" onclick="toggleTTS('TTS: ${safeTerm}', this)">▶️</button>
+            <div style="flex-grow:1">
+                <span class="term-en" style="display:block; font-weight:bold;">${item.term}</span>
+                <span class="term-pt" style="font-size:0.85rem; color:#666;">${item.trans}</span>
+            </div>
+            <div style="display:flex; gap:5px;">
+                <button class="btn-circle compact record-btn" onclick="toggleRecording(this, 's2a-${i}')">🎤</button>
+                <button class="btn-circle compact stop-btn" onclick="stopRecording(this)" style="display:none;">⏹️</button>
+                <button class="btn-circle compact play-rec-btn" style="display:none;">🎧</button>
+            </div>
+        </div>`;
+    }).join('');
+
+    return listHtml + `
+        <button class="btn" style="margin-top:15px; width:100%; background:var(--success-green); font-size:0.9rem;" 
+        onclick="playAllRecordings(this)">🎧 Play All Tab Recordings</button>`;
+});
 
         // --- 2B: Examples (Tabbed) ---
-        let html2b = '';
-        if (step.exampleGroups) {
-            html2b = buildInternalTabs(step.exampleGroups, 's2b', (group) => 
-                group.items.map(ex => {
-                    const safeSent = ex.sent.replace(/'/g, "\\'");
-                    return `<div class="exercise-card" style="box-shadow:none; border-bottom:1px solid #eee; margin-bottom:0; padding: 15px 60px 15px 0; position: relative;">
-                        <button class="btn-circle compact" onclick="toggleTTS('TTS: ${safeSent}', this)">▶️</button>
-                        <p><b class="term-en">${ex.term}:</b> ${ex.sent}</p>
-                        <p class="term-pt"><i>${ex.trans}</i></p>
-                    </div>`;
-                }).join('')
-            );
-        } else if (step.examples) {
-            // Fallback for old data
-            html2b = `<div class="area-box">${step.audio2b ? createAudioPlayer(step.audio2b) : ''}${step.examples.map(ex => `<p><b>${ex.term}:</b> ${ex.sent}</p>`).join('')}</div>`;
-        }
+let html2b = '';
+if (step.exampleGroups) {
+    html2b = buildInternalTabs(step.exampleGroups, 's2b', (group) => {
+        let listHtml = group.items.map((ex, i) => {
+            // Remove tooltip code for TTS
+            const cleanSent = ex.sent.replace(/\[(.*?)\]\(tooltip:.*?\)/g, '$1').replace(/'/g, "\\'");
+            return `
+            <div class="shadow-box" style="display:flex; align-items:center; gap:10px; margin-bottom:10px; padding:10px; border-radius:8px;">
+                <button class="btn-circle compact" onclick="toggleTTS('TTS: ${cleanSent}', this)">▶️</button>
+                <div style="flex-grow:1; font-size:0.95rem;">
+                    <b class="term-en">${ex.term}:</b> ${ex.sent}
+                    <div class="term-pt" style="font-size:0.85rem; color:#666; font-style:italic;">${ex.trans}</div>
+                </div>
+                <div style="display:flex; gap:5px;">
+                    <button class="btn-circle compact record-btn" onclick="toggleRecording(this, 's2b-${i}')">🎤</button>
+                    <button class="btn-circle compact stop-btn" onclick="stopRecording(this)" style="display:none;">⏹️</button>
+                    <button class="btn-circle compact play-rec-btn" style="display:none;">🎧</button>
+                </div>
+            </div>`;
+        }).join('');
+
+        return listHtml + `
+            <button class="btn" style="margin-top:15px; width:100%; background:var(--success-green); font-size:0.9rem;" 
+            onclick="playAllRecordings(this)">🎧 Play All Example Recordings</button>`;
+    });
+}
 
         // --- 2C: Practice (Tabbed Fix) ---
         let html2c = '';
@@ -1366,26 +1385,52 @@ if (index === 0) {
         }
 
         // --- 3B: Dialogues (Grouped in Boxes) ---
-        let html3b = '';
-        if (step.dialogueGroups) {
-            html3b = step.dialogueGroups.map(group => {
-                let audioHTML = createAudioPlayer(group.audio);
-                audioHTML = audioHTML.replace('class="audio-controller"', 'class="audio-controller" style="position:relative; top:0; right:auto; margin: 0 auto 15px auto; width:100%;"');
-                
-                return `
-                <div class="area-box" style="position:relative">
-                    <h4 style="margin-bottom:15px; color:var(--primary-blue); border-bottom:1px solid #eee; padding-bottom:5px;">${group.title}</h4>
-                    ${audioHTML}
-                    ${group.lines.map(d => `<p><b>${d.speaker}:</b> ${d.text}</p><p class="term-pt"><i>${d.pt}</i></p><br>`).join('')}
-                </div>`;
-            }).join('');
-        } else if (step.dialogueExamples) {
-             // Fallback
-             html3b = `<div class="area-box" style="position:relative">
-                        ${step.audio3b ? createAudioPlayer(step.audio3b) : ''}
-                        ${step.dialogueExamples.map(d => `<p><b>${d.speaker}:</b> ${d.text}</p><p class="term-pt"><i>${d.pt}</i></p><br>`).join('')}
-                    </div>`;
+let html3b = '';
+if (step.dialogueGroups) {
+    html3b = step.dialogueGroups.map((group, gIndex) => {
+        
+        // 1. RE-INSERT THE MAIN MP3 PLAYER LOGIC
+        let mainAudioHTML = '';
+        if (group.audio) {
+            // Use the internal helper to build the player
+            mainAudioHTML = createAudioPlayer(group.audio);
+            // Apply the styling fix to ensure it sits correctly inside the box
+            mainAudioHTML = mainAudioHTML.replace('class="audio-controller"', 'class="audio-controller" style="position:relative; top:0; right:auto; margin: 0 auto 15px auto; width:100%;"');
         }
+
+        return `
+        <div class="area-box" style="position:relative; margin-bottom:30px;">
+            <h4 style="margin-bottom:15px; color:var(--primary-blue); border-bottom:1px solid #eee; padding-bottom:5px;">${group.title}</h4>
+            
+            <!-- 2. Main MP3 Player appears here -->
+            ${mainAudioHTML}
+
+            <div class="dialogue-group-lines">
+                ${group.lines.map((d, i) => {
+                    // Safety: Clean tooltips for TTS
+                    const cleanText = d.text.replace(/\[(.*?)\]\(tooltip:.*?\)/g, '$1').replace(/'/g, "\\'");
+                    return `
+                    <div class="shadow-box" style="display:flex; align-items:center; gap:10px; margin-bottom:8px; padding:8px; border-radius:8px; border:1px solid var(--bg-alice-blue);">
+                        <button class="btn-circle compact" onclick="toggleTTS('TTS: ${cleanText}', this)">▶️</button>
+                        <div style="flex-grow:1; font-size:0.9rem;">
+                            <b>${d.speaker}:</b> ${d.text}
+                            <div style="font-size:0.8rem; color:#888;">${d.pt}</div>
+                        </div>
+                        <div style="display:flex; gap:5px; flex-shrink:0;">
+                            <button class="btn-circle compact record-btn" onclick="toggleRecording(this, 's3b-${gIndex}-${i}')">🎤</button>
+                            <button class="btn-circle compact stop-btn" onclick="stopRecording(this)" style="display:none;">⏹️</button>
+                            <button class="btn-circle compact play-rec-btn" style="display:none;">🎧</button>
+                        </div>
+                    </div>`;
+                }).join('')}
+            </div>
+
+            <!-- 3. Play All Recordings Button -->
+            <button class="btn" style="margin-top:15px; width:100%; background:var(--success-green); font-size:0.85rem;" 
+            onclick="playAllRecordings(this)">🎧 Play All My Recordings</button>
+        </div>`;
+    }).join('');
+}
 
         // --- 3C: Practice (Tabbed Fix) ---
         let html3c = '';

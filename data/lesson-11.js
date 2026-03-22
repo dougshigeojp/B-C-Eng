@@ -521,14 +521,14 @@ window.initLesson({
 
                 // --- CLICKABLE ERROR (15-24) ---
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I [make](error:do) the laundry on Sundays." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Please [do](error:wash) the dishes after dinner." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Please [clean](error:wash) the dishes after dinner." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Don't forget to take [in](error:out) the trash." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I need to [do](error:make) the bed in the morning." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I live[on](error:in) a big house." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "What is your new place [love](error:like)?" },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I need to [have](error:make) the bed in the morning." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I live [on](error:in) a big house." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "What is your new place [love](error:like) ?" },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "[Who's](error:Whose) turn is it to clean?" },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "The utilities are [including](error:included) in the rent." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "You pay for electricity [separate](error:separately)." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "You pay for electricity [separate](error:separately) ." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I hate [to](error:) washing the dishes." },
 
                 // --- ODD ONE OUT (25-30) ---

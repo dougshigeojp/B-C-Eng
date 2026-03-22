@@ -527,9 +527,9 @@ window.initLesson({
                 { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "Where is the [near](error:nearest) pharmacy?" },
                 { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "You need to [make](error:take) the second left." },
                 { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "Get [on](error:in) the car, we are leaving!" },
-                { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "The pilot[drives](error:flies) the airplane." },
+                { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "The pilot [drives](error:flies) the airplane." },
                 { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "Go [straightly](error:straight) for two blocks." },
-                { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "Subsequently, they [plan](error:planned) a trip to the countryside yesterday." },
+                { type: "clickable-error", instruction: "Click the incorrect word and fix it.", sentence: "They traveled finished work at 5PM, and subsequently, they [plan](error:planned) a trip to the countryside yesterday." },
 
                 // --- ODD ONE OUT (25-30) ---
                 { type: "odd-one-out", instruction: "Which word does NOT belong? (Transport)", options:[{t: "Bus", c: false}, {t: "Train", c: false}, {t: "Subway", c: false}, {t: "Ticket", c: true}] },
