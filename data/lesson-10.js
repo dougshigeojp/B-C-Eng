@@ -7,7 +7,7 @@ window.initLesson({
     // --- METADATA ---
     lessonId: "lesson-10",
     block: "2",
-    topicTitle: "Travel and Transportation",
+    topicTitle: "10 - Travel and Transportation",
 
     steps: [
         // ======================================================

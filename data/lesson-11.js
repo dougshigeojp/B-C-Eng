@@ -8,7 +8,7 @@ window.initLesson({
     // --- METADATA ---
     lessonId: "lesson-11",
     block: "2",
-    topicTitle: "Home and Living",
+    topicTitle: "11 - Home and Living",
 
     steps:[
         // ======================================================

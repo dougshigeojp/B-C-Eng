@@ -8,7 +8,7 @@ window.initLesson({
     // --- METADATA ---
     lessonId: "lesson-1",
     block: "1",
-    topicTitle: "Introductions and Greetings",
+    topicTitle: "1 - Introductions and Greetings",
 
     steps:[
         // ======================================================

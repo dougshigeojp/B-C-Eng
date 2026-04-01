@@ -8,7 +8,7 @@ window.initLesson({
     // --- METADATA ---
     lessonId: "lesson-2",
     block: "1",
-    topicTitle: "Daily Routines",
+    topicTitle: "2 - Daily Routines",
 
     steps:[
         // ======================================================
