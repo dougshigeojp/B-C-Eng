@@ -16,7 +16,7 @@ window.initLesson({
         // ======================================================
         {
             title: "Intro & Can-Do",
-            objectives: "• Talk about educational experiences and different[school subjects](tooltip:subject).<br>• Describe [studying habits](tooltip:studying-habits) and preparing for[exams](tooltip:exam).<br>• Understand vocabulary related to [higher education](tooltip:higher-education) and degrees.<br>• Discuss your [future plans](tooltip:future-plans) and career path.",
+            objectives: "• Talk about educational experiences and different [school subjects](tooltip:subject).<br>• Describe [studying habits](tooltip:studying-habits) and preparing for [exams](tooltip:exam).<br>• Understand vocabulary related to [higher education](tooltip:higher-education) and degrees.<br>• Discuss your [future plans](tooltip:future-plans) and career path.",
             welcome: "Welcome to Lesson 13! Education is a continuous journey. In this lesson, we will explore the vocabulary needed to talk about school, university, and learning. You will practice describing your favorite subjects, your study habits, and your plans for the future. Let's start learning!",
             audio: {
                 objectives: "TTS: In this lesson, you will learn to: Talk about educational experiences and different school subjects. Describe studying habits and preparing for exams. Understand vocabulary related to higher education and degrees. Discuss your future plans and career path.",
@@ -33,11 +33,11 @@ window.initLesson({
             contextAudio: "TTS: Sarah: Hi Mark! What are you doing in the library so late? Mark: Hey Sarah. I have a big exam next week, so I need to study hard. Sarah: Oh, I understand. What do you study again? Mark: I'm majoring in engineering. It is a very difficult course. Sarah: I bet! I'm studying Literature. We have to hand in our essays by Friday. Mark: That sounds interesting, but I was never good at writing. What are your plans after you graduate? Sarah: I want to continue my studies and get a Master's degree. Mark: That's a great choice. I think I will apply for a job right after I get my diploma.",
             dialogue:[
                 { speaker: "Sarah", text: "Hi Mark! What are you doing in the [library](tooltip:library) so late?" },
-                { speaker: "Mark", text: "Hey Sarah. I have a big [exam](tooltip:exam) next week, so I need to [study](tooltip:study) hard." },
+                { speaker: "Mark", text: "Hey Sarah. I have a big [exam](tooltip:exam) next week, so I need to study hard." },
                 { speaker: "Sarah", text: "Oh, I understand. What do you study again?" },
                 { speaker: "Mark", text: "I'm [majoring in](tooltip:major-in) engineering. It is a very [difficult](tooltip:difficult) [course](tooltip:course)." },
                 { speaker: "Sarah", text: "I bet! I'm studying Literature. We have to hand in our [essays](tooltip:essay) by Friday." },
-                { speaker: "Mark", text: "That sounds [interesting](tooltip:interesting), but I was never good at writing. What are your plans after you [graduate](tooltip:graduate)?" },
+                { speaker: "Mark", text: "That sounds interesting, but I was never good at writing. What are your plans after you [graduate](tooltip:to-graduate)?" },
                 { speaker: "Sarah", text: "I want to continue my studies and get a [Master's degree](tooltip:masters-degree)." },
                 { speaker: "Mark", text: "That's a great choice. I think I will apply for a job right after I get my [diploma](tooltip:diploma)." }
             ]
@@ -243,8 +243,8 @@ window.initLesson({
                     explanation: "Phrases used to discuss school stages, preferences, and basic academic responsibilities.<br><span style='color:var(--primary-blue); font-style:italic;'>(Frases usadas para discutir fases da escola, preferências e responsabilidades acadêmicas básicas.)</span>",
                     samples:[
                         { en: "I wake up early to <b>go to school</b>.", pt: "<span style='color:var(--primary-blue)'>(Eu acordo cedo para ir à escola.)</span>" },
-                        { en: "Kids start learning reading in <b>primary school</b>.", pt: "<span style='color:var(--primary-blue)'>(As crianças começam a aprender a ler na escola primária/ensino fundamental.)</span>" },
-                        { en: "Teenagers face many challenges in <b>high school</b>.", pt: "<span style='color:var(--primary-blue)'>(Adolescentes enfrentam muitos desafios no ensino médio.)</span>" },
+                        { en: "Kids start learning reading in <b>primary/elementary school</b>.", pt: "<span style='color:var(--primary-blue)'>(As crianças começam a aprender a ler na escola primária/ensino fundamental.)</span>" },
+                        { en: "Teenagers face many challenges in <b>secondary/high school</b>.", pt: "<span style='color:var(--primary-blue)'>(Adolescentes enfrentam muitos desafios no ensino médio.)</span>" },
                         { en: "<b>My favorite subject is</b> geography.", pt: "<span style='color:var(--primary-blue)'>(Minha matéria favorita é geografia.)</span>" },
                         { en: "She seems <b>to be good at</b> math.", pt: "<span style='color:var(--primary-blue)'>(Ela parece ser boa em matemática.)</span>" },
                         { en: "You must <b>do your homework</b> every day.", pt: "<span style='color:var(--primary-blue)'>(Você deve fazer seu dever de casa todos os dias.)</span>" }
@@ -265,10 +265,11 @@ window.initLesson({
                 },
                 {
                     title: "Higher Education & Future",
-                    audio: "TTS: Apply for a university. Major in. Get a degree. What do you want to be. Decide on a career path. Continue your studies.",
+                    audio: "TTS: Apply to a university. Major in. Get a degree. What do you want to be. Decide on a career path. Continue your studies.",
                     explanation: "Expressions for discussing college applications, university paths, and professional ambitions.<br><span style='color:var(--primary-blue); font-style:italic;'>(Expressões para discutir candidaturas a faculdades, caminhos universitários e ambições profissionais.)</span>",
                     samples:[
-                        { en: "I will <b>apply for a university</b> in London.", pt: "<span style='color:var(--primary-blue)'>(Vou me candidatar a uma universidade em Londres.)</span>" },
+                        { en: "I will <b>apply to a university</b> in London.", pt: "<span style='color:var(--primary-blue)'>(Vou me candidatar a uma universidade em Londres.)</span>" },
+                        { en: "I will <b>apply for a bachelor's degree in architecture</b> at a university in London.", pt: "<span style='color:var(--primary-blue)'>(Vou me candidatar para um diploma de bacharel em arquitetura em uma universidade em Londres.)</span>" },
                         { en: "I plan to <b>major in</b> computer science.", pt: "<span style='color:var(--primary-blue)'>(Pretendo me especializar/formar em ciência da computação.)</span>" },
                         { en: "It takes four years to <b>get a degree</b>.", pt: "<span style='color:var(--primary-blue)'>(Leva quatro anos para obter um diploma.)</span>" },
                         { en: "<b>What do you want to be</b> when you grow up?", pt: "<span style='color:var(--primary-blue)'>(O que você quer ser quando crescer?)</span>" },
@@ -290,9 +291,9 @@ window.initLesson({
                 },
                 {
                     title: "Dialogue 2: College Life",
-                    audio: "TTS: It is time to go to school. Wait, what do you major in again? I major in chemistry. Now let me do your homework in peace! It's my homework, not yours.",
+                    audio: "TTS: It is time to go to school. Can you help me with my homework? Wait, what do you major in again? I major in chemistry. Now let me do your homework in peace! It's my homework, not yours.",
                     lines:[
-                        { speaker: "Leo", text: "It is time to go to school. Wait, what do you major in again?", pt: "(É hora de ir para a escola. Espere, em que você se especializa mesmo?)" },
+                        { speaker: "Leo", text: "It is time to go to school. Can you help me with my homework? Wait, what do you major in again?", pt: "(É hora de ir para a escola. Você pode me ajudar com o dever de casa? Espere, em que você se especializa mesmo?)" },
                         { speaker: "Sam", text: "I major in chemistry. Now let me do your homework in peace! It's my homework, not yours.", pt: "(Eu me formo em química. Agora me deixe fazer o seu dever de casa em paz! É meu dever de casa, não seu.)" }
                     ]
                 },
@@ -306,26 +307,26 @@ window.initLesson({
                 },
                 {
                     title: "Dialogue 4: Test Results",
-                    audio: "TTS: Did you take an exam this morning? Yes, I hope I pass an exam this semester. If you study, you will get good grades.",
+                    audio: "TTS: Did you take an exam this morning? Yes, I hope I pass that exam this semester. If you study, you will get good grades.",
                     lines:[
                         { speaker: "Emma", text: "Did you take an exam this morning?", pt: "(Você fez um exame esta manhã?)" },
-                        { speaker: "Liam", text: "Yes, I hope I pass an exam this semester. If you study, you will get good grades.", pt: "(Sim, espero passar em um exame neste semestre. Se você estudar, tirará boas notas.)" }
+                        { speaker: "Liam", text: "Yes, I hope I pass that exam this semester. If you study, you will get good grades.", pt: "(Sim, espero passar naquele exame neste semestre. Se você estudar, tirará boas notas.)" }
                     ]
                 },
                 {
                     title: "Dialogue 5: Applying to College",
-                    audio: "TTS: I want to apply for a university soon. That's a big step! Did you decide on a career path? Not yet. It's much harder than in primary school.",
+                    audio: "TTS: I want to apply to a university soon. That's a big step! Did you decide on a career path? Because I haven't decided yet. It's much harder than in primary school.",
                     lines:[
-                        { speaker: "Noah", text: "I want to apply for a university soon.", pt: "(Quero me candidatar a uma universidade em breve.)" },
-                        { speaker: "Chloe", text: "That's a big step! Did you decide on a career path? Not yet. It's much harder than in primary school.", pt: "(Esse é um grande passo! Você decidiu sobre um plano de carreira? Ainda não. É muito mais difícil do que na escola primária.)" }
+                        { speaker: "Noah", text: "I want to apply to a university soon.", pt: "(Quero me candidatar a uma universidade em breve.)" },
+                        { speaker: "Chloe", text: "That's a big step! Did you decide on a career path? Because I haven't decided yet. It's much harder than in primary school.", pt: "(Esse é um grande passo! Você decidiu sobre um plano de carreira? Porque eu ainda não decidi. É muito mais difícil do que na escola primária.)" }
                     ]
                 },
                 {
                     title: "Dialogue 6: Future Goals",
-                    audio: "TTS: What do you want to be in the future? I want to get a degree in biology. Will you work or continue your studies after that?",
+                    audio: "TTS: What do you want to be in the future? I want to get a degree in biology. Whoa! Will you work or continue your studies after that?",
                     lines:[
                         { speaker: "Oliver", text: "What do you want to be in the future? I want to get a degree in biology.", pt: "(O que você quer ser no futuro? Quero obter um diploma em biologia.)" },
-                        { speaker: "Sophia", text: "Will you work or continue your studies after that?", pt: "(Você vai trabalhar ou continuar seus estudos depois disso?)" }
+                        { speaker: "Sophia", text: "Whoa! Will you work or continue your studies after that?", pt: "(Uau! Você vai trabalhar ou continuar seus estudos depois disso?)" }
                     ]
                 }
             ],
@@ -357,12 +358,12 @@ window.initLesson({
                 {
                     title: "Higher Education & Future",
                     drills:[
-                        { q: "I will _____ for a university in my hometown.", options:[{t: "enroll", c: false}, {t: "apply", c: true}, {t: "major", c: false}, {t: "study", c: false}], type: "mcq" },
+                        { q: "I will _____ to a university in my hometown for a degree in psychology.", options:[{t: "enroll", c: false}, {t: "apply", c: true}, {t: "major", c: false}, {t: "study", c: false}], type: "mcq" },
                         { q: "I decided to _____ in biology because I love science.", options:[{t: "degree", c: false}, {t: "major", c: true}, {t: "study", c: false}, {t: "graduate", c: false}], type: "mcq" },
                         { q: "After four years of college, you _____ a degree.", options:[{t: "pass", c: false}, {t: "take", c: false}, {t: "get", c: true}, {t: "major", c: false}], type: "mcq" },
                         { q: "_____ do you want to be when you finish school?", options:[{t: "Where", c: false}, {t: "When", c: false}, {t: "What", c: true}, {t: "Who", c: false}], type: "mcq" },
                         { q: "It is hard to _____ on a career path at age 18.", options:[{t: "decide", c: true}, {t: "think", c: false}, {t: "choose", c: false}, {t: "apply", c: false}], type: "mcq" },
-                        { q: "After getting a Bachelor's, some people _____ their studies.", options:[{t: "stop", c: false}, {t: "graduate", c: false}, {t: "continue", c: true}, {t: "pass", c: false}], type: "mcq" }
+                        { q: "After getting a Bachelor's, some people _____ their studies.", options:[{t: "start", c: false}, {t: "graduate", c: false}, {t: "continue", c: true}, {t: "pass", c: false}], type: "mcq" }
                     ]
                 }
             ]
@@ -377,7 +378,7 @@ window.initLesson({
             sentences:[
                 { text: "I need to study for a test tonight. ↘", audio: "TTS: I need to study for a test tonight." },
                 { text: "What is your favorite subject? ↘", audio: "TTS: What is your favorite subject?" },
-                { text: "I want to apply for a university in Canada. ↘", audio: "TTS: I want to apply for a university in Canada." },
+                { text: "I want to apply to a university in Canada. ↘", audio: "TTS: I want to apply to a university in Canada." },
                 { text: "Are you going to do your homework? ↗", audio: "TTS: Are you going to do your homework?" },
                 { text: "She is majoring in computer science. ↘", audio: "TTS: She is majoring in computer science." },
                 { text: "Did you pass the math exam? ↗", audio: "TTS: Did you pass the math exam?" },
@@ -403,9 +404,9 @@ window.initLesson({
                 {
                     type: "dropdown",
                     instruction: "Listen to the dialogue about higher education.",
-                    audio: "TTS: Mom: Did you apply for a university yet? Alex: Yes, I want to major in history. Mom: Will you get a scholarship? Alex: I hope so, the tuition fees are high.",
+                    audio: "TTS: Mom: Did you apply to a university yet? Alex: Yes, I want to major in history. Mom: Will you get a scholarship? Alex: I hope so, the tuition fees are high.",
                     questions:[
-                        { q: "Mom: Did you [apply* | enroll | graduate] for a university yet?", a: "apply" },
+                        { q: "Mom: Did you [apply* | enroll | graduate] to a university yet?", a: "apply" },
                         { q: "Alex: Yes, I want to[major* | pass | teach] in history.", a: "major" },
                         { q: "Mom: Will you get a[scholarship* | diploma | presentation]?", a: "scholarship" },
                         { q: "Alex: I hope so, the [tuition* | degree | course] fees are high.", a: "tuition" }
@@ -414,7 +415,7 @@ window.initLesson({
                 {
                     type: "audio-choice",
                     instruction: "Listen to the student and professor. What does the professor tell the student to do?",
-                    audio: "TTS: Student: Professor, I failed the math exam. What can I do to improve? Professor: You need to review your notes and attend every lecture. Do not miss any classes.",
+                    audio: "TTS: Student: Excuse me, Professor, I failed the math exam. What can I do to improve? Professor: You need to review your notes and attend every lecture. Do not miss any classes.",
                     options:[
                         { t: "Write a new essay.", c: false },
                         { t: "Change his major.", c: false },
@@ -433,8 +434,8 @@ window.initLesson({
             texts:[
                 {
                     title: "Dialogue - Planning for College",
-                    audio: "TTS: Emma: I can't believe high school is almost over. Noah: Me neither! Are you going to apply for a university? Emma: Yes, I want to get a degree in Science. Noah: That's great. I am not sure yet. It's hard to decide on a career path. Emma: You are very good at literature. Maybe you could major in English? Noah: That is an interesting idea. I will think about it.",
-                    body: "<b>Emma:</b> I can't believe [high school](tooltip:high-school) is almost over.<br><b>Noah:</b> Me neither! Are you going to[apply for a university](tooltip:apply-for-university)?<br><b>Emma:</b> Yes, I want to [get a degree](tooltip:get-degree) in [Science](tooltip:science).<br><b>Noah:</b> That's great. I am not sure yet. It's hard to [decide on a career path](tooltip:decide-career).<br><b>Emma:</b> You are very [good at](tooltip:good-at) [literature](tooltip:literature). Maybe you could [major in](tooltip:major-in) English?<br><b>Noah:</b> That is an interesting idea. I will think about it.",
+                    audio: "TTS: Emma: I can't believe high school is almost over. Noah: Me neither! Are you going to apply to a university? Emma: Yes, I want to get a degree in Science. Noah: That's great. I am not sure yet. It's hard to decide on a career path. Emma: You are very good at literature. Maybe you could major in English? Noah: That is an interesting idea. I will think about it.",
+                    body: "<b>Emma:</b> I can't believe [high school](tooltip:high-school) is almost over.<br><b>Noah:</b> Me neither! Are you going to [apply to a university](tooltip:apply-to-university)?<br><b>Emma:</b> Yes, I want to [get a degree](tooltip:get-degree) in [Science](tooltip:science).<br><b>Noah:</b> That's great. I am not sure yet. It's hard to [decide on a career path](tooltip:decide-career).<br><b>Emma:</b> You are very [good at](tooltip:good-at) [literature](tooltip:literature). Maybe you could [major in](tooltip:major-in) English?<br><b>Noah:</b> That is an interesting idea. I will think about it.",
                     questions:[
                         { q: "What does Emma want to get a degree in?", options:[{t: "Literature", c: false}, {t: "Science", c: true}, {t: "Mathematics", c: false}], type: "mcq" },
                         { q: "Why is Noah unsure about his future?", options:[{t: "He failed his exams.", c: false}, {t: "He doesn't want to go to school.", c: false}, {t: "It's hard to decide on a career path.", c: true}], type: "mcq" },
@@ -454,7 +455,7 @@ window.initLesson({
                 {
                     title: "Email - Studying Abroad",
                     audio: "TTS: Subject: My first semester! Hi Lisa, I am writing to you from my new campus! The university is amazing. This semester, I am taking five compulsory courses. My favorite subject is Geography. The tuition fees are expensive, but I got a scholarship! How are your studies going? Best, Carlos. Subject: Re: My first semester! Hi Carlos, That is wonderful news! I am so glad you got a scholarship. I am studying for a test right now. I want to pass an exam to get my diploma soon. Let's talk later! Lisa.",
-                    body: "<b>From: Carlos</b><br><b>To: Lisa</b><br>Subject: My first [semester](tooltip:semester)!<br><br>Hi Lisa,<br>I am writing to you from my new [campus](tooltip:campus)! The university is amazing. This semester, I am taking five [compulsory](tooltip:compulsory) courses. [My favorite subject is](tooltip:my-favorite-subject) [Geography](tooltip:geography). The [tuition fees](tooltip:tuition-fees) are expensive, but I got a [scholarship](tooltip:scholarship)! How are your studies going?<br>Best, Carlos.<br><br><b>From: Lisa</b><br><b>To: Carlos</b><br>Subject: Re: My first semester!<br><br>Hi Carlos,<br>That is wonderful news! I am so glad you got a scholarship. I am[studying for a test](tooltip:study-for-test) right now. I want to [pass an exam](tooltip:pass-exam) to get my [diploma](tooltip:diploma) soon. Let's talk later!<br>Lisa.",
+                    body: "<b>From: Carlos</b><br><b>To: Lisa</b><br>Subject: My first [semester](tooltip:semester)!<br><br>Hi Lisa,<br>I am writing to you from my new [campus](tooltip:campus)! The university is amazing. This semester, I am taking five [compulsory](tooltip:compulsory) courses. [My favorite subject is](tooltip:my-favorite-subject) [Geography](tooltip:geography). The [tuition fees](tooltip:tuition-fees) are expensive, but I got a [scholarship](tooltip:scholarship)! How are your studies going?<br>Best, Carlos.<br><br><b>From: Lisa</b><br><b>To: Carlos</b><br>Subject: Re: My first semester!<br><br>Hi Carlos,<br>That is wonderful news! I am so glad you got a scholarship. I am [studying for a test](tooltip:study-for-test) right now. I want to [pass an exam](tooltip:pass-exam) to get my [diploma](tooltip:diploma) soon. Let's talk later!<br>Lisa.",
                     questions:[
                         { q: "How many compulsory courses is Carlos taking?", options:[{t: "Three.", c: false}, {t: "Five.", c: true}, {t: "None, they are all optional.", c: false}], type: "mcq" },
                         { q: "How is Carlos paying for his expensive tuition fees?", options:[{t: "He works full-time.", c: false}, {t: "His parents are paying.", c: false}, {t: "He got a scholarship.", c: true}], type: "mcq" },
@@ -504,18 +505,18 @@ window.initLesson({
                 { type: "word-order", instruction: "Unscramble the sentence.", sentence: "for / test / study / must / We / a / .", correct: "We must study for a test ." },
                 { type: "word-order", instruction: "Unscramble the sentence.", sentence: "class / take / in / notes / I / always / .", correct: "I always take notes in class ." },
                 { type: "word-order", instruction: "Unscramble the sentence.", sentence: "exam / I / pass / an / to / want / .", correct: "I want to pass an exam ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "university / for / apply / a / will / She / .", correct: "She will apply for a university ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "university / to / apply / a / will / She / .", correct: "She will apply to a university ." },
                 { type: "word-order", instruction: "Unscramble the sentence.", sentence: "major / history / to / in / decided / I / .", correct: "I decided to major in history ." },
                 { type: "word-order", instruction: "Unscramble the sentence.", sentence: "do / want / What / be / you / to / ?", correct: "What do you want to be ?" },
 
                 // --- CLICKABLE ERROR (15-24) ---
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I need to [take](error:do) my homework before dinner." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "She wants to [make](error:take) notes during the lecture." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "He is going to[apply](error:enroll) in a photography course." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "He is going to[apply](error:enroll) in a photography course next week." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I hope to [fail](error:pass) the exam so I can graduate." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "My favorite [object](error:subject) in school is Geography." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "She is [majoring](error:good) at mathematics." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I will apply [to](error:for) a university next year." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I will apply [to](error:for) a university course next year." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "We must write an [essay](error:exam) about the book." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "It takes four years to [take](error:get) a degree." },
                 { type: "clickable-error", instruction: "Find and fix the error.", sentence: "They study in the [library](error:laboratory) to do chemistry experiments." },
@@ -630,7 +631,8 @@ window.initLesson({
                 { term: "Take an exam", definition: "To undergo a formal test of knowledge.", defTrans: "Fazer uma prova / um exame", example: "All students will take an exam on Friday.", audioFront: "TTS: Take an exam", audioBack: "TTS: All students will take an exam on Friday." },
                 { term: "Pass an exam", definition: "To be successful in a formal test.", defTrans: "Passar em uma prova", example: "I hope I pass an exam this time.", audioFront: "TTS: Pass an exam", audioBack: "TTS: I hope I pass an exam this time." },
                 { term: "Get good grades", definition: "To receive high marks for academic work.", defTrans: "Tirar boas notas", example: "If you study hard, you will get good grades.", audioFront: "TTS: Get good grades", audioBack: "TTS: If you study hard, you will get good grades." },
-                { term: "Apply for a university", definition: "To formally request admission to a college or university.", defTrans: "Candidatar-se a uma universidade", example: "I will apply for a university in London.", audioFront: "TTS: Apply for a university", audioBack: "TTS: I will apply for a university in London." },
+                { term: "Apply to a university", definition: "To formally request admission to a college or university.", defTrans: "Candidatar-se a uma universidade", example: "I will apply to a university in London.", audioFront: "TTS: Apply to a university", audioBack: "TTS: I will apply to a university in London." },
+                { term: "Apply for a course", definition: "To submit an application to enroll in a specific academic program.", defTrans: "Candidatar-se a um curso", example: "She wants to apply for an engineering course.", audioFront: "TTS: Apply for a course", audioBack: "TTS: She wants to apply for an engineering course." },
                 { term: "Major in", definition: "To specialize in a particular subject at college or university.", defTrans: "Especializar-se / Formar-se em", example: "I plan to major in computer science.", audioFront: "TTS: Major in", audioBack: "TTS: I plan to major in computer science." },
                 { term: "Get a degree", definition: "To successfully complete a university course and receive a qualification.", defTrans: "Obter um diploma universitário", example: "It takes four years to get a degree.", audioFront: "TTS: Get a degree", audioBack: "TTS: It takes four years to get a degree." },
                 { term: "What do you want to be", definition: "Asking someone about their future career aspirations.", defTrans: "O que você quer ser", example: "What do you want to be when you grow up?", audioFront: "TTS: What do you want to be", audioBack: "TTS: What do you want to be when you grow up?" },
@@ -699,7 +701,8 @@ window.initLesson({
         { topic: "Expressions", term: "take-exam", definition: "To undergo a formal test of knowledge.", translation: "Fazer uma prova" },
         { topic: "Expressions", term: "pass-exam", definition: "To be successful in a formal test.", translation: "Passar em uma prova" },
         { topic: "Expressions", term: "get-good-grades", definition: "To receive high marks for academic work.", translation: "Tirar boas notas" },
-        { topic: "Expressions", term: "apply-for-university", definition: "To formally request admission to a college.", translation: "Candidatar-se a uma universidade" },
+        { topic: "Expressions", term: "apply-to-university", definition: "To formally request admission to a college.", translation: "Candidatar-se a uma universidade" },
+        { topic: "Expressions", term: "apply-for-a-course", definition: "To formally request to join a specific course.", translation: "Candidatar-se a um curso" },
         { topic: "Expressions", term: "major-in", definition: "To specialize in a particular subject at college.", translation: "Formar-se em (Especializar-se)" },
         { topic: "Expressions", term: "get-degree", definition: "To complete a university course.", translation: "Obter um diploma" },
         { topic: "Expressions", term: "what-want-be", definition: "Asking someone about their future career aspirations.", translation: "O que você quer ser" },
