@@ -8,7 +8,7 @@ window.initLesson({
     // --- METADATA ---
     lessonId: "lesson-13",
     block: "2",
-    topicTitle: "Education and Learning",
+    topicTitle: "13 - Education and Learning",
 
     steps:[
         // ======================================================
