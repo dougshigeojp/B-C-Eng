@@ -1,14 +1,14 @@
 /**
- * English Block Assembling - LESSON DATA: Topic 30
- * Topic: Pets and Animals
+ * English Block Assembling - LESSON DATA: Topic 31
+ * Topic: Personal Development
  * Level: Upper A2 ~ Lower B1
  */
 
 window.initLesson({
     // --- METADATA ---
-    lessonId: "lesson-30",
+    lessonId: "lesson-31",
     block: "5",
-    topicTitle: "Pets and Animals",
+    topicTitle: "Personal Development",
 
     steps:[
         // ======================================================
@@ -16,11 +16,11 @@ window.initLesson({
         // ======================================================
         {
             title: "Intro & Can-Do",
-            objectives: "• Describe different types of animals, including [domestic](tooltip:domestic) and [wild](tooltip:wild) species.<br>• Talk about [pet](tooltip:pet) care and daily routines like feeding and walking.<br>• Identify animal body parts such as [paws](tooltip:paw), [claws](tooltip:claw), and [fur](tooltip:fur).<br>• Share personal experiences, preferences, and [fears](tooltip:fear) regarding animals.",
-            welcome: "Welcome to Lesson 30! Animals are a fascinating part of our world, whether they live in our homes or in the wild. In this lesson, you will learn the vocabulary to talk about your pets, describe farm and wild animals, and discuss the responsibilities of taking care of them. You will also learn how to express your favorite animal species or explain your allergies. Let's get started!",
+            objectives: "• Discuss self-[improvement](tooltip:improvement) and ways to build your[confidence](tooltip:confidence).<br>• Learn how to properly set a [goal](tooltip:goal) and track your [progress](tooltip:progress).<br>• Talk about [mental health](tooltip:mental-health) and ways to [manage](tooltip:manage) daily stress.<br>• Use vocabulary related to [mindfulness](tooltip:mindfulness), habits, and [well-being](tooltip:well-being).",
+            welcome: "Welcome to Lesson 31! Working on yourself is a lifelong journey. In this lesson, we will focus on the vocabulary needed to talk about personal growth, setting realistic goals, and developing positive new habits. You will also learn how to discuss mental health, stress management, and the importance of a healthy work-life balance. Let's start improving!",
             audio: {
-                objectives: "TTS: In this lesson, you will learn to: Describe different types of animals, including domestic and wild species. Talk about pet care and daily routines like feeding and walking. Identify animal body parts such as paws, claws, and fur. Share personal experiences, preferences, and fears regarding animals.",
-                welcome: "TTS: Welcome to Lesson 30! Animals are a fascinating part of our world, whether they live in our homes or in the wild. In this lesson, you will learn the vocabulary to talk about your pets, describe farm and wild animals, and discuss the responsibilities of taking care of them. You will also learn how to express your favorite animal species or explain your allergies. Let's get started!"
+                objectives: "TTS: In this lesson, you will learn to: Discuss self-improvement and ways to build your confidence. Learn how to properly set a goal and track your progress. Talk about mental health and ways to manage daily stress. Use vocabulary related to mindfulness, habits, and well-being.",
+                welcome: "TTS: Welcome to Lesson 31! Working on yourself is a lifelong journey. In this lesson, we will focus on the vocabulary needed to talk about personal growth, setting realistic goals, and developing positive new habits. You will also learn how to discuss mental health, stress management, and the importance of a healthy work-life balance. Let's start improving!"
             }
         },
 
@@ -29,20 +29,18 @@ window.initLesson({
         // ======================================================
         {
             title: "Context Dialogue",
-            context: "Emma and Liam are talking about their pets and favorite animals during a coffee break.",
-            contextAudio: "TTS: Emma: Do you have any pets, Liam? Liam: Yes, I have a dog. His name is Max. Emma: That's so cute! Is he a purebred? Liam: No, he is a mixed breed. I adopted him from a shelter. He is very loyal. Emma: I love dogs. Taking care of a pet is a big responsibility, though. Liam: It really is. I have to walk the dog every morning and feed him twice a day. What about you? Emma: I have a kitten. She is covered in fur and loves to sleep all day. Liam: Are you a cat person? Emma: Definitely! I'm actually afraid of big dogs. What's your favorite animal in the wild? Liam: I think wolves are amazing. Have you ever seen an animal in the wild? Emma: Only birds and some deer. I would love to see a whale in the ocean one day.",
+            context: "Emma is feeling a bit stuck in her routine and talks to her friend Liam about making some positive changes.",
+            contextAudio: "TTS: Emma: I've been feeling a bit stuck lately. I want to work on my personal development, but I don't know where to start. Liam: I understand. Maybe you could start by setting a goal for yourself. Make sure it is specific and realistic. Emma: Like what? Liam: Well, you can learn a new skill or develop a new hobby. For example, I started learning Spanish online using an app. Emma: I've always wanted to learn photography. It would definitely help me step out of my comfort zone. Liam: That's a perfect idea! Achieving that short-term goal will help you build your confidence. Emma: Thanks, Liam. I also need to focus on my well-being and manage stress better. Liam: Taking care of your mental health is crucial. You should practice mindfulness and try to relax more. Emma: You are right. I need a healthy work-life balance. I feel more motivated already!",
             dialogue:[
-                { speaker: "Emma", text: "[Do you have any pets](tooltip:do-you-have-pets), Liam?" },
-                { speaker: "Liam", text: "Yes, I have a [dog](tooltip:dog). His name is Max." },
-                { speaker: "Emma", text: "That's so cute! Is he a [purebred](tooltip:purebred)?" },
-                { speaker: "Liam", text: "No, he is a [mixed breed](tooltip:mixed-breed). I [adopted](tooltip:to-adopt) him from a shelter. He is very [loyal](tooltip:loyal)." },
-                { speaker: "Emma", text: "I love dogs. Taking care of a pet is[a big responsibility](tooltip:big-responsibility), though." },
-                { speaker: "Liam", text: "It really is. I have to [walk the dog](tooltip:walk-the-dog) every morning and[feed](tooltip:to-feed) him twice a day. What about you?" },
-                { speaker: "Emma", text: "I have a [kitten](tooltip:kitten). She is [covered in fur](tooltip:covered-in-fur) and loves to sleep all day." },
-                { speaker: "Liam", text: "Are you [a dog person](tooltip:dog-person) or a cat person?" },
-                { speaker: "Emma", text: "Definitely cat! I'm actually[afraid of](tooltip:afraid-of) big dogs. [What's your favorite animal](tooltip:favorite-animal) in the wild?" },
-                { speaker: "Liam", text: "I think wolves are amazing. Have you ever [seen an animal in the wild](tooltip:see-animal-wild)?" },
-                { speaker: "Emma", text: "Only birds and some deer. I would love to see a [whale](tooltip:whale) in the ocean one day." }
+                { speaker: "Emma", text: "I've been feeling a bit stuck lately. I want to work on my personal [development](tooltip:development), but I don't know where to start." },
+                { speaker: "Liam", text: "I understand. Maybe you could start by [setting a goal](tooltip:set-goal) for yourself. Make sure it is [specific](tooltip:specific) and [realistic](tooltip:realistic)." },
+                { speaker: "Emma", text: "Like what?" },
+                { speaker: "Liam", text: "Well, you can [learn a new skill](tooltip:learn-skill) or[develop a new hobby](tooltip:develop-hobby). For example, I started learning Spanish online using an app." },
+                { speaker: "Emma", text: "I've always wanted to learn photography. It would definitely help me [step out of my comfort zone](tooltip:comfort-zone)." },
+                { speaker: "Liam", text: "That's a perfect idea![Achieving](tooltip:achieve) that [short-term goal](tooltip:short-term) will help you [build your confidence](tooltip:build-confidence)." },
+                { speaker: "Emma", text: "Thanks, Liam. I also need to [focus](tooltip:focus) on my [well-being](tooltip:well-being) and[manage stress](tooltip:manage-stress) better." },
+                { speaker: "Liam", text: "[Taking care of your mental health](tooltip:mental-health) is crucial. You should [practice mindfulness](tooltip:practice-mindfulness) and try to [relax](tooltip:relax) more." },
+                { speaker: "Emma", text: "You are right. I need a [healthy work-life balance](tooltip:work-life-balance). I feel more[motivated](tooltip:motivated) already!" }
             ]
         },
 
@@ -59,57 +57,57 @@ window.initLesson({
             // --- 2A: NEW WORDS ---
             areas:[
                 {
-                    title: "Types of Animals",
-                    audio: "TTS: Dog. Cat. Puppy. Kitten. Rabbit. Cow. Pig. Horse. Lion. Bear. Monkey. Whale.",
+                    title: "Nouns (Concepts & Well-being)",
+                    audio: "TTS: Development. Improvement. Progress. Goal. Skill. Well-being. Mindfulness. Meditation. Stress. Confidence. Motivation. Habit.",
                     items:[
-                        { term: "Dog", trans: "Cachorro" },
-                        { term: "Cat", trans: "Gato" },
-                        { term: "Puppy", trans: "Filhote de cachorro" },
-                        { term: "Kitten", trans: "Filhote de gato" },
-                        { term: "Rabbit", trans: "Coelho" },
-                        { term: "Cow", trans: "Vaca" },
-                        { term: "Pig", trans: "Porco" },
-                        { term: "Horse", trans: "Cavalo" },
-                        { term: "Lion", trans: "Leão" },
-                        { term: "Bear", trans: "Urso" },
-                        { term: "Monkey", trans: "Macaco" },
-                        { term: "Whale", trans: "Baleia" }
+                        { term: "Development", trans: "Desenvolvimento" },
+                        { term: "Improvement", trans: "Melhoria" },
+                        { term: "Progress", trans: "Progresso" },
+                        { term: "Goal", trans: "Meta / Objetivo" },
+                        { term: "Skill", trans: "Habilidade" },
+                        { term: "Well-being", trans: "Bem-estar" },
+                        { term: "Mindfulness", trans: "Atenção plena (Mindfulness)" },
+                        { term: "Meditation", trans: "Meditação" },
+                        { term: "Stress", trans: "Estresse" },
+                        { term: "Confidence", trans: "Confiança" },
+                        { term: "Motivation", trans: "Motivação" },
+                        { term: "Habit", trans: "Hábito" }
                     ]
                 },
                 {
-                    title: "Animal Parts & Places",
-                    audio: "TTS: Vet. Zoo. Leash. Cage. Tank. Fur. Feather. Scale. Paw. Claw. Tail. Wing.",
+                    title: "Verbs (Growth & Management)",
+                    audio: "TTS: To improve. To develop. To grow. To learn. To set. To achieve. To accomplish. To plan. To manage. To encourage. To focus. To relax.",
                     items:[
-                        { term: "Vet (veterinarian)", trans: "Veterinário(a)" },
-                        { term: "Zoo", trans: "Zoológico" },
-                        { term: "Leash", trans: "Coleira (guia para cães)" },
-                        { term: "Cage", trans: "Gaiola" },
-                        { term: "Tank", trans: "Aquário / Tanque" },
-                        { term: "Fur", trans: "Pelo (de animal)" },
-                        { term: "Feather", trans: "Pena" },
-                        { term: "Scale", trans: "Escama" },
-                        { term: "Paw", trans: "Pata" },
-                        { term: "Claw", trans: "Garra" },
-                        { term: "Tail", trans: "Cauda / Rabo" },
-                        { term: "Wing", trans: "Asa" }
+                        { term: "To improve", trans: "Melhorar" },
+                        { term: "To develop", trans: "Desenvolver" },
+                        { term: "To grow", trans: "Crescer" },
+                        { term: "To learn", trans: "Aprender" },
+                        { term: "To set", trans: "Definir (uma meta)" },
+                        { term: "To achieve", trans: "Alcançar" },
+                        { term: "To accomplish", trans: "Realizar / Cumprir" },
+                        { term: "To plan", trans: "Planejar" },
+                        { term: "To manage", trans: "Gerenciar / Lidar com" },
+                        { term: "To encourage", trans: "Encorajar / Incentivar" },
+                        { term: "To focus", trans: "Focar / Concentrar-se" },
+                        { term: "To relax", trans: "Relaxar" }
                     ]
                 },
                 {
-                    title: "Verbs & Adjectives",
-                    audio: "TTS: To feed. To walk. To train. To bark. To adopt. Domestic. Wild. Fluffy. Loyal. Fierce. Dangerous. Endangered.",
+                    title: "Adjectives (States & Traits)",
+                    audio: "TTS: Personal. Professional. Motivated. Confident. Positive. Stressed. Anxious. Healthy. Balanced. Achievable. Realistic. Specific.",
                     items:[
-                        { term: "To feed", trans: "Alimentar" },
-                        { term: "To walk (a dog)", trans: "Passear (com um cachorro)" },
-                        { term: "To train", trans: "Treinar / Adestrar" },
-                        { term: "To bark", trans: "Latir" },
-                        { term: "To adopt", trans: "Adotar" },
-                        { term: "Domestic", trans: "Doméstico" },
-                        { term: "Wild", trans: "Selvagem" },
-                        { term: "Fluffy", trans: "Fofinho / Peludo" },
-                        { term: "Loyal", trans: "Leal" },
-                        { term: "Fierce", trans: "Feroz" },
-                        { term: "Dangerous", trans: "Perigoso" },
-                        { term: "Endangered", trans: "Ameaçado de extinção" }
+                        { term: "Personal", trans: "Pessoal" },
+                        { term: "Professional", trans: "Profissional" },
+                        { term: "Motivated", trans: "Motivado(a)" },
+                        { term: "Confident", trans: "Confiante" },
+                        { term: "Positive", trans: "Positivo(a)" },
+                        { term: "Stressed", trans: "Estressado(a)" },
+                        { term: "Anxious", trans: "Ansioso(a)" },
+                        { term: "Healthy", trans: "Saudável" },
+                        { term: "Balanced", trans: "Equilibrado(a)" },
+                        { term: "Achievable", trans: "Alcançável" },
+                        { term: "Realistic", trans: "Realista" },
+                        { term: "Specific", trans: "Específico(a)" }
                     ]
                 }
             ],
@@ -117,57 +115,57 @@ window.initLesson({
             // --- 2B: EXAMPLES ---
             exampleGroups:[
                 {
-                    title: "Types of Animals",
-                    audio: "TTS: A dog is often called man's best friend. The cat slept on the sofa all day. She adopted a cute little puppy. The kitten played with a ball of yarn. We gave a carrot to the rabbit. The cow produces milk on the farm. A pig likes to roll in the mud. He learned to ride a horse. The lion is the king of the jungle. The brown bear was eating fish in the river. A monkey was swinging from the tree. The blue whale is the largest animal in the ocean.",
+                    title: "Nouns (Concepts & Well-being)",
+                    audio: "TTS: Personal development is a lifelong journey. There is room for improvement in your writing. You are making great progress in your studies. My main goal this year is to read more. Coding is a very useful skill to have. Sleep is essential for your overall well-being. Mindfulness helps you stay in the present moment. Daily meditation can calm your mind. Work is causing me a lot of stress lately. Winning the award gave her a lot of confidence. I lost my motivation to exercise. Drinking water every morning is a good habit.",
                     items:[
-                        { term: "Dog", sent: "A dog is often called man's best friend.", trans: "Um cachorro é frequentemente chamado de melhor amigo do homem." },
-                        { term: "Cat", sent: "The cat slept on the sofa all day.", trans: "O gato dormiu no sofá o dia todo." },
-                        { term: "Puppy", sent: "She adopted a cute little puppy.", trans: "Ela adotou um cachorrinho fofo." },
-                        { term: "Kitten", sent: "The kitten played with a ball of yarn.", trans: "O filhote de gato brincou com um novelo de lã." },
-                        { term: "Rabbit", sent: "We gave a carrot to the rabbit.", trans: "Nós demos uma cenoura para o coelho." },
-                        { term: "Cow", sent: "The cow produces milk on the farm.", trans: "A vaca produz leite na fazenda." },
-                        { term: "Pig", sent: "A pig likes to roll in the mud.", trans: "Um porco gosta de rolar na lama." },
-                        { term: "Horse", sent: "He learned to ride a horse.", trans: "Ele aprendeu a andar a cavalo." },
-                        { term: "Lion", sent: "The lion is the king of the jungle.", trans: "O leão é o rei da selva." },
-                        { term: "Bear", sent: "The brown bear was eating fish in the river.", trans: "O urso pardo estava comendo peixe no rio." },
-                        { term: "Monkey", sent: "A monkey was swinging from the tree.", trans: "Um macaco estava balançando na árvore." },
-                        { term: "Whale", sent: "The blue whale is the largest animal in the ocean.", trans: "A baleia azul é o maior animal do oceano." }
+                        { term: "Development", sent: "Personal development is a lifelong journey.", trans: "O desenvolvimento pessoal é uma jornada para a vida toda." },
+                        { term: "Improvement", sent: "There is room for improvement in your writing.", trans: "Há espaço para melhoria na sua escrita." },
+                        { term: "Progress", sent: "You are making great progress in your studies.", trans: "Você está fazendo um ótimo progresso nos seus estudos." },
+                        { term: "Goal", sent: "My main goal this year is to read more.", trans: "Minha meta principal este ano é ler mais." },
+                        { term: "Skill", sent: "Coding is a very useful skill to have.", trans: "Programar é uma habilidade muito útil para se ter." },
+                        { term: "Well-being", sent: "Sleep is essential for your overall well-being.", trans: "O sono é essencial para o seu bem-estar geral." },
+                        { term: "Mindfulness", sent: "Mindfulness helps you stay in the present moment.", trans: "A atenção plena ajuda você a permanecer no momento presente." },
+                        { term: "Meditation", sent: "Daily meditation can calm your mind.", trans: "A meditação diária pode acalmar a sua mente." },
+                        { term: "Stress", sent: "Work is causing me a lot of stress lately.", trans: "O trabalho está me causando muito estresse ultimamente." },
+                        { term: "Confidence", sent: "Winning the award gave her a lot of confidence.", trans: "Ganhar o prêmio deu a ela muita confiança." },
+                        { term: "Motivation", sent: "I lost my motivation to exercise.", trans: "Perdi minha motivação para me exercitar." },
+                        { term: "Habit", sent: "Drinking water every morning is a good habit.", trans: "Beber água toda manhã é um bom hábito." }
                     ]
                 },
                 {
-                    title: "Animal Parts & Places",
-                    audio: "TTS: I took my sick dog to the vet. We saw lions and tigers at the zoo. Keep the dog on a leash in the park. The bird sings inside its cage. The fish swam around in the tank. The rabbit has very soft fur. The peacock has a colorful feather. A fish is covered in a shiny scale. The cat licked its injured paw. The bear has a very sharp claw. The happy dog wagged its tail. The bird broke its wing and could not fly.",
+                    title: "Verbs (Growth & Management)",
+                    audio: "TTS: I read books to improve my vocabulary. It takes time to develop a new habit. Plants need sunlight to grow. I want to learn how to play the piano. You should set a deadline for your project. She worked hard to achieve success. He finally accomplished his biggest dream. Let's plan our trip for next summer. It is difficult to manage a large team. My parents always encourage me to do my best. I need quiet space to focus on my work. Listen to some music to relax your mind.",
                     items:[
-                        { term: "Vet (veterinarian)", sent: "I took my sick dog to the vet.", trans: "Eu levei meu cachorro doente ao veterinário." },
-                        { term: "Zoo", sent: "We saw lions and tigers at the zoo.", trans: "Nós vimos leões e tigres no zoológico." },
-                        { term: "Leash", sent: "Keep the dog on a leash in the park.", trans: "Mantenha o cachorro na coleira (guia) no parque." },
-                        { term: "Cage", sent: "The bird sings inside its cage.", trans: "O pássaro canta dentro de sua gaiola." },
-                        { term: "Tank", sent: "The fish swam around in the tank.", trans: "O peixe nadou pelo aquário." },
-                        { term: "Fur", sent: "The rabbit has very soft fur.", trans: "O coelho tem um pelo muito macio." },
-                        { term: "Feather", sent: "The peacock has a colorful feather.", trans: "O pavão tem uma pena colorida." },
-                        { term: "Scale", sent: "A fish is covered in a shiny scale.", trans: "Um peixe é coberto por uma escama brilhante." },
-                        { term: "Paw", sent: "The cat licked its injured paw.", trans: "O gato lambeu sua pata machucada." },
-                        { term: "Claw", sent: "The bear has a very sharp claw.", trans: "O urso tem uma garra muito afiada." },
-                        { term: "Tail", sent: "The happy dog wagged its tail.", trans: "O cachorro feliz abanou o rabo." },
-                        { term: "Wing", sent: "The bird broke its wing and could not fly.", trans: "O pássaro quebrou a asa e não conseguia voar." }
+                        { term: "To improve", sent: "I read books to improve my vocabulary.", trans: "Eu leio livros para melhorar meu vocabulário." },
+                        { term: "To develop", sent: "It takes time to develop a new habit.", trans: "Leva tempo para desenvolver um novo hábito." },
+                        { term: "To grow", sent: "Plants need sunlight to grow.", trans: "As plantas precisam de luz solar para crescer." },
+                        { term: "To learn", sent: "I want to learn how to play the piano.", trans: "Quero aprender a tocar piano." },
+                        { term: "To set", sent: "You should set a deadline for your project.", trans: "Você deve definir um prazo para o seu projeto." },
+                        { term: "To achieve", sent: "She worked hard to achieve success.", trans: "Ela trabalhou duro para alcançar o sucesso." },
+                        { term: "To accomplish", sent: "He finally accomplished his biggest dream.", trans: "Ele finalmente realizou seu maior sonho." },
+                        { term: "To plan", sent: "Let's plan our trip for next summer.", trans: "Vamos planejar nossa viagem para o próximo verão." },
+                        { term: "To manage", sent: "It is difficult to manage a large team.", trans: "É difícil gerenciar uma equipe grande." },
+                        { term: "To encourage", sent: "My parents always encourage me to do my best.", trans: "Meus pais sempre me encorajam a dar o meu melhor." },
+                        { term: "To focus", sent: "I need quiet space to focus on my work.", trans: "Preciso de um espaço silencioso para focar no meu trabalho." },
+                        { term: "To relax", sent: "Listen to some music to relax your mind.", trans: "Ouça um pouco de música para relaxar sua mente." }
                     ]
                 },
                 {
-                    title: "Verbs & Adjectives",
-                    audio: "TTS: Don't forget to feed the cat this morning. I wake up early to walk the dog. You must train your puppy to sit. The dog started to bark at the stranger. We decided to adopt a rescue dog. Cows and pigs are domestic animals. You can find wild animals in the forest. My kitten is very small and fluffy. A dog is known to be a very loyal friend. The lion was very fierce. Do not go near the snake, it is dangerous. The blue whale is an endangered species.",
+                    title: "Adjectives (States & Traits)",
+                    audio: "TTS: This journal is for my personal thoughts. Please maintain a professional attitude at work. She is highly motivated to win the race. I am confident that we will pass the test. Try to keep a positive mindset. He feels stressed because of the deadline. Waiting for the results makes me anxious. Eating vegetables is part of a healthy diet. You need a balanced life to be truly happy. Make sure your targets are achievable. Running a marathon tomorrow is not realistic. We need specific instructions to build the machine.",
                     items:[
-                        { term: "To feed", sent: "Don't forget to feed the cat this morning.", trans: "Não se esqueça de alimentar o gato esta manhã." },
-                        { term: "To walk", sent: "I wake up early to walk the dog.", trans: "Eu acordo cedo para passear com o cachorro." },
-                        { term: "To train", sent: "You must train your puppy to sit.", trans: "Você deve treinar seu filhote de cachorro a sentar." },
-                        { term: "To bark", sent: "The dog started to bark at the stranger.", trans: "O cachorro começou a latir para o estranho." },
-                        { term: "To adopt", sent: "We decided to adopt a rescue dog.", trans: "Decidimos adotar um cachorro resgatado." },
-                        { term: "Domestic", sent: "Cows and pigs are domestic animals.", trans: "Vacas e porcos são animais domésticos." },
-                        { term: "Wild", sent: "You can find wild animals in the forest.", trans: "Você pode encontrar animais selvagens na floresta." },
-                        { term: "Fluffy", sent: "My kitten is very small and fluffy.", trans: "Meu filhote de gato é muito pequeno e peludinho/fofo." },
-                        { term: "Loyal", sent: "A dog is known to be a very loyal friend.", trans: "Um cachorro é conhecido por ser um amigo muito leal." },
-                        { term: "Fierce", sent: "The lion was very fierce.", trans: "O leão era muito feroz." },
-                        { term: "Dangerous", sent: "Do not go near the snake, it is dangerous.", trans: "Não chegue perto da cobra, ela é perigosa." },
-                        { term: "Endangered", sent: "The blue whale is an endangered species.", trans: "A baleia azul é uma espécie ameaçada de extinção." }
+                        { term: "Personal", sent: "This journal is for my personal thoughts.", trans: "Este diário é para meus pensamentos pessoais." },
+                        { term: "Professional", sent: "Please maintain a professional attitude at work.", trans: "Por favor, mantenha uma atitude profissional no trabalho." },
+                        { term: "Motivated", sent: "She is highly motivated to win the race.", trans: "Ela está altamente motivada para vencer a corrida." },
+                        { term: "Confident", sent: "I am confident that we will pass the test.", trans: "Estou confiante de que vamos passar no teste." },
+                        { term: "Positive", sent: "Try to keep a positive mindset.", trans: "Tente manter uma mentalidade positiva." },
+                        { term: "Stressed", sent: "He feels stressed because of the deadline.", trans: "Ele se sente estressado por causa do prazo." },
+                        { term: "Anxious", sent: "Waiting for the results makes me anxious.", trans: "Esperar pelos resultados me deixa ansioso." },
+                        { term: "Healthy", sent: "Eating vegetables is part of a healthy diet.", trans: "Comer vegetais faz parte de uma dieta saudável." },
+                        { term: "Balanced", sent: "You need a balanced life to be truly happy.", trans: "Você precisa de uma vida equilibrada para ser verdadeiramente feliz." },
+                        { term: "Achievable", sent: "Make sure your targets are achievable.", trans: "Certifique-se de que seus alvos sejam alcançáveis." },
+                        { term: "Realistic", sent: "Running a marathon tomorrow is not realistic.", trans: "Correr uma maratona amanhã não é realista." },
+                        { term: "Specific", sent: "We need specific instructions to build the machine.", trans: "Precisamos de instruções específicas para construir a máquina." }
                     ]
                 }
             ],
@@ -175,54 +173,54 @@ window.initLesson({
             // --- 2C: PRACTICE ---
             drillGroups:[
                 {
-                    title: "Types of Animals",
+                    title: "Nouns (Concepts & Well-being)",
                     drills:[
-                        { q: "A domesticated carnivorous mammal, typically kept as a pet or for guarding is a ________.", options:[{t: "Pig", c: false}, {t: "Dog", c: true}, {t: "Cow", c: false}, {t: "Horse", c: false}], type: "mcq" },
-                        { q: "A small domesticated carnivorous mammal with soft fur is a ________.", options:[{t: "Cat", c: true}, {t: "Whale", c: false}, {t: "Lion", c: false}, {t: "Monkey", c: false}], type: "mcq" },
-                        { q: "A young dog is called a ________.", options:[{t: "Kitten", c: false}, {t: "Puppy", c: true}, {t: "Rabbit", c: false}, {t: "Bear", c: false}], type: "mcq" },
-                        { q: "A young cat is called a ________.", options:[{t: "Puppy", c: false}, {t: "Kitten", c: true}, {t: "Cow", c: false}, {t: "Pig", c: false}], type: "mcq" },
-                        { q: "A burrowing, plant-eating mammal with long ears and short tail is a ________.", options:[{t: "Rabbit", c: true}, {t: "Horse", c: false}, {t: "Whale", c: false}, {t: "Bear", c: false}], type: "mcq" },
-                        { q: "A large domestic animal kept to produce milk or beef is a ________.", options:[{t: "Pig", c: false}, {t: "Cow", c: true}, {t: "Lion", c: false}, {t: "Monkey", c: false}], type: "mcq" },
-                        { q: "A domestic animal raised for pork is a ________.", options:[{t: "Horse", c: false}, {t: "Cat", c: false}, {t: "Pig", c: true}, {t: "Rabbit", c: false}], type: "mcq" },
-                        { q: "A large plant-eating domesticated mammal with solid hooves, used for riding is a ________.", options:[{t: "Horse", c: true}, {t: "Cow", c: false}, {t: "Bear", c: false}, {t: "Lion", c: false}], type: "mcq" },
-                        { q: "A large tawny-colored cat that lives in prides, found in Africa, is a ________.", options:[{t: "Lion", c: true}, {t: "Pig", c: false}, {t: "Monkey", c: false}, {t: "Whale", c: false}], type: "mcq" },
-                        { q: "A large, heavy mammal that walks on the soles of its feet, with thick fur is a ________.", options:[{t: "Bear", c: true}, {t: "Horse", c: false}, {t: "Puppy", c: false}, {t: "Rabbit", c: false}], type: "mcq" },
-                        { q: "A small to medium-sized primate that typically has a long tail and lives in trees is a ________.", options:[{t: "Cow", c: false}, {t: "Cat", c: false}, {t: "Monkey", c: true}, {t: "Lion", c: false}], type: "mcq" },
-                        { q: "A very large marine mammal with a streamlined hairless body is a ________.", options:[{t: "Whale", c: true}, {t: "Bear", c: false}, {t: "Pig", c: false}, {t: "Dog", c: false}], type: "mcq" }
+                        { q: "The process of developing or being developed is ________.", options:[{t: "Habit", c: false}, {t: "Development", c: true}, {t: "Meditation", c: false}, {t: "Goal", c: false}], type: "mcq" },
+                        { q: "An example or instance of making something better is an ________.", options:[{t: "Improvement", c: true}, {t: "Stress", c: false}, {t: "Skill", c: false}, {t: "Confidence", c: false}], type: "mcq" },
+                        { q: "Forward or onward movement toward a destination or goal is ________.", options:[{t: "Progress", c: true}, {t: "Mindfulness", c: false}, {t: "Habit", c: false}, {t: "Meditation", c: false}], type: "mcq" },
+                        { q: "The object of a person's ambition or effort; an aim or desired result is a ________.", options:[{t: "Goal", c: true}, {t: "Stress", c: false}, {t: "Well-being", c: false}, {t: "Improvement", c: false}], type: "mcq" },
+                        { q: "The ability to do something well; expertise is a ________.", options:[{t: "Confidence", c: false}, {t: "Skill", c: true}, {t: "Motivation", c: false}, {t: "Progress", c: false}], type: "mcq" },
+                        { q: "The state of being comfortable, healthy, or happy is ________.", options:[{t: "Development", c: false}, {t: "Goal", c: false}, {t: "Well-being", c: true}, {t: "Stress", c: false}], type: "mcq" },
+                        { q: "A mental state achieved by focusing one's awareness on the present moment is ________.", options:[{t: "Mindfulness", c: true}, {t: "Habit", c: false}, {t: "Progress", c: false}, {t: "Skill", c: false}], type: "mcq" },
+                        { q: "The action or practice of meditating to relax and focus the mind is ________.", options:[{t: "Motivation", c: false}, {t: "Meditation", c: true}, {t: "Stress", c: false}, {t: "Goal", c: false}], type: "mcq" },
+                        { q: "A state of mental or emotional strain or tension resulting from adverse circumstances is ________.", options:[{t: "Stress", c: true}, {t: "Well-being", c: false}, {t: "Confidence", c: false}, {t: "Development", c: false}], type: "mcq" },
+                        { q: "The feeling or belief that one can rely on someone or something; firm trust in oneself is ________.", options:[{t: "Mindfulness", c: false}, {t: "Confidence", c: true}, {t: "Habit", c: false}, {t: "Meditation", c: false}], type: "mcq" },
+                        { q: "The reason or reasons one has for acting or behaving in a particular way is ________.", options:[{t: "Motivation", c: true}, {t: "Stress", c: false}, {t: "Skill", c: false}, {t: "Improvement", c: false}], type: "mcq" },
+                        { q: "A settled or regular tendency or practice, especially one that is hard to give up, is a ________.", options:[{t: "Habit", c: true}, {t: "Progress", c: false}, {t: "Goal", c: false}, {t: "Well-being", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Animal Parts & Places",
+                    title: "Verbs (Growth & Management)",
                     drills:[
-                        { q: "A person qualified to treat diseased or injured animals is a ________.", options:[{t: "Vet", c: true}, {t: "Zoo", c: false}, {t: "Tank", c: false}, {t: "Cage", c: false}], type: "mcq" },
-                        { q: "An establishment which maintains a collection of wild animals for study or display is a ________.", options:[{t: "Zoo", c: true}, {t: "Vet", c: false}, {t: "Leash", c: false}, {t: "Tail", c: false}], type: "mcq" },
-                        { q: "A strap or cord for restraining and guiding a dog is a ________.", options:[{t: "Leash", c: true}, {t: "Scale", c: false}, {t: "Feather", c: false}, {t: "Wing", c: false}], type: "mcq" },
-                        { q: "A structure of bars or wires in which birds or other animals are confined is a ________.", options:[{t: "Cage", c: true}, {t: "Tank", c: false}, {t: "Paw", c: false}, {t: "Claw", c: false}], type: "mcq" },
-                        { q: "A large receptacle or container for keeping fish is a ________.", options:[{t: "Tank", c: true}, {t: "Zoo", c: false}, {t: "Cage", c: false}, {t: "Vet", c: false}], type: "mcq" },
-                        { q: "The short, fine, soft hair of certain animals is ________.", options:[{t: "Fur", c: true}, {t: "Feather", c: false}, {t: "Scale", c: false}, {t: "Leash", c: false}], type: "mcq" },
-                        { q: "Any of the flat appendages growing from a bird's skin is a ________.", options:[{t: "Feather", c: true}, {t: "Fur", c: false}, {t: "Scale", c: false}, {t: "Paw", c: false}], type: "mcq" },
-                        { q: "Each of the small, thin horny or bony plates protecting the skin of fish is a ________.", options:[{t: "Scale", c: true}, {t: "Wing", c: false}, {t: "Tail", c: false}, {t: "Claw", c: false}], type: "mcq" },
-                        { q: "An animal's foot having claws and pads is a ________.", options:[{t: "Paw", c: true}, {t: "Claw", c: false}, {t: "Tank", c: false}, {t: "Feather", c: false}], type: "mcq" },
-                        { q: "A curved pointed horny nail on each digit of the foot in birds, lizards, and some mammals is a ________.", options:[{t: "Claw", c: true}, {t: "Tail", c: false}, {t: "Paw", c: false}, {t: "Leash", c: false}], type: "mcq" },
-                        { q: "The hindmost part of an animal, especially when prolonged beyond the rest of the body is a ________.", options:[{t: "Tail", c: true}, {t: "Wing", c: false}, {t: "Scale", c: false}, {t: "Fur", c: false}], type: "mcq" },
-                        { q: "A modified forelimb that bears large feathers and is used for flying is a ________.", options:[{t: "Wing", c: true}, {t: "Cage", c: false}, {t: "Zoo", c: false}, {t: "Vet", c: false}], type: "mcq" }
+                        { q: "To make or become better is ________.", options:[{t: "To learn", c: false}, {t: "To improve", c: true}, {t: "To set", c: false}, {t: "To relax", c: false}], type: "mcq" },
+                        { q: "To grow or cause to grow and become more mature, advanced, or elaborate is ________.", options:[{t: "To develop", c: true}, {t: "To accomplish", c: false}, {t: "To manage", c: false}, {t: "To plan", c: false}], type: "mcq" },
+                        { q: "To undergo natural development by increasing in size and changing physically is ________.", options:[{t: "To grow", c: true}, {t: "To set", c: false}, {t: "To learn", c: false}, {t: "To focus", c: false}], type: "mcq" },
+                        { q: "To acquire knowledge of or skill in something by study, experience, or being taught is ________.", options:[{t: "To relax", c: false}, {t: "To learn", c: true}, {t: "To encourage", c: false}, {t: "To improve", c: false}], type: "mcq" },
+                        { q: "To fix or establish (a goal or deadline) is ________.", options:[{t: "To set", c: true}, {t: "To accomplish", c: false}, {t: "To manage", c: false}, {t: "To grow", c: false}], type: "mcq" },
+                        { q: "To successfully bring about or reach (a desired objective or result) by effort is ________.", options:[{t: "To encourage", c: false}, {t: "To focus", c: false}, {t: "To achieve", c: true}, {t: "To plan", c: false}], type: "mcq" },
+                        { q: "To achieve or complete successfully (often a task) is ________.", options:[{t: "To relax", c: false}, {t: "To accomplish", c: true}, {t: "To learn", c: false}, {t: "To set", c: false}], type: "mcq" },
+                        { q: "To decide on and arrange in advance is ________.", options:[{t: "To plan", c: true}, {t: "To grow", c: false}, {t: "To encourage", c: false}, {t: "To improve", c: false}], type: "mcq" },
+                        { q: "To be in charge of (a company, establishment, or undertaking) is ________.", options:[{t: "To set", c: false}, {t: "To manage", c: true}, {t: "To learn", c: false}, {t: "To accomplish", c: false}], type: "mcq" },
+                        { q: "To give support, confidence, or hope to someone is ________.", options:[{t: "To encourage", c: true}, {t: "To focus", c: false}, {t: "To relax", c: false}, {t: "To develop", c: false}], type: "mcq" },
+                        { q: "To pay particular attention to is ________.", options:[{t: "To focus", c: true}, {t: "To improve", c: false}, {t: "To plan", c: false}, {t: "To grow", c: false}], type: "mcq" },
+                        { q: "To rest from work or engage in an enjoyable activity so as to become less tired is ________.", options:[{t: "To relax", c: true}, {t: "To achieve", c: false}, {t: "To manage", c: false}, {t: "To set", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Verbs & Adjectives",
+                    title: "Adjectives (States & Traits)",
                     drills:[
-                        { q: "To give food to an animal is to ________.", options:[{t: "To feed", c: true}, {t: "To train", c: false}, {t: "To bark", c: false}, {t: "To adopt", c: false}], type: "mcq" },
-                        { q: "To guide a dog outdoors for exercise is to ________.", options:[{t: "To walk", c: true}, {t: "To feed", c: false}, {t: "To train", c: false}, {t: "To bark", c: false}], type: "mcq" },
-                        { q: "To teach an animal a particular skill or type of behavior is to ________.", options:[{t: "To train", c: true}, {t: "To adopt", c: false}, {t: "To walk", c: false}, {t: "To feed", c: false}], type: "mcq" },
-                        { q: "To make the sharp explosive cry of a dog is to ________.", options:[{t: "To bark", c: true}, {t: "To train", c: false}, {t: "To walk", c: false}, {t: "To adopt", c: false}], type: "mcq" },
-                        { q: "To legally take another's pet and bring it up as one's own is to ________.", options:[{t: "To adopt", c: true}, {t: "To bark", c: false}, {t: "To train", c: false}, {t: "To feed", c: false}], type: "mcq" },
-                        { q: "An animal kept as a pet or on a farm is ________.", options:[{t: "Domestic", c: true}, {t: "Wild", c: false}, {t: "Fierce", c: false}, {t: "Dangerous", c: false}], type: "mcq" },
-                        { q: "An animal living in a state of nature, not domesticated is ________.", options:[{t: "Wild", c: true}, {t: "Domestic", c: false}, {t: "Loyal", c: false}, {t: "Fluffy", c: false}], type: "mcq" },
-                        { q: "Covered with soft, thick hair or feathers means it is ________.", options:[{t: "Fluffy", c: true}, {t: "Fierce", c: false}, {t: "Dangerous", c: false}, {t: "Endangered", c: false}], type: "mcq" },
-                        { q: "Giving or showing firm and constant support or allegiance to a person is ________.", options:[{t: "Loyal", c: true}, {t: "Wild", c: false}, {t: "Fierce", c: false}, {t: "Dangerous", c: false}], type: "mcq" },
-                        { q: "Having or displaying an intense or ferocious aggressiveness is ________.", options:[{t: "Fierce", c: true}, {t: "Fluffy", c: false}, {t: "Loyal", c: false}, {t: "Domestic", c: false}], type: "mcq" },
-                        { q: "Able or likely to cause harm or injury is ________.", options:[{t: "Dangerous", c: true}, {t: "Loyal", c: false}, {t: "Fluffy", c: false}, {t: "Domestic", c: false}], type: "mcq" },
-                        { q: "A species seriously at risk of extinction is ________.", options:[{t: "Endangered", c: true}, {t: "Fierce", c: false}, {t: "Wild", c: false}, {t: "Dangerous", c: false}], type: "mcq" }
+                        { q: "Of, affecting, or belonging to a particular person rather than to anyone else is ________.", options:[{t: "Professional", c: false}, {t: "Personal", c: true}, {t: "Specific", c: false}, {t: "Achievable", c: false}], type: "mcq" },
+                        { q: "Relating to or belonging to a profession is ________.", options:[{t: "Professional", c: true}, {t: "Balanced", c: false}, {t: "Anxious", c: false}, {t: "Healthy", c: false}], type: "mcq" },
+                        { q: "Provided with a motive; highly driven to do something is ________.", options:[{t: "Motivated", c: true}, {t: "Stressed", c: false}, {t: "Realistic", c: false}, {t: "Anxious", c: false}], type: "mcq" },
+                        { q: "Feeling or showing confidence in oneself; self-assured is ________.", options:[{t: "Confident", c: true}, {t: "Personal", c: false}, {t: "Specific", c: false}, {t: "Healthy", c: false}], type: "mcq" },
+                        { q: "Constructive, optimistic, or confident is ________.", options:[{t: "Positive", c: true}, {t: "Stressed", c: false}, {t: "Anxious", c: false}, {t: "Professional", c: false}], type: "mcq" },
+                        { q: "Experiencing mental or emotional strain or tension is ________.", options:[{t: "Balanced", c: false}, {t: "Achievable", c: false}, {t: "Stressed", c: true}, {t: "Motivated", c: false}], type: "mcq" },
+                        { q: "Experiencing worry, unease, or nervousness is ________.", options:[{t: "Anxious", c: true}, {t: "Confident", c: false}, {t: "Positive", c: false}, {t: "Realistic", c: false}], type: "mcq" },
+                        { q: "In a good physical or mental condition is ________.", options:[{t: "Healthy", c: true}, {t: "Specific", c: false}, {t: "Stressed", c: false}, {t: "Personal", c: false}], type: "mcq" },
+                        { q: "Keeping or showing a balance; arranged in good proportions is ________.", options:[{t: "Balanced", c: true}, {t: "Anxious", c: false}, {t: "Achievable", c: false}, {t: "Motivated", c: false}], type: "mcq" },
+                        { q: "Able to be brought about or reached successfully is ________.", options:[{t: "Achievable", c: true}, {t: "Stressed", c: false}, {t: "Professional", c: false}, {t: "Confident", c: false}], type: "mcq" },
+                        { q: "Having or showing a sensible and practical idea of what can be achieved or expected is ________.", options:[{t: "Realistic", c: true}, {t: "Anxious", c: false}, {t: "Personal", c: false}, {t: "Positive", c: false}], type: "mcq" },
+                        { q: "Clearly defined or identified is ________.", options:[{t: "Specific", c: true}, {t: "Healthy", c: false}, {t: "Balanced", c: false}, {t: "Stressed", c: false}], type: "mcq" }
                     ]
                 }
             ]
@@ -241,42 +239,42 @@ window.initLesson({
             // --- 3A: KEY EXPRESSIONS ---
             patterns:[
                 {
-                    title: "Pet Care",
-                    audio: "TTS: Have a pet. Own a pet. Walk the dog. Feed the cat. Clean out the litter box. Take the pet to the vet.",
-                    explanation: "Basic phrases for owning and taking care of a pet's daily needs.<br><span style='color:var(--primary-blue); font-style:italic;'>(Frases básicas sobre ter e cuidar das necessidades diárias de um animal de estimação.)</span>",
+                    title: "Self-Improvement",
+                    audio: "TTS: Work on yourself. Learn a new skill. Step out of your comfort zone. Develop a new hobby. Build your confidence. Improve your communication skills.",
+                    explanation: "Phrases to talk about personal growth and trying new challenges to better yourself.<br><span style='color:var(--primary-blue); font-style:italic;'>(Frases para falar sobre crescimento pessoal e tentar novos desafios para melhorar a si mesmo.)</span>",
                     samples:[
-                        { en: "I don't <b>have a pet</b> right now.", pt: "<span style='color:var(--primary-blue)'>(Não tenho um animal de estimação agora.)</span>" },
-                        { en: "It is expensive to <b>own a pet</b>.", pt: "<span style='color:var(--primary-blue)'>(É caro ter/possuir um animal de estimação.)</span>" },
-                        { en: "Every morning, I <b>walk the dog</b>.", pt: "<span style='color:var(--primary-blue)'>(Toda manhã, eu passeio com o cachorro.)</span>" },
-                        { en: "Don't forget to <b>feed the cat</b>.", pt: "<span style='color:var(--primary-blue)'>(Não se esqueça de alimentar o gato.)</span>" },
-                        { en: "I hate to <b>clean out the litter box</b>.", pt: "<span style='color:var(--primary-blue)'>(Eu odeio limpar a caixa de areia.)</span>" },
-                        { en: "If he is sick, <b>take the pet to the vet</b>.", pt: "<span style='color:var(--primary-blue)'>(Se ele estiver doente, leve o animal ao veterinário.)</span>" }
+                        { en: "It is important to <b>work on yourself</b> every day.", pt: "<span style='color:var(--primary-blue)'>(É importante trabalhar em si mesmo todos os dias.)</span>" },
+                        { en: "I want to <b>learn a new skill</b> this year, like coding.", pt: "<span style='color:var(--primary-blue)'>(Quero aprender uma nova habilidade este ano, como programar.)</span>" },
+                        { en: "You must <b>step out of your comfort zone</b> to grow.", pt: "<span style='color:var(--primary-blue)'>(Você deve sair da sua zona de conforto para crescer.)</span>" },
+                        { en: "I decided to <b>develop a new hobby</b> to relax.", pt: "<span style='color:var(--primary-blue)'>(Decidi desenvolver um novo hobby para relaxar.)</span>" },
+                        { en: "Public speaking will help <b>build your confidence</b>.", pt: "<span style='color:var(--primary-blue)'>(Falar em público ajudará a construir sua confiança.)</span>" },
+                        { en: "Reading books can <b>improve your communication skills</b>.", pt: "<span style='color:var(--primary-blue)'>(Ler livros pode melhorar suas habilidades de comunicação.)</span>" }
                     ]
                 },
                 {
-                    title: "Descriptions & Types",
-                    audio: "TTS: A dog person. A mixed breed. A purebred. Covered in fur. It has paws. Animal species.",
-                    explanation: "Phrases used to describe your preference in pets, their genetics, and physical traits.<br><span style='color:var(--primary-blue); font-style:italic;'>(Frases usadas para descrever sua preferência por animais de estimação, a genética deles e traços físicos.)</span>",
+                    title: "Setting Goals",
+                    audio: "TTS: Set a goal for yourself. A short-term goal. A long-term goal. Make a plan. Track your progress. Achieve your goals.",
+                    explanation: "Vocabulary for defining what you want to accomplish and mapping out the steps to get there.<br><span style='color:var(--primary-blue); font-style:italic;'>(Vocabulário para definir o que você deseja realizar e mapear as etapas para chegar lá.)</span>",
                     samples:[
-                        { en: "I am definitely <b>a dog person</b>.", pt: "<span style='color:var(--primary-blue)'>(Eu sou definitivamente uma pessoa de cachorro.)</span>" },
-                        { en: "My rescue dog is <b>a mixed breed</b>.", pt: "<span style='color:var(--primary-blue)'>(Meu cachorro resgatado é sem raça definida / vira-lata.)</span>" },
-                        { en: "They bought <b>a purebred</b> cat.", pt: "<span style='color:var(--primary-blue)'>(Eles compraram um gato de raça pura.)</span>" },
-                        { en: "The rabbit is <b>covered in fur</b>.", pt: "<span style='color:var(--primary-blue)'>(O coelho é coberto de pelo.)</span>" },
-                        { en: "A cat is quiet because <b>it has paws</b>.", pt: "<span style='color:var(--primary-blue)'>(Um gato é silencioso porque ele tem patas.)</span>" },
-                        { en: "There are many <b>animal species</b> in the jungle.", pt: "<span style='color:var(--primary-blue)'>(Há muitas espécies de animais na selva.)</span>" }
+                        { en: "You should <b>set a goal for yourself</b> to stay motivated.", pt: "<span style='color:var(--primary-blue)'>(Você deve definir uma meta para si mesmo para se manter motivado.)</span>" },
+                        { en: "Losing two kilos is <b>a short-term goal</b>.", pt: "<span style='color:var(--primary-blue)'>(Perder dois quilos é uma meta de curto prazo.)</span>" },
+                        { en: "Buying a house is <b>a long-term goal</b>.", pt: "<span style='color:var(--primary-blue)'>(Comprar uma casa é uma meta de longo prazo.)</span>" },
+                        { en: "To succeed, you need to <b>make a plan</b>.", pt: "<span style='color:var(--primary-blue)'>(Para ter sucesso, você precisa fazer um plano.)</span>" },
+                        { en: "Use a journal to <b>track your progress</b>.", pt: "<span style='color:var(--primary-blue)'>(Use um diário para acompanhar seu progresso.)</span>" },
+                        { en: "Hard work helps you <b>achieve your goals</b>.", pt: "<span style='color:var(--primary-blue)'>(Trabalho duro ajuda você a alcançar suas metas.)</span>" }
                     ]
                 },
                 {
-                    title: "Experiences & Questions",
-                    audio: "TTS: See an animal in the wild. I'm allergic to. I'm afraid of. Do you have any pets? What's your favorite animal? A big responsibility.",
-                    explanation: "Phrases to ask about someone's animals, express fear or allergies, and discuss the burden of pet ownership.<br><span style='color:var(--primary-blue); font-style:italic;'>(Frases para perguntar sobre os animais de alguém, expressar medo ou alergias, e discutir o peso de ter um animal.)</span>",
+                    title: "Mental Health & Mindfulness",
+                    audio: "TTS: Take care of your mental health. Manage stress. Practice mindfulness. Live in the moment. A healthy work-life balance. Take time for yourself.",
+                    explanation: "Expressions focused on well-being, reducing anxiety, and finding balance in your daily life.<br><span style='color:var(--primary-blue); font-style:italic;'>(Expressões focadas no bem-estar, em reduzir a ansiedade e em encontrar equilíbrio na sua vida diária.)</span>",
                     samples:[
-                        { en: "I want to <b>see an animal in the wild</b>.", pt: "<span style='color:var(--primary-blue)'>(Quero ver um animal na natureza / selvagem.)</span>" },
-                        { en: "I can't go near cats, <b>I'm allergic to</b> them.", pt: "<span style='color:var(--primary-blue)'>(Não posso chegar perto de gatos, sou alérgico a eles.)</span>" },
-                        { en: "<b>I'm afraid of</b> big spiders.", pt: "<span style='color:var(--primary-blue)'>(Tenho medo de aranhas grandes.)</span>" },
-                        { en: "<b>Do you have any pets?</b>", pt: "<span style='color:var(--primary-blue)'>(Você tem algum animal de estimação?)</span>" },
-                        { en: "<b>What's your favorite animal?</b>", pt: "<span style='color:var(--primary-blue)'>(Qual é o seu animal favorito?)</span>" },
-                        { en: "Having a puppy is <b>a big responsibility</b>.", pt: "<span style='color:var(--primary-blue)'>(Ter um filhote é uma grande responsabilidade.)</span>" }
+                        { en: "You must <b>take care of your mental health</b>.", pt: "<span style='color:var(--primary-blue)'>(Você deve cuidar da sua saúde mental.)</span>" },
+                        { en: "Meditation is a great way to <b>manage stress</b>.", pt: "<span style='color:var(--primary-blue)'>(A meditação é uma ótima maneira de gerenciar o estresse.)</span>" },
+                        { en: "I try to <b>practice mindfulness</b> every morning.", pt: "<span style='color:var(--primary-blue)'>(Tento praticar a atenção plena todas as manhãs.)</span>" },
+                        { en: "Stop worrying about the future and <b>live in the moment</b>.", pt: "<span style='color:var(--primary-blue)'>(Pare de se preocupar com o futuro e viva o momento.)</span>" },
+                        { en: "She finally found <b>a healthy work-life balance</b>.", pt: "<span style='color:var(--primary-blue)'>(Ela finalmente encontrou um equilíbrio saudável entre vida pessoal e profissional.)</span>" },
+                        { en: "When you are tired, you should <b>take time for yourself</b>.", pt: "<span style='color:var(--primary-blue)'>(Quando estiver cansado, você deve tirar um tempo para si mesmo.)</span>" }
                     ]
                 }
             ],
@@ -284,83 +282,77 @@ window.initLesson({
             // --- 3B: DIALOGUES ---
             dialogueGroups:[
                 {
-                    title: "Dialogue 1: Pet Ownership",
-                    audio: "TTS: Do you have any pets? Yes, I have a pet dog. I want to own a pet too.",
+                    title: "Dialogue 1: Personal Growth",
+                    audio: "TTS: I feel like I need to work on myself. That's good. You should step out of your comfort zone. I know. I want to try public speaking to build my confidence.",
                     lines:[
-                        { speaker: "John", text: "Do you have any pets?", pt: "(Você tem algum animal de estimação?)" },
-                        { speaker: "Anna", text: "Yes, I have a pet dog. I want to own a pet too.", pt: "(Sim, eu tenho um cachorro de estimação. Eu quero ter um animal de estimação também.)" } // Logic fix needed
+                        { speaker: "Anna", text: "I feel like I need to work on myself.", pt: "(Sinto que preciso trabalhar em mim mesma.)" },
+                        { speaker: "Tom", text: "That's good. You should step out of your comfort zone.", pt: "(Isso é bom. Você deveria sair da sua zona de conforto.)" },
+                        { speaker: "Anna", text: "I know. I want to try public speaking to build my confidence.", pt: "(Eu sei. Quero tentar falar em público para construir minha confiança.)" }
                     ]
                 },
                 {
-                    title: "Dialogue 1: Pet Ownership", // Fixed
-                    audio: "TTS: Do you have any pets? Yes, I have a pet dog. Oh, I would love to own a pet too.",
+                    title: "Dialogue 2: New Interests",
+                    audio: "TTS: I really want to learn a new skill. Why don't you develop a new hobby, like painting? That could be fun. But I also need to improve my communication skills for work.",
                     lines:[
-                        { speaker: "John", text: "Do you have any pets?", pt: "(Você tem algum animal de estimação?)" },
-                        { speaker: "Anna", text: "Yes, I have a pet dog. Oh, I would love to own a pet too.", pt: "(Sim, eu tenho um cachorro. Ah, eu adoraria ter um também.)" } // Still logic error, Anna has one.
+                        { speaker: "Mark", text: "I really want to learn a new skill.", pt: "(Eu realmente quero aprender uma nova habilidade.)" },
+                        { speaker: "Lisa", text: "Why don't you develop a new hobby, like painting?", pt: "(Por que você não desenvolve um novo hobby, como pintura?)" },
+                        { speaker: "Mark", text: "That could be fun. But I also need to improve my communication skills for work.", pt: "(Isso pode ser divertido. Mas também preciso melhorar minhas habilidades de comunicação para o trabalho.)" }
                     ]
                 },
                 {
-                    title: "Dialogue 1: Pet Ownership", // Final fix
-                    audio: "TTS: Do you have any pets? Yes, I have a pet dog. That is nice. I want to own a pet too.",
+                    title: "Dialogue 3: Goal Setting",
+                    audio: "TTS: You should always set a goal for yourself. I agree. Right now, passing my exam is a short-term goal. Good. And what is a long-term goal you have? I want to open my own business.",
                     lines:[
-                        { speaker: "John", text: "Do you have any pets?", pt: "(Você tem algum animal de estimação?)" },
-                        { speaker: "Anna", text: "Yes, I have a pet dog.", pt: "(Sim, eu tenho um cachorro de estimação.)" },
-                        { speaker: "John", text: "That is nice. I want to own a pet too.", pt: "(Isso é legal. Eu quero ter um animal de estimação também.)" }
+                        { speaker: "David", text: "You should always set a goal for yourself.", pt: "(Você deve sempre definir uma meta para si mesmo.)" },
+                        { speaker: "Chloe", text: "I agree. Right now, passing my exam is a short-term goal.", pt: "(Eu concordo. No momento, passar no meu exame é uma meta de curto prazo.)" },
+                        { speaker: "David", text: "Good. And what is a long-term goal you have? I want to open my own business.", pt: "(Bom. E qual é uma meta de longo prazo que você tem? Eu quero abrir meu próprio negócio.)" } // Logic fix needed
                     ]
                 },
                 {
-                    title: "Dialogue 2: Daily Care",
-                    audio: "TTS: Did you walk the dog today? Yes, and I also feed the cat every morning. Good. Now please clean out the litter box.",
+                    title: "Dialogue 3: Goal Setting", // Fixed
+                    audio: "TTS: You should always set a goal for yourself. I agree. Right now, passing my exam is a short-term goal. Good. And what is a long-term goal you have? I want to open my own business.",
                     lines:[
-                        { speaker: "Mom", text: "Did you walk the dog today?", pt: "(Você passeou com o cachorro hoje?)" },
-                        { speaker: "Son", text: "Yes, and I also feed the cat every morning.", pt: "(Sim, e eu também alimento o gato toda manhã.)" },
-                        { speaker: "Mom", text: "Good. Now please clean out the litter box.", pt: "(Bom. Agora, por favor, limpe a caixa de areia.)" }
+                        { speaker: "David", text: "You should always set a goal for yourself.", pt: "(Você deve sempre definir uma meta para si mesmo.)" },
+                        { speaker: "Chloe", text: "I agree. Right now, passing my exam is a short-term goal.", pt: "(Eu concordo. No momento, passar no meu exame é uma meta de curto prazo.)" },
+                        { speaker: "David", text: "Good. And what is a long-term goal you have?", pt: "(Bom. E qual é uma meta de longo prazo que você tem?)" },
+                        { speaker: "Chloe", text: "I want to open my own business.", pt: "(Eu quero abrir meu próprio negócio.)" } // Max 2 speakers, perfect. Wait, the rule is exactly 2 characters. The number of lines can be 2 to 4. I'll stick to 3 or 4.
                     ]
                 },
                 {
-                    title: "Dialogue 3: Preferences and Allergies",
-                    audio: "TTS: I am totally a dog person. Really? I can't have dogs because I'm allergic to them. Oh no. Are you afraid of dogs, too? Yes, I'm afraid of big dogs.",
+                    title: "Dialogue 4: Executing Plans",
+                    audio: "TTS: If you want to succeed, you need to make a plan. I did. I use an app to track my progress every day. Excellent. That is the best way to achieve your goals.",
                     lines:[
-                        { speaker: "Mark", text: "I am totally a dog person.", pt: "(Eu sou totalmente uma pessoa de cachorro.)" },
-                        { speaker: "Lisa", text: "Really? I can't have dogs because I'm allergic to them.", pt: "(Sério? Eu não posso ter cachorros porque sou alérgica a eles.)" },
-                        { speaker: "Mark", text: "Oh no. Are you afraid of dogs, too?", pt: "(Ah não. Você tem medo de cachorros também?)" },
-                        { speaker: "Lisa", text: "Yes, I'm afraid of big dogs.", pt: "(Sim, eu tenho medo de cachorros grandes.)" }
+                        { speaker: "Coach", text: "If you want to succeed, you need to make a plan.", pt: "(Se você quer ter sucesso, precisa fazer um plano.)" },
+                        { speaker: "Client", text: "I did. I use an app to track my progress every day.", pt: "(Eu fiz. Eu uso um aplicativo para acompanhar meu progresso todos os dias.)" },
+                        { speaker: "Coach", text: "Excellent. That is the best way to achieve your goals.", pt: "(Excelente. Essa é a melhor maneira de alcançar suas metas.)" }
                     ]
                 },
                 {
-                    title: "Dialogue 4: Breeds and Health",
-                    audio: "TTS: Is your cat a purebred? No, he is a mixed breed from the shelter. That's nice. Did you take the pet to the vet yet? Yes, he is perfectly healthy.",
+                    title: "Dialogue 5: Stress & Balance",
+                    audio: "TTS: I feel so anxious. You really need to take care of your mental health. I know. I just don't know how to manage stress well. You need to find a healthy work-life balance and rest more.",
                     lines:[
-                        { speaker: "Chloe", text: "Is your cat a purebred?", pt: "(O seu gato é de raça pura?)" },
-                        { speaker: "David", text: "No, he is a mixed breed from the shelter.", pt: "(Não, ele é um vira-lata do abrigo.)" },
-                        { speaker: "Chloe", text: "That's nice. Did you take the pet to the vet yet?", pt: "(Isso é legal. Você já levou o animal ao veterinário?)" },
-                        { speaker: "David", text: "Yes, he is perfectly healthy.", pt: "(Sim, ele é perfeitamente saudável.)" }
+                        { speaker: "Emma", text: "I feel so anxious. You really need to take care of your mental health.", pt: "(Me sinto tão ansiosa. Você realmente precisa cuidar da sua saúde mental.)" }, // Logic fix
+                        { speaker: "John", text: "I know. I just don't know how to manage stress well. You need to find a healthy work-life balance and rest more.", pt: "(Eu sei. Eu só não sei como gerenciar bem o estresse. Você precisa encontrar um equilíbrio saudável entre vida pessoal e profissional e descansar mais.)" }
                     ]
                 },
                 {
-                    title: "Dialogue 5: Wild Animals",
-                    audio: "TTS: What's your favorite animal? I love lions. It is rare to see an animal in the wild like that. Yes, there are many animal species we only see in zoos.",
+                    title: "Dialogue 5: Stress & Balance", // Fixed logic
+                    audio: "TTS: I feel so anxious lately. You really need to take care of your mental health. I know. I just don't know how to manage stress well. You need to find a healthy work-life balance.",
                     lines:[
-                        { speaker: "Leo", text: "What's your favorite animal?", pt: "(Qual é o seu animal favorito?)" },
-                        { speaker: "Emma", text: "I love lions. It is rare to see an animal in the wild like that.", pt: "(Eu amo leões. É raro ver um animal na natureza assim.)" },
-                        { speaker: "Leo", text: "Yes, there are many animal species we only see in zoos.", pt: "(Sim, há muitas espécies de animais que só vemos em zoológicos.)" }
+                        { speaker: "Emma", text: "I feel so anxious lately.", pt: "(Me sinto tão ansiosa ultimamente.)" },
+                        { speaker: "John", text: "You really need to take care of your mental health.", pt: "(Você realmente precisa cuidar da sua saúde mental.)" },
+                        { speaker: "Emma", text: "I know. I just don't know how to manage stress well.", pt: "(Eu sei. Só não sei como gerenciar o estresse bem.)" },
+                        { speaker: "John", text: "You need to find a healthy work-life balance.", pt: "(Você precisa encontrar um equilíbrio saudável entre trabalho e vida pessoal.)" }
                     ]
                 },
                 {
-                    title: "Dialogue 6: Physical Traits and Burden",
-                    audio: "TTS: My rabbit is so cute, he is covered in fur. And it has paws that are so tiny! Yes, but taking care of him is a big responsibility.",
+                    title: "Dialogue 6: Mindfulness",
+                    audio: "TTS: You always seem so calm. How do you do it? I practice mindfulness every morning. It helps a lot. I should try that. I never take time for myself. You definitely should. It teaches you to live in the moment.",
                     lines:[
-                        { speaker: "Tom", text: "My rabbit is so cute, he is covered in fur.", pt: "(Meu coelho é tão fofo, ele é coberto de pelo.)" },
-                        { speaker: "Anna", text: "And it has paws that are so tiny! Yes, but taking care of him is a big responsibility.", pt: "(E ele tem patas tão pequenininhas! Sim, mas cuidar dele é uma grande responsabilidade.)" } // Flow fix
-                    ]
-                },
-                {
-                    title: "Dialogue 6: Physical Traits and Burden", // Fixed
-                    audio: "TTS: My rabbit is so cute, he is covered in fur. And it has paws that are so tiny! Yes, but taking care of him is a big responsibility.",
-                    lines:[
-                        { speaker: "Tom", text: "My rabbit is so cute, he is covered in fur.", pt: "(Meu coelho é tão fofo, ele é coberto de pelo.)" },
-                        { speaker: "Anna", text: "And it has paws that are so tiny!", pt: "(E ele tem patas tão pequenininhas!)" },
-                        { speaker: "Tom", text: "Yes, but taking care of him is a big responsibility.", pt: "(Sim, mas cuidar dele é uma grande responsabilidade.)" }
+                        { speaker: "Mia", text: "You always seem so calm. How do you do it?", pt: "(Você sempre parece tão calmo. Como você faz isso?)" },
+                        { speaker: "Leo", text: "I practice mindfulness every morning. It helps a lot.", pt: "(Eu pratico atenção plena toda manhã. Ajuda muito.)" },
+                        { speaker: "Mia", text: "I should try that. I never take time for myself.", pt: "(Eu deveria tentar isso. Eu nunca tiro um tempo para mim.)" },
+                        { speaker: "Leo", text: "You definitely should. It teaches you to live in the moment.", pt: "(Você definitivamente deveria. Isso te ensina a viver o momento.)" }
                     ]
                 }
             ],
@@ -368,37 +360,36 @@ window.initLesson({
             // --- 3C: PRACTICE ---
             grammarDrillGroups:[
                 {
-                    title: "Pet Care",
+                    title: "Self-Improvement",
                     drills:[
-                        { q: "I don't ________ a pet right now.", options:[{t: "have", c: true}, {t: "own", c: false}, {t: "make", c: false}, {t: "do", c: false}], type: "mcq" },
-                        { q: "It is expensive to ________ a pet.", options:[{t: "have", c: false}, {t: "own", c: true}, {t: "take", c: false}, {t: "make", c: false}], type: "mcq" },
-                        { q: "Every morning, I ________ the dog.", options:[{t: "run", c: false}, {t: "walk", c: true}, {t: "go", c: false}, {t: "feed", c: false}], type: "mcq" },
-                        { q: "Don't forget to ________ the cat.", options:[{t: "feed", c: true}, {t: "eat", c: false}, {t: "walk", c: false}, {t: "give", c: false}], type: "mcq" },
-                        { q: "I hate to ________ out the litter box.", options:[{t: "wash", c: false}, {t: "clean", c: true}, {t: "make", c: false}, {t: "do", c: false}], type: "mcq" },
-                        { q: "If he is sick, ________ the pet to the vet.", options:[{t: "bring", c: false}, {t: "take", c: true}, {t: "make", c: false}, {t: "walk", c: false}], type: "mcq" }
+                        { q: "It is important to work ________ yourself every day.", options:[{t: "on", c: true}, {t: "in", c: false}, {t: "at", c: false}, {t: "to", c: false}], type: "mcq" },
+                        { q: "I want to ________ a new skill this year.", options:[{t: "teach", c: false}, {t: "learn", c: true}, {t: "make", c: false}, {t: "do", c: false}], type: "mcq" },
+                        { q: "You must step out of your ________ zone to grow.", options:[{t: "safety", c: false}, {t: "comfort", c: true}, {t: "lazy", c: false}, {t: "easy", c: false}], type: "mcq" },
+                        { q: "I decided to ________ a new hobby to relax.", options:[{t: "improve", c: false}, {t: "develop", c: true}, {t: "build", c: false}, {t: "grow", c: false}], type: "mcq" },
+                        { q: "Public speaking will help ________ your confidence.", options:[{t: "build", c: true}, {t: "make", c: false}, {t: "do", c: false}, {t: "work", c: false}], type: "mcq" },
+                        { q: "Reading books can ________ your communication skills.", options:[{t: "improve", c: true}, {t: "build", c: false}, {t: "grow", c: false}, {t: "set", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Descriptions & Types",
+                    title: "Setting Goals",
                     drills:[
-                        { q: "I am definitely a ________ person.", options:[{t: "cat", c: false}, {t: "dog", c: true}, {t: "animal", c: false}, {t: "pet", c: false}], type: "mcq" }, // Usually "dog person" or "cat person", both work, but "dog person" is the target phrase here. Let's make the options clearer.
-                        { q: "I am definitely a dog ________.", options:[{t: "human", c: false}, {t: "man", c: false}, {t: "person", c: true}, {t: "guy", c: false}], type: "mcq" },
-                        { q: "My rescue dog is a ________ breed.", options:[{t: "mixed", c: true}, {t: "pure", c: false}, {t: "half", c: false}, {t: "double", c: false}], type: "mcq" },
-                        { q: "They bought a ________ cat.", options:[{t: "purebred", c: true}, {t: "mixed", c: false}, {t: "single", c: false}, {t: "full", c: false}], type: "mcq" },
-                        { q: "The rabbit is covered ________ fur.", options:[{t: "on", c: false}, {t: "in", c: true}, {t: "at", c: false}, {t: "with", c: false}], type: "mcq" }, // covered in / covered with are both fine. The chunk is "covered in"
-                        { q: "A cat is quiet because it has ________.", options:[{t: "claws", c: false}, {t: "tails", c: false}, {t: "paws", c: true}, {t: "fur", c: false}], type: "mcq" },
-                        { q: "There are many animal ________ in the jungle.", options:[{t: "species", c: true}, {t: "kinds", c: false}, {t: "types", c: false}, {t: "breeds", c: false}], type: "mcq" }
+                        { q: "You should ________ a goal for yourself.", options:[{t: "put", c: false}, {t: "set", c: true}, {t: "make", c: false}, {t: "do", c: false}], type: "mcq" },
+                        { q: "Losing two kilos is a ________-term goal.", options:[{t: "short", c: true}, {t: "long", c: false}, {t: "fast", c: false}, {t: "quick", c: false}], type: "mcq" },
+                        { q: "Buying a house is a ________-term goal.", options:[{t: "big", c: false}, {t: "short", c: false}, {t: "long", c: true}, {t: "high", c: false}], type: "mcq" },
+                        { q: "To succeed, you need to ________ a plan.", options:[{t: "do", c: false}, {t: "make", c: true}, {t: "build", c: false}, {t: "set", c: false}], type: "mcq" },
+                        { q: "Use a journal to ________ your progress.", options:[{t: "track", c: true}, {t: "find", c: false}, {t: "look", c: false}, {t: "see", c: false}], type: "mcq" },
+                        { q: "Hard work helps you ________ your goals.", options:[{t: "achieve", c: true}, {t: "improve", c: false}, {t: "develop", c: false}, {t: "manage", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Experiences & Questions",
+                    title: "Mental Health & Mindfulness",
                     drills:[
-                        { q: "I want to see an animal in the ________.", options:[{t: "wild", c: true}, {t: "forest", c: false}, {t: "jungle", c: false}, {t: "zoo", c: false}], type: "mcq" },
-                        { q: "I can't go near cats, I'm ________ to them.", options:[{t: "allergic", c: true}, {t: "afraid", c: false}, {t: "scared", c: false}, {t: "sick", c: false}], type: "mcq" },
-                        { q: "I'm ________ of big spiders.", options:[{t: "allergic", c: false}, {t: "afraid", c: true}, {t: "fear", c: false}, {t: "scary", c: false}], type: "mcq" },
-                        { q: "________ you have any pets?", options:[{t: "Are", c: false}, {t: "Do", c: true}, {t: "Have", c: false}, {t: "Does", c: false}], type: "mcq" },
-                        { q: "What's your ________ animal?", options:[{t: "best", c: false}, {t: "favorite", c: true}, {t: "liked", c: false}, {t: "good", c: false}], type: "mcq" },
-                        { q: "Having a puppy is a big ________.", options:[{t: "responsibility", c: true}, {t: "problem", c: false}, {t: "thing", c: false}, {t: "work", c: false}], type: "mcq" }
+                        { q: "You must take ________ of your mental health.", options:[{t: "attention", c: false}, {t: "time", c: false}, {t: "care", c: true}, {t: "mind", c: false}], type: "mcq" },
+                        { q: "Meditation is a great way to ________ stress.", options:[{t: "improve", c: false}, {t: "manage", c: true}, {t: "develop", c: false}, {t: "build", c: false}], type: "mcq" },
+                        { q: "I try to ________ mindfulness every morning.", options:[{t: "make", c: false}, {t: "do", c: false}, {t: "practice", c: true}, {t: "live", c: false}], type: "mcq" },
+                        { q: "Stop worrying about the future and live in the ________.", options:[{t: "time", c: false}, {t: "moment", c: true}, {t: "mind", c: false}, {t: "past", c: false}], type: "mcq" },
+                        { q: "She finally found a healthy ________-life balance.", options:[{t: "work", c: true}, {t: "job", c: false}, {t: "stress", c: false}, {t: "time", c: false}], type: "mcq" },
+                        { q: "When you are tired, you should take ________ for yourself.", options:[{t: "time", c: true}, {t: "moment", c: false}, {t: "care", c: false}, {t: "health", c: false}], type: "mcq" }
                     ]
                 }
             ]
@@ -411,16 +402,16 @@ window.initLesson({
         {
             title: "Speaking Practice",
             sentences:[
-                { text: "Do you have any pets? ↗", audio: "TTS: Do you have any pets?" },
-                { text: "I have a pet dog, and I walk him every morning. ↘", audio: "TTS: I have a pet dog, and I walk him every morning." },
-                { text: "Don't forget to feed the cat. ↘", audio: "TTS: Don't forget to feed the cat." },
-                { text: "Is your dog a purebred or a mixed breed? ↗", audio: "TTS: Is your dog a purebred or a mixed breed?" },
-                { text: "I am definitely a dog person. ↘", audio: "TTS: I am definitely a dog person." },
-                { text: "Taking care of a pet is a big responsibility. ↘", audio: "TTS: Taking care of a pet is a big responsibility." },
-                { text: "I am allergic to cats, so I can't own one. ↘", audio: "TTS: I am allergic to cats, so I can't own one." },
-                { text: "I'm afraid of spiders and snakes. ↘", audio: "TTS: I'm afraid of spiders and snakes." },
-                { text: "What's your favorite animal? ↘", audio: "TTS: What's your favorite animal?" },
-                { text: "I would love to see an animal in the wild. ↘", audio: "TTS: I would love to see an animal in the wild." }
+                { text: "It is important to work on yourself every day. ↘", audio: "TTS: It is important to work on yourself every day." },
+                { text: "You must step out of your comfort zone to grow. ↘", audio: "TTS: You must step out of your comfort zone to grow." },
+                { text: "What is a long-term goal you have? ↘", audio: "TTS: What is a long-term goal you have?" },
+                { text: "You should set a realistic goal to stay motivated. ↘", audio: "TTS: You should set a realistic goal to stay motivated." },
+                { text: "I use a journal to track my progress. ↘", audio: "TTS: I use a journal to track my progress." },
+                { text: "Hard work helps you achieve your goals. ↘", audio: "TTS: Hard work helps you achieve your goals." },
+                { text: "You really need to take care of your mental health. ↘", audio: "TTS: You really need to take care of your mental health." },
+                { text: "How do you manage stress at work? ↘", audio: "TTS: How do you manage stress at work?" },
+                { text: "I practice mindfulness to live in the moment. ↘", audio: "TTS: I practice mindfulness to live in the moment." },
+                { text: "It is hard to find a healthy work-life balance. ↘", audio: "TTS: It is hard to find a healthy work-life balance." }
             ]
         },
 
@@ -433,29 +424,29 @@ window.initLesson({
                 {
                     type: "typing",
                     instruction: "Listen to the conversation and type the missing words.",
-                    audio: "TTS: Anna: Do you want to adopt a puppy? Mark: I don't know. Owning a pet is a big responsibility. Anna: That's true. You have to walk the dog every day. Mark: And I also have to take the pet to the vet.",
-                    text: "Anna: Do you want to [adopt] a puppy?<br>Mark: I don't know. Owning a pet is a big [responsibility].<br>Anna: That's true. You have to [walk] the dog every day.<br>Mark: And I also have to take the pet to the [vet]."
+                    audio: "TTS: John: I want to improve my writing skills. Sarah: That's a great goal. You should make a plan. John: Yes, I will practice every evening to track my progress. Sarah: Building a new habit takes a lot of motivation.",
+                    text: "John: I want to [improve] my writing [skills].<br>Sarah: That's a great [goal]. You should make a [plan].<br>John: Yes, I will practice every evening to track my [progress].<br>Sarah: Building a new habit takes a lot of [motivation]."
                 },
                 {
                     type: "dropdown",
-                    instruction: "Listen to the dialogue about wild animals.",
-                    audio: "TTS: Lisa: Did you enjoy the safari park? John: Yes! I saw a lion. It was very fierce. Lisa: I prefer the aquarium. I love to watch the whales. John: That's cool. I'm afraid of the deep ocean.",
+                    instruction: "Listen to the dialogue about mental health.",
+                    audio: "TTS: Mark: I am feeling very stressed today. Emma: Have you tried to practice mindfulness? Mark: No, I never have the time to relax. Emma: You should really take time for yourself. It is important.",
                     questions:[
-                        { q: "Lisa: Did you enjoy the safari [park* | zoo | tank]?", a: "park" },
-                        { q: "John: Yes! I saw a [lion* | bear | monkey]. It was very [fierce* | fluffy | domestic].", a: "lion" },
-                        { q: "Lisa: I prefer the aquarium. I love to watch the[whales* | fish | scales].", a: "whales" },
-                        { q: "John: That's cool. I'm [afraid* | allergic | tired] of the deep ocean.", a: "afraid" }
+                        { q: "Mark: I am feeling very [stressed* | confident | active] today.", a: "stressed" },
+                        { q: "Emma: Have you tried to practice [mindfulness* | confidence | habits]?", a: "mindfulness" },
+                        { q: "Mark: No, I never have the time to [relax* | achieve | manage].", a: "relax" },
+                        { q: "Emma: You should really take [time* | goals | plans] for yourself. It is important.", a: "time" }
                     ]
                 },
                 {
                     type: "audio-choice",
-                    instruction: "Listen to the speaker. Why doesn't she want a cat?",
-                    audio: "TTS: My roommate wants to get a kitten because they are cute and covered in fur. But I told her no. I am completely allergic to cats, and they make me sneeze.",
+                    instruction: "Listen to the speaker. What did she do?",
+                    audio: "TTS: I decided to step out of my comfort zone this year. I enrolled in a public speaking course. It was scary at first, but it really helped me build my confidence.",
                     options:[
-                        { t: "She thinks kittens are ugly.", c: false },
-                        { t: "She doesn't like cleaning the litter box.", c: false },
-                        { t: "She is allergic to cats.", c: true },
-                        { t: "She is afraid of cats.", c: false }
+                        { t: "She bought a new house.", c: false },
+                        { t: "She stepped out of her comfort zone to build her confidence.", c: true },
+                        { t: "She decided to retire from work.", c: false },
+                        { t: "She took a long vacation to manage her stress.", c: false }
                     ]
                 }
             ]
@@ -468,33 +459,33 @@ window.initLesson({
             title: "Reading Practice",
             texts:[
                 {
-                    title: "Dialogue - Getting a Pet",
-                    audio: "TTS: David: I really want to adopt a dog from the shelter. Chloe: Are you sure? You know taking care of a pet is a big responsibility. David: I know. But I am a dog person, and I want a loyal friend. Chloe: What kind of dog do you want? A purebred? David: No, I prefer a mixed breed. They are usually very healthy. Chloe: Well, remember that you have to walk the dog every morning! David: And feed him, and take the pet to the vet. I am ready for it.",
-                    body: "<b>David:</b> I really want to [adopt](tooltip:to-adopt) a [dog](tooltip:dog) from the shelter.<br><b>Chloe:</b> Are you sure? You know taking care of a pet is [a big responsibility](tooltip:big-responsibility).<br><b>David:</b> I know. But I am [a dog person](tooltip:dog-person), and I want a [loyal](tooltip:loyal) friend.<br><b>Chloe:</b> What kind of dog do you want? A [purebred](tooltip:purebred)?<br><b>David:</b> No, I prefer a [mixed breed](tooltip:mixed-breed). They are usually very healthy.<br><b>Chloe:</b> Well, remember that you have to [walk the dog](tooltip:walk-the-dog) every morning!<br><b>David:</b> And [feed](tooltip:to-feed) him, and[take the pet to the vet](tooltip:take-pet-vet). I am ready for it.",
+                    title: "Dialogue - New Year's Resolutions",
+                    audio: "TTS: Lisa: What is your main goal for this year? David: I want to work on myself. I plan to learn a new language. Lisa: That is a great short-term goal. How will you achieve it? David: I will study for twenty minutes every day to develop a new habit. Lisa: Tracking your progress daily will help you stay motivated. David: Yes, and stepping out of my comfort zone will build my confidence, too.",
+                    body: "<b>Lisa:</b> What is your main [goal](tooltip:goal) for this year?<br><b>David:</b> I want to [work on myself](tooltip:work-on-yourself). I [plan](tooltip:to-plan) to [learn a new skill](tooltip:learn-skill), specifically a language.<br><b>Lisa:</b> That is a great [short-term goal](tooltip:short-term). How will you [achieve](tooltip:to-achieve) it?<br><b>David:</b> I will study for twenty minutes every day to [develop a new hobby](tooltip:develop-hobby) and habit.<br><b>Lisa:</b>[Tracking your progress](tooltip:track-progress) daily will help you stay [motivated](tooltip:motivated).<br><b>David:</b> Yes, and [stepping out of my comfort zone](tooltip:comfort-zone) will[build my confidence](tooltip:build-confidence), too.",
                     questions:[
-                        { q: "What kind of dog does David want to adopt?", options:[{t: "A purebred.", c: false}, {t: "A mixed breed.", c: true}, {t: "A fierce dog.", c: false}], type: "mcq" },
-                        { q: "Why does Chloe ask if David is sure?", options:[{t: "Because he is allergic to dogs.", c: false}, {t: "Because taking care of a pet is a big responsibility.", c: true}, {t: "Because he is a cat person.", c: false}], type: "mcq" },
-                        { q: "What are some responsibilities David mentions?", options:[{t: "Walking the dog, feeding him, and taking him to the vet.", c: true}, {t: "Cleaning the litter box.", c: false}, {t: "Training a lion.", c: false}], type: "mcq" }
+                        { q: "What is David's short-term goal?", options:[{t: "To buy a house.", c: false}, {t: "To learn a new language.", c: true}, {t: "To manage stress.", c: false}], type: "mcq" },
+                        { q: "How does David plan to achieve his goal?", options:[{t: "By studying once a month.", c: false}, {t: "By taking a vacation.", c: false}, {t: "By studying for twenty minutes every day.", c: true}], type: "mcq" },
+                        { q: "Why is David doing this?", options:[{t: "To make money.", c: false}, {t: "To step out of his comfort zone and build confidence.", c: true}, {t: "To find a new job.", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Dialogue - The Cat Lover",
-                    audio: "TTS: Mark: Look at this video of a kitten! It is so fluffy. Emma: Oh, it's very cute. But I can't watch it. I'm allergic to cats. Mark: Oh, really? That's too bad. I love cats because they have paws and soft fur. Emma: I prefer birds. I have a parrot in a cage at home. He has beautiful feathers. Mark: I'm afraid of birds! Sometimes they bite with their beak or scratch with their claw. Emma: Not my bird. He is very friendly and domestic.",
-                    body: "<b>Mark:</b> Look at this video of a [kitten](tooltip:kitten)! It is so [fluffy](tooltip:fluffy).<br><b>Emma:</b> Oh, it's very cute. But I can't watch it.[I'm allergic to](tooltip:allergic-to) cats.<br><b>Mark:</b> Oh, really? That's too bad. I love cats because they have [paws](tooltip:paw) and soft [fur](tooltip:fur).<br><b>Emma:</b> I prefer birds. I have a parrot in a [cage](tooltip:cage) at home. He has beautiful [feathers](tooltip:feather).<br><b>Mark:</b>[I'm afraid of](tooltip:afraid-of) birds! Sometimes they bite with their beak or scratch with their[claw](tooltip:claw).<br><b>Emma:</b> Not my bird. He is very friendly and [domestic](tooltip:domestic).",
+                    title: "Dialogue - Finding Balance",
+                    audio: "TTS: Emma: You look exhausted, Tom. Are you okay? Tom: I'm just so stressed out from work. I never relax. Emma: You really need to take care of your mental health. Tom: I know. But it's hard to find a healthy work-life balance. Emma: Have you tried to practice mindfulness or meditation? Tom: No, but I should. I really need to take time for myself and live in the moment.",
+                    body: "<b>Emma:</b> You look exhausted, Tom. Are you okay?<br><b>Tom:</b> I'm just so [stressed](tooltip:stressed) out from work. I never [relax](tooltip:to-relax).<br><b>Emma:</b> You really need to [take care of your mental health](tooltip:mental-health).<br><b>Tom:</b> I know. But it's hard to find a[healthy work-life balance](tooltip:work-life-balance).<br><b>Emma:</b> Have you tried to[practice mindfulness](tooltip:practice-mindfulness) or [meditation](tooltip:meditation)?<br><b>Tom:</b> No, but I should. I really need to [take time for myself](tooltip:take-time-yourself) and [live in the moment](tooltip:live-in-moment).",
                     questions:[
-                        { q: "Why doesn't Emma want to watch the cat video?", options:[{t: "She is afraid of cats.", c: false}, {t: "She is allergic to cats.", c: true}, {t: "She hates fluffy animals.", c: false}], type: "mcq" },
-                        { q: "What kind of pet does Emma have?", options:[{t: "A kitten.", c: false}, {t: "A parrot.", c: true}, {t: "A dog.", c: false}], type: "mcq" },
-                        { q: "Why is Mark afraid of birds?", options:[{t: "Because they make too much noise.", c: false}, {t: "Because they might bite or scratch.", c: true}, {t: "Because they have beautiful feathers.", c: false}], type: "mcq" }
+                        { q: "Why does Tom look exhausted?", options:[{t: "He is sick.", c: false}, {t: "He exercises too much.", c: false}, {t: "He is stressed from work and never relaxes.", c: true}], type: "mcq" },
+                        { q: "What does Emma say Tom needs to take care of?", options:[{t: "His mental health.", c: true}, {t: "His physical health.", c: false}, {t: "His diet.", c: false}], type: "mcq" },
+                        { q: "What is Tom going to try to do?", options:[{t: "Take time for himself and live in the moment.", c: true}, {t: "Work more hours.", c: false}, {t: "Get a new job.", c: false}], type: "mcq" }
                     ]
                 },
                 {
-                    title: "Email - Safari Adventure",
-                    audio: "TTS: Subject: Greetings from Kenya! Hi Lucas, I am having the best trip of my life! Yesterday, we went on a safari. I finally got to see an animal in the wild! We saw a huge lion resting under a tree. It was so fierce and powerful. There are so many endangered animal species here, so the park protects them. Tomorrow we are going to the coast to try and see a whale. What's your favorite animal? I will bring you a souvenir! Best, Sophia.",
-                    body: "<b>From: Sophia</b><br><b>To: Lucas</b><br>Subject: Greetings from Kenya!<br><br>Hi Lucas,<br>I am having the best trip of my life! Yesterday, we went on a safari. I finally got to [see an animal in the wild](tooltip:see-animal-wild)! We saw a huge [lion](tooltip:lion) resting under a tree. It was so [fierce](tooltip:fierce) and powerful. There are so many [endangered](tooltip:endangered) [animal species](tooltip:animal-species) here, so the park protects them. Tomorrow we are going to the coast to try and see a [whale](tooltip:whale).[What's your favorite animal](tooltip:favorite-animal)? I will bring you a souvenir!<br><br>Best, Sophia.",
+                    title: "Email - Monthly Check-in",
+                    audio: "TTS: Subject: How are your goals? Hi Sarah, I am writing to check on your progress. At the beginning of the year, you set a goal to improve your communication skills. You wanted to make a plan to achieve this long-term goal. Have you been able to manage your time and stay motivated? I want to encourage you to keep trying. Being confident is a very important professional trait. Let's meet next week to chat! Best, Manager.",
+                    body: "<b>From: Manager</b><br><b>To: Sarah</b><br>Subject: How are your [goals](tooltip:goal)?<br><br>Hi Sarah,<br>I am writing to check on your [progress](tooltip:progress). At the beginning of the year, you [set a goal](tooltip:set-goal) to[improve your communication skills](tooltip:improve-communication). You wanted to [make a plan](tooltip:make-plan) to [achieve](tooltip:to-achieve) this [long-term goal](tooltip:long-term). Have you been able to [manage](tooltip:to-manage) your time and stay [motivated](tooltip:motivated)? I want to[encourage](tooltip:to-encourage) you to keep trying. Being [confident](tooltip:confident) is a very important [professional](tooltip:professional) trait. Let's meet next week to chat!<br><br>Best, Manager.",
                     questions:[
-                        { q: "What did Sophia see on her safari?", options:[{t: "A monkey in a cage.", c: false}, {t: "A huge lion resting under a tree.", c: true}, {t: "A bear.", c: false}], type: "mcq" },
-                        { q: "Why does the park protect these animals?", options:[{t: "Because they are domestic.", c: false}, {t: "Because they are endangered species.", c: true}, {t: "Because they are fluffy.", c: false}], type: "mcq" },
-                        { q: "What is Sophia hoping to see tomorrow at the coast?", options:[{t: "A whale.", c: true}, {t: "A fish.", c: false}, {t: "A crab.", c: false}], type: "mcq" }
+                        { q: "What goal did Sarah set at the beginning of the year?", options:[{t: "To improve her communication skills.", c: true}, {t: "To lose weight.", c: false}, {t: "To learn a new language.", c: false}], type: "mcq" },
+                        { q: "What type of goal is it?", options:[{t: "A short-term goal.", c: false}, {t: "A long-term goal.", c: true}, {t: "An unrealistic goal.", c: false}], type: "mcq" },
+                        { q: "What does the manager want to do?", options:[{t: "Fire Sarah.", c: false}, {t: "Encourage her to keep trying.", c: true}, {t: "Cancel the project.", c: false}], type: "mcq" }
                     ]
                 }
             ]
@@ -507,88 +498,86 @@ window.initLesson({
             title: "Mixed Exercises",
             drills:[
                 // --- MATCHING (1-4) ---
-                { type: "matching", instruction: "Match the animal to its category.", pairs:[
-                    { left: "Dog", right: "Pet", val: "1" },
-                    { left: "Cow", right: "Farm animal", val: "2" },
-                    { left: "Lion", right: "Wild animal", val: "3" },
-                    { left: "Whale", right: "Marine animal", val: "4" }
+                { type: "matching", instruction: "Match the nouns to their definitions.", pairs:[
+                    { left: "Development", right: "The process of growing", val: "1" },
+                    { left: "Goal", right: "An objective or aim", val: "2" },
+                    { left: "Habit", right: "A regular practice or routine", val: "3" },
+                    { left: "Mindfulness", right: "Focusing on the present moment", val: "4" }
                 ]},
-                { type: "matching", instruction: "Match the animal parts.", pairs:[
-                    { left: "Fur", right: "Soft hair on a mammal", val: "1" },
-                    { left: "Feather", right: "Plumage on a bird", val: "2" },
-                    { left: "Scale", right: "Hard plate on a fish", val: "3" },
-                    { left: "Paw", right: "Foot of a dog or cat", val: "4" }
+                { type: "matching", instruction: "Match the verbs to their meanings.", pairs:[
+                    { left: "To achieve", right: "To successfully reach a goal", val: "1" },
+                    { left: "To improve", right: "To make something better", val: "2" },
+                    { left: "To encourage", right: "To give support and hope", val: "3" },
+                    { left: "To relax", right: "To rest and reduce stress", val: "4" }
                 ]},
-                { type: "matching", instruction: "Match the adjectives.", pairs:[
-                    { left: "Domestic", right: "Tame, kept by humans", val: "1" },
-                    { left: "Wild", right: "Living in nature", val: "2" },
-                    { left: "Fierce", right: "Aggressive and powerful", val: "3" },
-                    { left: "Endangered", right: "At risk of extinction", val: "4" }
+                { type: "matching", instruction: "Match the adjectives with their opposites.", pairs:[
+                    { left: "Confident", right: "Anxious / Insecure", val: "1" },
+                    { left: "Motivated", right: "Unmotivated / Lazy", val: "2" },
+                    { left: "Realistic", right: "Unrealistic / Impossible", val: "3" },
+                    { left: "Positive", right: "Negative", val: "4" }
                 ]},
-                { type: "matching", instruction: "Match the phrases.", pairs:[
-                    { left: "Clean out", right: "the litter box", val: "1" },
-                    { left: "Take the pet", right: "to the vet", val: "2" },
-                    { left: "A big", right: "responsibility", val: "3" },
-                    { left: "A mixed", right: "breed", val: "4" }
+                { type: "matching", instruction: "Match the phrase halves.", pairs:[
+                    { left: "Step out of your", right: "comfort zone", val: "1" },
+                    { left: "Take care of your", right: "mental health", val: "2" },
+                    { left: "A healthy work-life", right: "balance", val: "3" },
+                    { left: "Live in", right: "the moment", val: "4" }
                 ]},
 
                 // --- WORD ORDER (5-14) ---
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "you / Do / have / pets / any / ?", correct: "Do you have any pets ?" },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "pet / own / a / to / want / I / .", correct: "I want to own a pet ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "dog / walk / the / morning / every / I / .", correct: "I walk the dog every morning ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "cat / feed / the / to / forget / Don't / .", correct: "Don't forget to feed the cat ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "box / out / litter / the / Clean / .", correct: "Clean out the litter box ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "pet / vet / the / Take / the / to / .", correct: "Take the pet to the vet ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "definitely / person / I / a / am / dog / .", correct: "I am definitely a dog person ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "fur / in / is / covered / rabbit / The / .", correct: "The rabbit is covered in fur ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "allergic / cats / to / I'm / .", correct: "I'm allergic to cats ." },
-                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "afraid / I'm / of / spiders / .", correct: "I'm afraid of spiders ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "yourself / on / work / to / important / It's / .", correct: "It's important to work on yourself ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "skill / new / learn / a / I / want / to / .", correct: "I want to learn a new skill ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "zone / out / of / your / comfort / Step / .", correct: "Step out of your comfort zone ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "hobby / a / new / Develop / .", correct: "Develop a new hobby ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "confidence / your / Build / .", correct: "Build your confidence ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "yourself / for / goal / a / Set / .", correct: "Set a goal for yourself ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "plan / a / Make / .", correct: "Make a plan ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "progress / your / Track / .", correct: "Track your progress ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "goals / your / Achieve / .", correct: "Achieve your goals ." },
+                { type: "word-order", instruction: "Unscramble the sentence.", sentence: "moment / the / in / Live / .", correct: "Live in the moment ." },
 
                 // --- CLICKABLE ERROR (15-24) ---
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "He is a[mix](error:mixed) breed." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I want to [have](error:own) a pet." }, // Both have and own are chunks, but let's target the error clearly.
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I want to [buy](error:own) a pet." }, // Buy is fine, but own/have is the chunk. Let's make it undeniably wrong grammar.
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I want to [owns](error:own) a pet." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Clean [off](error:out) the litter box." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Take the pet [at](error:to) the vet." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I am a dog [human](error:person)." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "The cat is covered [with](error:in) fur." }, // with is grammatically okay but the chunk is 'in'
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "It [makes](error:has) paws." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I'm allergic [for](error:to) cats." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I'm afraid[from](error:of) dogs." },
-                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "It's a big [responsive](error:responsibility)." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I want to work [in](error:on) myself." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Step out of your [lazy](error:comfort) zone." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "This will[make](error:build) your confidence." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "You must [put](error:set) a goal for yourself." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "It is a [small](error:short)-term goal." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I use an app to [look](error:track) my progress." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Take care of your [brain](error:mental) health." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "I try to [do](error:manage) my stress." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "You should [do](error:practice) mindfulness." },
+                { type: "clickable-error", instruction: "Find and fix the error.", sentence: "Take [moment](error:time) for yourself." },
 
                 // --- ODD ONE OUT (25-30) ---
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Farm Animals)", options:[{t: "Cow", c: false}, {t: "Pig", c: false}, {t: "Horse", c: false}, {t: "Whale", c: true}] },
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Animal Parts)", options:[{t: "Paw", c: false}, {t: "Claw", c: false}, {t: "Tail", c: false}, {t: "Leash", c: true}] },
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Verbs for Pets)", options:[{t: "To feed", c: false}, {t: "To walk", c: false}, {t: "To train", c: false}, {t: "To bark", c: true}] }, // Bark is what the dog does, the others are owner actions
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Places)", options:[{t: "Zoo", c: false}, {t: "Vet", c: false}, {t: "Tank", c: false}, {t: "Feather", c: true}] },
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Adjectives)", options:[{t: "Fluffy", c: false}, {t: "Fierce", c: false}, {t: "Loyal", c: false}, {t: "Cage", c: true}] },
-                { type: "odd-one-out", instruction: "Which word does NOT belong? (Baby Animals)", options:[{t: "Puppy", c: false}, {t: "Kitten", c: false}, {t: "Rabbit", c: true}, {t: "Bear", c: false}] }, // Rabbit/Bear are not baby names
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Positive Concepts)", options:[{t: "Improvement", c: false}, {t: "Development", c: false}, {t: "Progress", c: false}, {t: "Stress", c: true}] },
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Verbs for Goals)", options:[{t: "To achieve", c: false}, {t: "To set", c: false}, {t: "To accomplish", c: false}, {t: "To relax", c: true}] },
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Mental States)", options:[{t: "Mindfulness", c: false}, {t: "Meditation", c: false}, {t: "Well-being", c: false}, {t: "Skill", c: true}] },
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Adjectives)", options:[{t: "Motivated", c: false}, {t: "Confident", c: false}, {t: "Positive", c: false}, {t: "Habit", c: true}] },
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Negative States)", options:[{t: "Stressed", c: false}, {t: "Anxious", c: false}, {t: "Tired", c: false}, {t: "Balanced", c: true}] },
+                { type: "odd-one-out", instruction: "Which word does NOT belong? (Goal Adjectives)", options:[{t: "Realistic", c: false}, {t: "Achievable", c: false}, {t: "Specific", c: false}, {t: "Personal", c: true}] },
 
                 // --- TRUE / FALSE (31-35) ---
-                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "A 'purebred' animal has parents of different breeds.", correct: "false"}] },
-                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "To 'adopt' an animal usually means to take it from a shelter to live with you.", correct: "true"}] },
-                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "If an animal is 'endangered', there are very few of them left in the world.", correct: "true"}] },
-                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "A 'tank' is a glass container usually used to keep dogs.", correct: "false"}] },
-                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "If you are 'allergic' to an animal, being near it makes you sick or sneeze.", correct: "true"}] },
+                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "To 'step out of your comfort zone' means doing things that are familiar and easy.", correct: "false"}] },
+                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "A 'short-term goal' is something you want to achieve very far in the future.", correct: "false"}] },
+                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "If you 'track your progress', you monitor how close you are to your goal.", correct: "true"}] },
+                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "To 'live in the moment' means you are constantly worrying about tomorrow.", correct: "false"}] },
+                { type: "true-false", instruction: "Is this statement True or False?", questions:[{text: "'Mindfulness' involves focusing your awareness on the present moment.", correct: "true"}] },
 
                 // --- MCQ (36-39) ---
-                { type: "mcq", instruction: "Choose the correct phrase.<br>When a dog makes a loud noise, it is ________.", options:[{t: "feeding", c: false}, {t: "walking", c: false}, {t: "barking", c: true}, {t: "training", c: false}] },
-                { type: "mcq", instruction: "Choose the correct word.<br>The long hair covering a cat or a dog is called ________.", options:[{t: "fur", c: true}, {t: "feather", c: false}, {t: "scale", c: false}, {t: "paw", c: false}] },
-                { type: "mcq", instruction: "Choose the correct phrase.<br>If you like dogs more than cats, you say: 'I am a ________.'", options:[{t: "purebred", c: false}, {t: "dog person", c: true}, {t: "mixed breed", c: false}, {t: "domestic", c: false}] },
-                { type: "mcq", instruction: "Choose the correct word.<br>A professional who provides medical care for animals is a ________.", options:[{t: "zoo", c: false}, {t: "cage", c: false}, {t: "vet", c: true}, {t: "shelter", c: false}] },
+                { type: "mcq", instruction: "Choose the correct phrase.<br>When you decide exactly what you want to achieve, you ________ a goal.", options:[{t: "do", c: false}, {t: "make", c: false}, {t: "set", c: true}, {t: "get", c: false}] },
+                { type: "mcq", instruction: "Choose the correct word.<br>I need to find a healthy work-life ________.", options:[{t: "balance", c: true}, {t: "habit", c: false}, {t: "development", c: false}, {t: "stress", c: false}] },
+                { type: "mcq", instruction: "Choose the correct verb.<br>If you want to reduce your anxiety, you should learn to ________ your stress.", options:[{t: "build", c: false}, {t: "manage", c: true}, {t: "improve", c: false}, {t: "achieve", c: false}] },
+                { type: "mcq", instruction: "Choose the correct phrase.<br>To become better at public speaking, you need to build your ________.", options:[{t: "mindfulness", c: false}, {t: "confidence", c: true}, {t: "plan", c: false}, {t: "meditation", c: false}] },
 
                 // --- CATEGORIZE (40) ---
-                { type: "categorize", instruction: "Sort the words into Wild Animals and Pets.", 
-                    categories:[{id: "wild", name: "Wild"}, {id: "pet", name: "Pets"}],
+                { type: "categorize", instruction: "Sort the words into Goal Setting and Mental Health.", 
+                    categories:[{id: "goal", name: "Goal Setting"}, {id: "mental", name: "Mental Health"}],
                     items:[
-                        {text: "Lion", catId: "wild"}, 
-                        {text: "Bear", catId: "wild"}, 
-                        {text: "Whale", catId: "wild"}, 
-                        {text: "Dog", catId: "pet"}, 
-                        {text: "Kitten", catId: "pet"}, 
-                        {text: "Rabbit", catId: "pet"}
+                        {text: "Achieve", catId: "goal"}, 
+                        {text: "Progress", catId: "goal"}, 
+                        {text: "Plan", catId: "goal"}, 
+                        {text: "Stress", catId: "mental"}, 
+                        {text: "Mindfulness", catId: "mental"}, 
+                        {text: "Meditation", catId: "mental"}
                     ] 
                 }
             ]
@@ -599,13 +588,13 @@ window.initLesson({
         // ======================================================
         {
             title: "Writing Practice",
-            instruction: "Write a short paragraph (5-7 sentences) about animals. Mention if you have a pet (or want one), what your daily routine with it would be, and what your favorite wild animal is. Include whether you are allergic or afraid of any animals.",
-            example: "I don't have a pet right now, but I would love to own a dog. I am definitely a dog person. If I had one, I would walk the dog every morning and train it to be very obedient. I know taking care of a pet is a big responsibility! However, I am allergic to cats, so I can't be near them. As for wild animals, my favorite is the lion because it is so fierce. I would love to see an animal in the wild on a safari.",
+            instruction: "Write a short paragraph (5-7 sentences) about your personal development goals for the year. Mention one short-term goal and one long-term goal. Describe what you are doing to achieve them, and how you take care of your mental health while working hard.",
+            example: "This year, I really want to work on myself. My short-term goal is to learn a new skill, so I am taking an online coding class. My long-term goal is to get a promotion at work. I track my progress every week to stay motivated. It is a lot of hard work, so I have to be careful with my mental health. I practice mindfulness in the mornings to manage my stress, and I make sure to maintain a healthy work-life balance.",
             prompts:[
-                "State if you have a pet or are a 'dog/cat person'.",
-                "Describe pet care tasks (e.g., feed the cat, walk the dog).",
-                "Mention an allergy or fear (e.g., I am afraid of...).",
-                "Name a wild animal and why you like it."
+                "State that you want to work on yourself or improve.",
+                "Describe a short-term goal (e.g., learn a new skill).",
+                "Describe a long-term goal (e.g., get a promotion, buy a house).",
+                "Explain how you manage stress (e.g., practice mindfulness, take time for yourself)."
             ]
         },
 
@@ -616,66 +605,66 @@ window.initLesson({
             title: "Flashcards",
             items:[
                 // 2A Items (36 items)
-                { term: "Dog", definition: "A domesticated carnivorous mammal, often kept as a pet.", defTrans: "Cachorro", example: "A dog is often called man's best friend.", audioFront: "TTS: Dog", audioBack: "TTS: A dog is often called man's best friend." },
-                { term: "Cat", definition: "A small domesticated carnivorous mammal with soft fur.", defTrans: "Gato", example: "The cat slept on the sofa all day.", audioFront: "TTS: Cat", audioBack: "TTS: The cat slept on the sofa all day." },
-                { term: "Puppy", definition: "A young dog.", defTrans: "Filhote de cachorro", example: "She adopted a cute little puppy.", audioFront: "TTS: Puppy", audioBack: "TTS: She adopted a cute little puppy." },
-                { term: "Kitten", definition: "A young cat.", defTrans: "Filhote de gato", example: "The kitten played with a ball of yarn.", audioFront: "TTS: Kitten", audioBack: "TTS: The kitten played with a ball of yarn." },
-                { term: "Rabbit", definition: "A burrowing, plant-eating mammal with long ears.", defTrans: "Coelho", example: "We gave a carrot to the rabbit.", audioFront: "TTS: Rabbit", audioBack: "TTS: We gave a carrot to the rabbit." },
-                { term: "Cow", definition: "A large domestic animal kept to produce milk or beef.", defTrans: "Vaca", example: "The cow produces milk on the farm.", audioFront: "TTS: Cow", audioBack: "TTS: The cow produces milk on the farm." },
-                { term: "Pig", definition: "A domestic animal raised for pork.", defTrans: "Porco", example: "A pig likes to roll in the mud.", audioFront: "TTS: Pig", audioBack: "TTS: A pig likes to roll in the mud." },
-                { term: "Horse", definition: "A large plant-eating domesticated mammal with solid hooves.", defTrans: "Cavalo", example: "He learned to ride a horse.", audioFront: "TTS: Horse", audioBack: "TTS: He learned to ride a horse." },
-                { term: "Lion", definition: "A large tawny-colored cat that lives in prides.", defTrans: "Leão", example: "The lion is the king of the jungle.", audioFront: "TTS: Lion", audioBack: "TTS: The lion is the king of the jungle." },
-                { term: "Bear", definition: "A large, heavy mammal that walks on the soles of its feet.", defTrans: "Urso", example: "The brown bear was eating fish in the river.", audioFront: "TTS: Bear", audioBack: "TTS: The brown bear was eating fish in the river." },
-                { term: "Monkey", definition: "A small to medium-sized primate.", defTrans: "Macaco", example: "A monkey was swinging from the tree.", audioFront: "TTS: Monkey", audioBack: "TTS: A monkey was swinging from the tree." },
-                { term: "Whale", definition: "A very large marine mammal.", defTrans: "Baleia", example: "The blue whale is the largest animal in the ocean.", audioFront: "TTS: Whale", audioBack: "TTS: The blue whale is the largest animal in the ocean." },
+                { term: "Development", definition: "The process of developing or being developed.", defTrans: "Desenvolvimento", example: "Personal development is a lifelong journey.", audioFront: "TTS: Development", audioBack: "TTS: Personal development is a lifelong journey." },
+                { term: "Improvement", definition: "An instance of making something better.", defTrans: "Melhoria", example: "There is room for improvement in your writing.", audioFront: "TTS: Improvement", audioBack: "TTS: There is room for improvement in your writing." },
+                { term: "Progress", definition: "Forward movement toward a destination or goal.", defTrans: "Progresso", example: "You are making great progress in your studies.", audioFront: "TTS: Progress", audioBack: "TTS: You are making great progress in your studies." },
+                { term: "Goal", definition: "The object of a person's ambition; an aim.", defTrans: "Meta / Objetivo", example: "My main goal this year is to read more.", audioFront: "TTS: Goal", audioBack: "TTS: My main goal this year is to read more." },
+                { term: "Skill", definition: "The ability to do something well; expertise.", defTrans: "Habilidade", example: "Coding is a very useful skill to have.", audioFront: "TTS: Skill", audioBack: "TTS: Coding is a very useful skill to have." },
+                { term: "Well-being", definition: "The state of being comfortable, healthy, or happy.", defTrans: "Bem-estar", example: "Sleep is essential for your overall well-being.", audioFront: "TTS: Well-being", audioBack: "TTS: Sleep is essential for your overall well-being." },
+                { term: "Mindfulness", definition: "A mental state achieved by focusing awareness on the present moment.", defTrans: "Atenção plena (Mindfulness)", example: "Mindfulness helps you stay in the present moment.", audioFront: "TTS: Mindfulness", audioBack: "TTS: Mindfulness helps you stay in the present moment." },
+                { term: "Meditation", definition: "The practice of thinking deeply in silence for relaxation.", defTrans: "Meditação", example: "Daily meditation can calm your mind.", audioFront: "TTS: Meditation", audioBack: "TTS: Daily meditation can calm your mind." },
+                { term: "Stress", definition: "A state of mental or emotional strain.", defTrans: "Estresse", example: "Work is causing me a lot of stress lately.", audioFront: "TTS: Stress", audioBack: "TTS: Work is causing me a lot of stress lately." },
+                { term: "Confidence", definition: "The feeling or belief that one can rely on oneself.", defTrans: "Confiança", example: "Winning the award gave her a lot of confidence.", audioFront: "TTS: Confidence", audioBack: "TTS: Winning the award gave her a lot of confidence." },
+                { term: "Motivation", definition: "The reason or reasons one has for acting in a particular way.", defTrans: "Motivação", example: "I lost my motivation to exercise.", audioFront: "TTS: Motivation", audioBack: "TTS: I lost my motivation to exercise." },
+                { term: "Habit", definition: "A settled or regular tendency or practice.", defTrans: "Hábito", example: "Drinking water every morning is a good habit.", audioFront: "TTS: Habit", audioBack: "TTS: Drinking water every morning is a good habit." },
+                
+                { term: "To improve", definition: "To make or become better.", defTrans: "Melhorar", example: "I read books to improve my vocabulary.", audioFront: "TTS: To improve", audioBack: "TTS: I read books to improve my vocabulary." },
+                { term: "To develop", definition: "To grow or cause to grow and become more mature.", defTrans: "Desenvolver", example: "It takes time to develop a new habit.", audioFront: "TTS: To develop", audioBack: "TTS: It takes time to develop a new habit." },
+                { term: "To grow", definition: "To undergo natural development by increasing in size.", defTrans: "Crescer", example: "Plants need sunlight to grow.", audioFront: "TTS: To grow", audioBack: "TTS: Plants need sunlight to grow." },
+                { term: "To learn", definition: "To acquire knowledge of or skill in something.", defTrans: "Aprender", example: "I want to learn how to play the piano.", audioFront: "TTS: To learn", audioBack: "TTS: I want to learn how to play the piano." },
+                { term: "To set", definition: "To fix or establish (a goal or deadline).", defTrans: "Definir", example: "You should set a deadline for your project.", audioFront: "TTS: To set", audioBack: "TTS: You should set a deadline for your project." },
+                { term: "To achieve", definition: "To successfully bring about a desired objective.", defTrans: "Alcançar", example: "She worked hard to achieve success.", audioFront: "TTS: To achieve", audioBack: "TTS: She worked hard to achieve success." },
+                { term: "To accomplish", definition: "To achieve or complete successfully.", defTrans: "Realizar / Cumprir", example: "He finally accomplished his biggest dream.", audioFront: "TTS: To accomplish", audioBack: "TTS: He finally accomplished his biggest dream." },
+                { term: "To plan", definition: "To decide on and arrange in advance.", defTrans: "Planejar", example: "Let's plan our trip for next summer.", audioFront: "TTS: To plan", audioBack: "TTS: Let's plan our trip for next summer." },
+                { term: "To manage", definition: "To succeed in surviving or dealing with a difficult situation.", defTrans: "Gerenciar / Lidar", example: "It is difficult to manage a large team.", audioFront: "TTS: To manage", audioBack: "TTS: It is difficult to manage a large team." },
+                { term: "To encourage", definition: "To give support, confidence, or hope to someone.", defTrans: "Encorajar / Incentivar", example: "My parents always encourage me to do my best.", audioFront: "TTS: To encourage", audioBack: "TTS: My parents always encourage me to do my best." },
+                { term: "To focus", definition: "To pay particular attention to.", defTrans: "Focar", example: "I need quiet space to focus on my work.", audioFront: "TTS: To focus", audioBack: "TTS: I need quiet space to focus on my work." },
+                { term: "To relax", definition: "To rest from work or become less tense.", defTrans: "Relaxar", example: "Listen to some music to relax your mind.", audioFront: "TTS: To relax", audioBack: "TTS: Listen to some music to relax your mind." },
 
-                { term: "Vet (veterinarian)", definition: "A person qualified to treat diseased or injured animals.", defTrans: "Veterinário(a)", example: "I took my sick dog to the vet.", audioFront: "TTS: Vet", audioBack: "TTS: I took my sick dog to the vet." },
-                { term: "Zoo", definition: "An establishment which maintains a collection of wild animals.", defTrans: "Zoológico", example: "We saw lions and tigers at the zoo.", audioFront: "TTS: Zoo", audioBack: "TTS: We saw lions and tigers at the zoo." },
-                { term: "Leash", definition: "A strap or cord for restraining and guiding a dog.", defTrans: "Coleira (guia)", example: "Keep the dog on a leash in the park.", audioFront: "TTS: Leash", audioBack: "TTS: Keep the dog on a leash in the park." },
-                { term: "Cage", definition: "A structure of bars or wires in which birds or animals are confined.", defTrans: "Gaiola", example: "The bird sings inside its cage.", audioFront: "TTS: Cage", audioBack: "TTS: The bird sings inside its cage." },
-                { term: "Tank", definition: "A large receptacle or container for keeping fish.", defTrans: "Aquário / Tanque", example: "The fish swam around in the tank.", audioFront: "TTS: Tank", audioBack: "TTS: The fish swam around in the tank." },
-                { term: "Fur", definition: "The short, fine, soft hair of certain animals.", defTrans: "Pelo (de animal)", example: "The rabbit has very soft fur.", audioFront: "TTS: Fur", audioBack: "TTS: The rabbit has very soft fur." },
-                { term: "Feather", definition: "Any of the flat appendages growing from a bird's skin.", defTrans: "Pena", example: "The peacock has a colorful feather.", audioFront: "TTS: Feather", audioBack: "TTS: The peacock has a colorful feather." },
-                { term: "Scale", definition: "Each of the small, thin horny or bony plates protecting the skin of fish.", defTrans: "Escama", example: "A fish is covered in a shiny scale.", audioFront: "TTS: Scale", audioBack: "TTS: A fish is covered in a shiny scale." },
-                { term: "Paw", definition: "An animal's foot having claws and pads.", defTrans: "Pata", example: "The cat licked its injured paw.", audioFront: "TTS: Paw", audioBack: "TTS: The cat licked its injured paw." },
-                { term: "Claw", definition: "A curved pointed horny nail on each digit of the foot.", defTrans: "Garra", example: "The bear has a very sharp claw.", audioFront: "TTS: Claw", audioBack: "TTS: The bear has a very sharp claw." },
-                { term: "Tail", definition: "The hindmost part of an animal.", defTrans: "Cauda / Rabo", example: "The happy dog wagged its tail.", audioFront: "TTS: Tail", audioBack: "TTS: The happy dog wagged its tail." },
-                { term: "Wing", definition: "A modified forelimb that bears large feathers and is used for flying.", defTrans: "Asa", example: "The bird broke its wing and could not fly.", audioFront: "TTS: Wing", audioBack: "TTS: The bird broke its wing and could not fly." },
-
-                { term: "To feed", definition: "To give food to an animal.", defTrans: "Alimentar", example: "Don't forget to feed the cat this morning.", audioFront: "TTS: To feed", audioBack: "TTS: Don't forget to feed the cat this morning." },
-                { term: "To walk", definition: "To guide a dog outdoors for exercise.", defTrans: "Passear (com cão)", example: "I wake up early to walk the dog.", audioFront: "TTS: To walk", audioBack: "TTS: I wake up early to walk the dog." },
-                { term: "To train", definition: "To teach an animal a particular skill or behavior.", defTrans: "Treinar / Adestrar", example: "You must train your puppy to sit.", audioFront: "TTS: To train", audioBack: "TTS: You must train your puppy to sit." },
-                { term: "To bark", definition: "To make the sharp explosive cry of a dog.", defTrans: "Latir", example: "The dog started to bark at the stranger.", audioFront: "TTS: To bark", audioBack: "TTS: The dog started to bark at the stranger." },
-                { term: "To adopt", definition: "To legally take another's pet and bring it up as one's own.", defTrans: "Adotar", example: "We decided to adopt a rescue dog.", audioFront: "TTS: To adopt", audioBack: "TTS: We decided to adopt a rescue dog." },
-                { term: "Domestic", definition: "An animal kept as a pet or on a farm.", defTrans: "Doméstico", example: "Cows and pigs are domestic animals.", audioFront: "TTS: Domestic", audioBack: "TTS: Cows and pigs are domestic animals." },
-                { term: "Wild", definition: "An animal living in a state of nature, not domesticated.", defTrans: "Selvagem", example: "You can find wild animals in the forest.", audioFront: "TTS: Wild", audioBack: "TTS: You can find wild animals in the forest." },
-                { term: "Fluffy", definition: "Covered with soft, thick hair or feathers.", defTrans: "Fofinho / Peludo", example: "My kitten is very small and fluffy.", audioFront: "TTS: Fluffy", audioBack: "TTS: My kitten is very small and fluffy." },
-                { term: "Loyal", definition: "Giving or showing firm and constant support or allegiance.", defTrans: "Leal", example: "A dog is known to be a very loyal friend.", audioFront: "TTS: Loyal", audioBack: "TTS: A dog is known to be a very loyal friend." },
-                { term: "Fierce", definition: "Having or displaying an intense or ferocious aggressiveness.", defTrans: "Feroz", example: "The lion was very fierce.", audioFront: "TTS: Fierce", audioBack: "TTS: The lion was very fierce." },
-                { term: "Dangerous", definition: "Able or likely to cause harm or injury.", defTrans: "Perigoso", example: "Do not go near the snake, it is dangerous.", audioFront: "TTS: Dangerous", audioBack: "TTS: Do not go near the snake, it is dangerous." },
-                { term: "Endangered", definition: "A species seriously at risk of extinction.", defTrans: "Ameaçado de extinção", example: "The blue whale is an endangered species.", audioFront: "TTS: Endangered", audioBack: "TTS: The blue whale is an endangered species." },
+                { term: "Personal", definition: "Of, affecting, or belonging to a particular person.", defTrans: "Pessoal", example: "This journal is for my personal thoughts.", audioFront: "TTS: Personal", audioBack: "TTS: This journal is for my personal thoughts." },
+                { term: "Professional", definition: "Relating to or belonging to a profession.", defTrans: "Profissional", example: "Please maintain a professional attitude at work.", audioFront: "TTS: Professional", audioBack: "TTS: Please maintain a professional attitude at work." },
+                { term: "Motivated", definition: "Highly driven to do something.", defTrans: "Motivado(a)", example: "She is highly motivated to win the race.", audioFront: "TTS: Motivated", audioBack: "TTS: She is highly motivated to win the race." },
+                { term: "Confident", definition: "Feeling or showing confidence in oneself.", defTrans: "Confiante", example: "I am confident that we will pass the test.", audioFront: "TTS: Confident", audioBack: "TTS: I am confident that we will pass the test." },
+                { term: "Positive", definition: "Constructive, optimistic, or confident.", defTrans: "Positivo(a)", example: "Try to keep a positive mindset.", audioFront: "TTS: Positive", audioBack: "TTS: Try to keep a positive mindset." },
+                { term: "Stressed", definition: "Experiencing mental or emotional strain.", defTrans: "Estressado(a)", example: "He feels stressed because of the deadline.", audioFront: "TTS: Stressed", audioBack: "TTS: He feels stressed because of the deadline." },
+                { term: "Anxious", definition: "Experiencing worry, unease, or nervousness.", defTrans: "Ansioso(a)", example: "Waiting for the results makes me anxious.", audioFront: "TTS: Anxious", audioBack: "TTS: Waiting for the results makes me anxious." },
+                { term: "Healthy", definition: "In a good physical or mental condition.", defTrans: "Saudável", example: "Eating vegetables is part of a healthy diet.", audioFront: "TTS: Healthy", audioBack: "TTS: Eating vegetables is part of a healthy diet." },
+                { term: "Balanced", definition: "Keeping or showing a balance.", defTrans: "Equilibrado(a)", example: "You need a balanced life to be truly happy.", audioFront: "TTS: Balanced", audioBack: "TTS: You need a balanced life to be truly happy." },
+                { term: "Achievable", definition: "Able to be brought about or reached successfully.", defTrans: "Alcançável", example: "Make sure your targets are achievable.", audioFront: "TTS: Achievable", audioBack: "TTS: Make sure your targets are achievable." },
+                { term: "Realistic", definition: "Having a sensible idea of what can be achieved.", defTrans: "Realista", example: "Running a marathon tomorrow is not realistic.", audioFront: "TTS: Realistic", audioBack: "TTS: Running a marathon tomorrow is not realistic." },
+                { term: "Specific", definition: "Clearly defined or identified.", defTrans: "Específico(a)", example: "We need specific instructions to build the machine.", audioFront: "TTS: Specific", audioBack: "TTS: We need specific instructions to build the machine." },
 
                 // 3A Items (18 items)
-                { term: "Have a pet", definition: "To keep an animal for companionship.", defTrans: "Ter um animal de estimação", example: "I don't have a pet right now.", audioFront: "TTS: Have a pet", audioBack: "TTS: I don't have a pet right now." },
-                { term: "Own a pet", definition: "To possess an animal.", defTrans: "Possuir um animal de estimação", example: "It is expensive to own a pet.", audioFront: "TTS: Own a pet", audioBack: "TTS: It is expensive to own a pet." },
-                { term: "Walk the dog", definition: "To take a dog out for exercise.", defTrans: "Passear com o cachorro", example: "Every morning, I walk the dog.", audioFront: "TTS: Walk the dog", audioBack: "TTS: Every morning, I walk the dog." },
-                { term: "Feed the cat", definition: "To give food to a feline.", defTrans: "Alimentar o gato", example: "Don't forget to feed the cat.", audioFront: "TTS: Feed the cat", audioBack: "TTS: Don't forget to feed the cat." },
-                { term: "Clean out the litter box", definition: "To remove waste from a cat's toilet area.", defTrans: "Limpar a caixa de areia", example: "I hate to clean out the litter box.", audioFront: "TTS: Clean out the litter box", audioBack: "TTS: I hate to clean out the litter box." },
-                { term: "Take the pet to the vet", definition: "To bring an animal to the doctor.", defTrans: "Levar o animal ao veterinário", example: "If he is sick, take the pet to the vet.", audioFront: "TTS: Take the pet to the vet", audioBack: "TTS: If he is sick, take the pet to the vet." },
+                { term: "Work on yourself", definition: "To put effort into personal growth.", defTrans: "Trabalhar em si mesmo", example: "It is important to work on yourself every day.", audioFront: "TTS: Work on yourself", audioBack: "TTS: It is important to work on yourself every day." },
+                { term: "Learn a new skill", definition: "To acquire a new ability.", defTrans: "Aprender uma nova habilidade", example: "I want to learn a new skill this year, like coding.", audioFront: "TTS: Learn a new skill", audioBack: "TTS: I want to learn a new skill this year, like coding." },
+                { term: "Step out of your comfort zone", definition: "To do something that you are not comfortable or familiar with.", defTrans: "Sair da sua zona de conforto", example: "You must step out of your comfort zone to grow.", audioFront: "TTS: Step out of your comfort zone", audioBack: "TTS: You must step out of your comfort zone to grow." },
+                { term: "Develop a new hobby", definition: "To start doing a new activity for fun.", defTrans: "Desenvolver um novo hobby", example: "I decided to develop a new hobby to relax.", audioFront: "TTS: Develop a new hobby", audioBack: "TTS: I decided to develop a new hobby to relax." },
+                { term: "Build your confidence", definition: "To increase your belief in your own abilities.", defTrans: "Construir sua confiança", example: "Public speaking will help build your confidence.", audioFront: "TTS: Build your confidence", audioBack: "TTS: Public speaking will help build your confidence." },
+                { term: "Improve your communication skills", definition: "To get better at talking and listening to others.", defTrans: "Melhorar suas habilidades de comunicação", example: "Reading books can improve your communication skills.", audioFront: "TTS: Improve your communication skills", audioBack: "TTS: Reading books can improve your communication skills." },
                 
-                { term: "A dog person", definition: "Someone who prefers dogs over cats.", defTrans: "Uma pessoa de cachorro", example: "I am definitely a dog person.", audioFront: "TTS: A dog person", audioBack: "TTS: I am definitely a dog person." },
-                { term: "A mixed breed", definition: "An animal with parents of different breeds.", defTrans: "Sem raça definida (vira-lata)", example: "My rescue dog is a mixed breed.", audioFront: "TTS: A mixed breed", audioBack: "TTS: My rescue dog is a mixed breed." },
-                { term: "A purebred", definition: "An animal with parents of the same breed.", defTrans: "De raça pura", example: "They bought a purebred cat.", audioFront: "TTS: A purebred", audioBack: "TTS: They bought a purebred cat." },
-                { term: "Covered in fur", definition: "Having thick hair all over the body.", defTrans: "Coberto de pelo", example: "The rabbit is covered in fur.", audioFront: "TTS: Covered in fur", audioBack: "TTS: The rabbit is covered in fur." },
-                { term: "It has paws", definition: "Stating an animal has soft padded feet.", defTrans: "Tem patas", example: "A cat is quiet because it has paws.", audioFront: "TTS: It has paws", audioBack: "TTS: A cat is quiet because it has paws." },
-                { term: "Animal species", definition: "A group of living organisms consisting of similar individuals.", defTrans: "Espécie animal", example: "There are many animal species in the jungle.", audioFront: "TTS: Animal species", audioBack: "TTS: There are many animal species in the jungle." },
+                { term: "Set a goal", definition: "To define a specific target you want to reach.", defTrans: "Definir uma meta", example: "You should set a goal for yourself.", audioFront: "TTS: Set a goal", audioBack: "TTS: You should set a goal for yourself." },
+                { term: "A short-term goal", definition: "A target you want to reach in the near future.", defTrans: "Uma meta de curto prazo", example: "Losing two kilos is a short-term goal.", audioFront: "TTS: A short-term goal", audioBack: "TTS: Losing two kilos is a short-term goal." },
+                { term: "A long-term goal", definition: "A target you want to reach far in the future.", defTrans: "Uma meta de longo prazo", example: "Buying a house is a long-term goal.", audioFront: "TTS: A long-term goal", audioBack: "TTS: Buying a house is a long-term goal." },
+                { term: "Make a plan", definition: "To map out the steps to achieve an objective.", defTrans: "Fazer um plano", example: "To succeed, you need to make a plan.", audioFront: "TTS: Make a plan", audioBack: "TTS: To succeed, you need to make a plan." },
+                { term: "Track your progress", definition: "To monitor how close you are to your goal.", defTrans: "Acompanhar seu progresso", example: "Use a journal to track your progress.", audioFront: "TTS: Track your progress", audioBack: "TTS: Use a journal to track your progress." },
+                { term: "Achieve your goals", definition: "To successfully reach the targets you set.", defTrans: "Alcançar suas metas", example: "Hard work helps you achieve your goals.", audioFront: "TTS: Achieve your goals", audioBack: "TTS: Hard work helps you achieve your goals." },
                 
-                { term: "See an animal in the wild", definition: "To observe creatures in their natural habitat.", defTrans: "Ver um animal na natureza", example: "I want to see an animal in the wild.", audioFront: "TTS: See an animal in the wild", audioBack: "TTS: I want to see an animal in the wild." },
-                { term: "I'm allergic to", definition: "Having an immune response to something.", defTrans: "Sou alérgico(a) a", example: "I can't go near cats, I'm allergic to them.", audioFront: "TTS: I'm allergic to", audioBack: "TTS: I can't go near cats, I'm allergic to them." },
-                { term: "I'm afraid of", definition: "Feeling fear or anxiety about something.", defTrans: "Tenho medo de", example: "I'm afraid of big spiders.", audioFront: "TTS: I'm afraid of", audioBack: "TTS: I'm afraid of big spiders." },
-                { term: "Do you have any pets?", definition: "Asking if someone owns domestic animals.", defTrans: "Você tem animais de estimação?", example: "Do you have any pets?", audioFront: "TTS: Do you have any pets?", audioBack: "TTS: Do you have any pets?" },
-                { term: "What's your favorite animal?", definition: "Asking about someone's preferred creature.", defTrans: "Qual é o seu animal favorito?", example: "What's your favorite animal?", audioFront: "TTS: What's your favorite animal?", audioBack: "TTS: What's your favorite animal?" },
-                { term: "A big responsibility", definition: "A heavy duty or obligation.", defTrans: "Uma grande responsabilidade", example: "Having a puppy is a big responsibility.", audioFront: "TTS: A big responsibility", audioBack: "TTS: Having a puppy is a big responsibility." }
+                { term: "Take care of your mental health", definition: "To ensure your psychological well-being.", defTrans: "Cuidar da sua saúde mental", example: "You must take care of your mental health.", audioFront: "TTS: Take care of your mental health", audioBack: "TTS: You must take care of your mental health." },
+                { term: "Manage stress", definition: "To control and reduce feelings of anxiety and pressure.", defTrans: "Gerenciar o estresse", example: "Meditation is a great way to manage stress.", audioFront: "TTS: Manage stress", audioBack: "TTS: Meditation is a great way to manage stress." },
+                { term: "Practice mindfulness", definition: "To intentionally focus on the present moment.", defTrans: "Praticar atenção plena", example: "I try to practice mindfulness every morning.", audioFront: "TTS: Practice mindfulness", audioBack: "TTS: I try to practice mindfulness every morning." },
+                { term: "Live in the moment", definition: "To focus on the present rather than the past or future.", defTrans: "Viver o momento", example: "Stop worrying about the future and live in the moment.", audioFront: "TTS: Live in the moment", audioBack: "TTS: Stop worrying about the future and live in the moment." },
+                { term: "A healthy work-life balance", definition: "The proper division of time between working and relaxing.", defTrans: "Um equilíbrio saudável entre trabalho e vida", example: "She finally found a healthy work-life balance.", audioFront: "TTS: A healthy work-life balance", audioBack: "TTS: She finally found a healthy work-life balance." },
+                { term: "Take time for yourself", definition: "To spend time doing things you enjoy for your own well-being.", defTrans: "Tirar um tempo para si mesmo", example: "When you are tired, you should take time for yourself.", audioFront: "TTS: Take time for yourself", audioBack: "TTS: When you are tired, you should take time for yourself." }
             ]
         }
     ],
@@ -684,73 +673,68 @@ window.initLesson({
     // GLOSSARY (All 54 items + Context words)
     // ======================================================
     glossary:[
-        // 2A: Types of Animals
-        { topic: "Animals", term: "dog", definition: "A domesticated carnivorous mammal.", translation: "Cachorro" },
-        { topic: "Animals", term: "cat", definition: "A small domesticated carnivorous mammal.", translation: "Gato" },
-        { topic: "Animals", term: "puppy", definition: "A young dog.", translation: "Filhote de cachorro" },
-        { topic: "Animals", term: "kitten", definition: "A young cat.", translation: "Filhote de gato" },
-        { topic: "Animals", term: "rabbit", definition: "A burrowing, plant-eating mammal.", translation: "Coelho" },
-        { topic: "Animals", term: "cow", definition: "A large domestic animal kept for milk/beef.", translation: "Vaca" },
-        { topic: "Animals", term: "pig", definition: "A domestic animal raised for pork.", translation: "Porco" },
-        { topic: "Animals", term: "horse", definition: "A large plant-eating domesticated mammal.", translation: "Cavalo" },
-        { topic: "Animals", term: "lion", definition: "A large tawny-colored cat.", translation: "Leão" },
-        { topic: "Animals", term: "bear", definition: "A large, heavy mammal with thick fur.", translation: "Urso" },
-        { topic: "Animals", term: "monkey", definition: "A small to medium-sized primate.", translation: "Macaco" },
-        { topic: "Animals", term: "whale", definition: "A very large marine mammal.", translation: "Baleia" },
+        // 2A: Concepts & Well-being
+        { topic: "Concepts", term: "development", definition: "The process of developing.", translation: "Desenvolvimento" },
+        { topic: "Concepts", term: "improvement", definition: "Making something better.", translation: "Melhoria" },
+        { topic: "Concepts", term: "progress", definition: "Forward movement toward a goal.", translation: "Progresso" },
+        { topic: "Concepts", term: "goal", definition: "An objective or aim.", translation: "Meta / Objetivo" },
+        { topic: "Concepts", term: "skill", definition: "The ability to do something well.", translation: "Habilidade" },
+        { topic: "Well-being", term: "well-being", definition: "The state of being comfortable and healthy.", translation: "Bem-estar" },
+        { topic: "Well-being", term: "mindfulness", definition: "Focusing awareness on the present moment.", translation: "Atenção plena" },
+        { topic: "Well-being", term: "meditation", definition: "The practice of thinking deeply in silence.", translation: "Meditação" },
+        { topic: "Well-being", term: "stress", definition: "A state of mental or emotional strain.", translation: "Estresse" },
+        { topic: "Concepts", term: "confidence", definition: "A feeling of self-assurance.", translation: "Confiança" },
+        { topic: "Concepts", term: "motivation", definition: "The reason for acting in a particular way.", translation: "Motivação" },
+        { topic: "Concepts", term: "habit", definition: "A settled or regular tendency or practice.", translation: "Hábito" },
 
-        // 2A: Animal Parts & Places
-        { topic: "Places/People", term: "vet", definition: "A person qualified to treat animals.", translation: "Veterinário(a)" },
-        { topic: "Places", term: "zoo", definition: "An establishment maintaining wild animals.", translation: "Zoológico" },
-        { topic: "Items", term: "leash", definition: "A strap for restraining a dog.", translation: "Coleira (guia)" },
-        { topic: "Items", term: "cage", definition: "A structure in which animals are confined.", translation: "Gaiola" },
-        { topic: "Items", term: "tank", definition: "A receptacle for keeping fish.", translation: "Aquário / Tanque" },
-        { topic: "Parts", term: "fur", definition: "The short, soft hair of certain animals.", translation: "Pelo" },
-        { topic: "Parts", term: "feather", definition: "Appendages growing from a bird's skin.", translation: "Pena" },
-        { topic: "Parts", term: "scale", definition: "Plates protecting the skin of fish.", translation: "Escama" },
-        { topic: "Parts", term: "paw", definition: "An animal's foot having claws and pads.", translation: "Pata" },
-        { topic: "Parts", term: "claw", definition: "A curved pointed nail on the foot.", translation: "Garra" },
-        { topic: "Parts", term: "tail", definition: "The hindmost part of an animal.", translation: "Rabo / Cauda" },
-        { topic: "Parts", term: "wing", definition: "A forelimb used for flying.", translation: "Asa" },
+        // 2A: Verbs (Growth & Management)
+        { topic: "Verbs", term: "to-improve", definition: "To make better.", translation: "Melhorar" },
+        { topic: "Verbs", term: "to-develop", definition: "To grow or become more mature.", translation: "Desenvolver" },
+        { topic: "Verbs", term: "to-grow", definition: "To increase in size or maturity.", translation: "Crescer" },
+        { topic: "Verbs", term: "to-learn", definition: "To acquire knowledge.", translation: "Aprender" },
+        { topic: "Verbs", term: "to-set", definition: "To fix or establish (a goal).", translation: "Definir" },
+        { topic: "Verbs", term: "to-achieve", definition: "To successfully bring about a desired result.", translation: "Alcançar" },
+        { topic: "Verbs", term: "to-accomplish", definition: "To complete successfully.", translation: "Realizar" },
+        { topic: "Verbs", term: "to-plan", definition: "To decide on and arrange in advance.", translation: "Planejar" },
+        { topic: "Verbs", term: "to-manage", definition: "To deal with a difficult situation.", translation: "Gerenciar / Lidar" },
+        { topic: "Verbs", term: "to-encourage", definition: "To give support and hope.", translation: "Encorajar" },
+        { topic: "Verbs", term: "to-focus", definition: "To pay particular attention to.", translation: "Focar" },
+        { topic: "Verbs", term: "to-relax", definition: "To rest from work or become less tense.", translation: "Relaxar" },
 
-        // 2A: Verbs & Adjectives
-        { topic: "Verbs", term: "to-feed", definition: "To give food to an animal.", translation: "Alimentar" },
-        { topic: "Verbs", term: "to-walk", definition: "To guide a dog outdoors.", translation: "Passear (com cão)" },
-        { topic: "Verbs", term: "to-train", definition: "To teach an animal a skill.", translation: "Treinar / Adestrar" },
-        { topic: "Verbs", term: "to-bark", definition: "To make the cry of a dog.", translation: "Latir" },
-        { topic: "Verbs", term: "to-adopt", definition: "To take a pet as one's own.", translation: "Adotar" },
-        { topic: "Adjectives", term: "domestic", definition: "Kept as a pet or on a farm.", translation: "Doméstico" },
-        { topic: "Adjectives", term: "wild", definition: "Living in a state of nature.", translation: "Selvagem" },
-        { topic: "Adjectives", term: "fluffy", definition: "Covered with soft, thick hair.", translation: "Fofinho / Peludo" },
-        { topic: "Adjectives", term: "loyal", definition: "Giving firm and constant support.", translation: "Leal" },
-        { topic: "Adjectives", term: "fierce", definition: "Displaying intense aggressiveness.", translation: "Feroz" },
-        { topic: "Adjectives", term: "dangerous", definition: "Likely to cause harm.", translation: "Perigoso" },
-        { topic: "Adjectives", term: "endangered", definition: "At risk of extinction.", translation: "Ameaçado de extinção" },
+        // 2A: Adjectives
+        { topic: "Adjectives", term: "personal", definition: "Belonging to a particular person.", translation: "Pessoal" },
+        { topic: "Adjectives", term: "professional", definition: "Relating to a profession.", translation: "Profissional" },
+        { topic: "Adjectives", term: "motivated", definition: "Highly driven to do something.", translation: "Motivado(a)" },
+        { topic: "Adjectives", term: "confident", definition: "Feeling certain about yourself.", translation: "Confiante" },
+        { topic: "Adjectives", term: "positive", definition: "Optimistic or confident.", translation: "Positivo(a)" },
+        { topic: "Adjectives", term: "stressed", definition: "Experiencing emotional strain.", translation: "Estressado(a)" },
+        { topic: "Adjectives", term: "anxious", definition: "Experiencing worry or unease.", translation: "Ansioso(a)" },
+        { topic: "Adjectives", term: "healthy", definition: "In a good physical or mental condition.", translation: "Saudável" },
+        { topic: "Adjectives", term: "balanced", definition: "Arranged in good proportions.", translation: "Equilibrado(a)" },
+        { topic: "Adjectives", term: "achievable", definition: "Able to be reached successfully.", translation: "Alcançável" },
+        { topic: "Adjectives", term: "realistic", definition: "Having a sensible idea of what can be achieved.", translation: "Realista" },
+        { topic: "Adjectives", term: "specific", definition: "Clearly defined or identified.", translation: "Específico(a)" },
 
         // 3A: Expressions
-        { topic: "Expressions", term: "have-pet", definition: "To keep an animal for companionship.", translation: "Ter um animal de estimação" },
-        { topic: "Expressions", term: "own-pet", definition: "To possess an animal.", translation: "Possuir um animal de estimação" },
-        { topic: "Expressions", term: "walk-the-dog", definition: "To take a dog out for exercise.", translation: "Passear com o cachorro" },
-        { topic: "Expressions", term: "feed-cat", definition: "To give food to a feline.", translation: "Alimentar o gato" },
-        { topic: "Expressions", term: "clean-litter-box", definition: "To remove waste from a cat's toilet.", translation: "Limpar a caixa de areia" },
-        { topic: "Expressions", term: "take-pet-vet", definition: "To bring an animal to the doctor.", translation: "Levar o animal ao veterinário" },
+        { topic: "Expressions", term: "work-on-yourself", definition: "To put effort into personal growth.", translation: "Trabalhar em si mesmo" },
+        { topic: "Expressions", term: "learn-skill", definition: "To acquire a new ability.", translation: "Aprender uma nova habilidade" },
+        { topic: "Expressions", term: "comfort-zone", definition: "Doing things you are familiar with.", translation: "Zona de conforto" },
+        { topic: "Expressions", term: "develop-hobby", definition: "To start a new activity for fun.", translation: "Desenvolver um novo hobby" },
+        { topic: "Expressions", term: "build-confidence", definition: "To increase belief in your abilities.", translation: "Construir sua confiança" },
+        { topic: "Expressions", term: "improve-communication", definition: "To get better at talking to others.", translation: "Melhorar habilidades de comunicação" },
         
-        { topic: "Expressions", term: "dog-person", definition: "Someone who prefers dogs over cats.", translation: "Pessoa de cachorro" },
-        { topic: "Expressions", term: "mixed-breed", definition: "An animal with parents of different breeds.", translation: "Sem raça definida (vira-lata)" },
-        { topic: "Expressions", term: "purebred", definition: "An animal with parents of the same breed.", translation: "De raça pura" },
-        { topic: "Expressions", term: "covered-in-fur", definition: "Having thick hair all over the body.", translation: "Coberto de pelo" },
-        { topic: "Expressions", term: "has-paws", definition: "Stating an animal has soft padded feet.", translation: "Tem patas" },
-        { topic: "Expressions", term: "animal-species", definition: "A group of living organisms.", translation: "Espécie animal" },
+        { topic: "Expressions", term: "set-goal", definition: "To define a specific target.", translation: "Definir uma meta" },
+        { topic: "Expressions", term: "short-term", definition: "A target you want to reach soon.", translation: "Meta de curto prazo" },
+        { topic: "Expressions", term: "long-term", definition: "A target you want to reach in the future.", translation: "Meta de longo prazo" },
+        { topic: "Expressions", term: "make-plan", definition: "To map out steps to an objective.", translation: "Fazer um plano" },
+        { topic: "Expressions", term: "track-progress", definition: "To monitor how close you are to a goal.", translation: "Acompanhar seu progresso" },
+        { topic: "Expressions", term: "to-achieve", definition: "To successfully reach targets.", translation: "Alcançar suas metas" },
         
-        { topic: "Expressions", term: "see-animal-wild", definition: "To observe creatures in their habitat.", translation: "Ver um animal na natureza" },
-        { topic: "Expressions", term: "allergic-to", definition: "Having an immune response to something.", translation: "Alérgico a" },
-        { topic: "Expressions", term: "afraid-of", definition: "Feeling fear about something.", translation: "Com medo de" },
-        { topic: "Expressions", term: "do-you-have-pets", definition: "Asking if someone owns domestic animals.", translation: "Você tem animais de estimação?" },
-        { topic: "Expressions", term: "favorite-animal", definition: "Asking about someone's preferred creature.", translation: "Animal favorito" },
-        { topic: "Expressions", term: "big-responsibility", definition: "A heavy duty or obligation.", translation: "Uma grande responsabilidade" },
-
-        // Additional Context Words
-        { topic: "Context", term: "pet", definition: "A domestic or tamed animal kept for companionship.", translation: "Animal de estimação" },
-        { topic: "Context", term: "shelter", definition: "A place giving temporary protection to animals.", translation: "Abrigo" },
-        { topic: "Context", term: "fear", definition: "An unpleasant emotion caused by the belief that someone or something is dangerous.", translation: "Medo" }
+        { topic: "Expressions", term: "mental-health", definition: "Psychological well-being.", translation: "Saúde mental" },
+        { topic: "Expressions", term: "manage-stress", definition: "To reduce feelings of anxiety.", translation: "Gerenciar o estresse" },
+        { topic: "Expressions", term: "practice-mindfulness", definition: "To focus on the present moment.", translation: "Praticar atenção plena" },
+        { topic: "Expressions", term: "live-in-moment", definition: "To focus on the present.", translation: "Viver o momento" },
+        { topic: "Expressions", term: "work-life-balance", definition: "Division of time between work and life.", translation: "Equilíbrio entre trabalho e vida pessoal" },
+        { topic: "Expressions", term: "take-time-yourself", definition: "To do things you enjoy for well-being.", translation: "Tirar um tempo para si mesmo" }
     ]
 });
