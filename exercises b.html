@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercises | English Block Assembling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STICKY METADATA HEADER -->
+<header id="metadata-header">
+    <!-- SWITCHER BUTTON (Left side) -->
+    <a href="index.html?lesson=home" class="mode-switch-btn" title="Go to Course">
+        🏠 COURSE
+    </a>
+
+    <div class="header-content">
+        <span id="display-block" style="color:var(--accent-red); font-weight:900;">EXERCISES</span> • 
+        <span id="display-topic">PRACTICE PORTAL</span>
+    </div>
+</header>
+
+    <!-- RETRACTABLE MENU -->
+    <button id="menu-toggle" aria-label="Toggle Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <nav id="slide-menu">
+        <div class="compact-nav-row">
+            <a href="index.html?lesson=home" class="home-link">🏠 HOME</a>
+            <a href="exercises.html?id=ex-home" class="home-link">🏋️ PRACTICE</a>
+        </div>
+        <div class="menu-header">
+            <div class="menu-logo"><span class="red-text">ENGLISH</span> Block Assembling</div>
+            <div id="menu-block-label">PRACTICE</div>
+            <div id="menu-topic-label">Exercises</div>
+        </div>
+        <ul id="nav-list"></ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-container">
+        <div id="lesson-content">
+            <div class="loader-container" style="text-align: center; padding-top: 50px;">
+                <div class="loader">Loading Exercises...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- NAVIGATION UI -->
+    <div id="ui-cluster">
+        <div class="nav-buttons">
+            <button id="prev-btn" class="nav-arrow" disabled>←</button>
+            <button id="next-btn" class="nav-arrow">→</button>
+        </div>
+    </div>
+
+    <audio id="global-audio-player"></audio>
+    <div id="tooltip-container" class="tooltip-box"></div>
+
+    <script src="engine-exercises.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const lessonId = urlParams.get('id');
+        const contentDiv = document.getElementById('lesson-content');
+
+        if (!lessonId) {
+            contentDiv.innerHTML = `<div style="text-align:center; padding:50px;"><h2>Setup Required</h2><p>Missing ID.</p></div>`;
+        } else {
+            const dataScript = document.createElement('script');
+            dataScript.src = `data/exercises/${lessonId}.js`;
+            dataScript.onerror = () => { contentDiv.innerHTML = `<h3>❌ Error: File Not Found</h3>`; };
+            document.head.appendChild(dataScript);
+        }
+    </script>
+</body>
+</html>
