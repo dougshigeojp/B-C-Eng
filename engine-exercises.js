@@ -20,6 +20,8 @@ let isSessionFinished = false;
 window.userRecordings = {}; 
 let mediaRecorder = null;
 let audioChunks = [];
+// --- BROWSER SUPPORT CHECKER ---
+const supportsSpeechRecognition = ('SpeechRecognition' in window) || ('webkitSpeechRecognition' in window);
 
 const MATCH_ORANGES = [
     { bg: '#fff3e0', border: '#ffb74d' }, 
@@ -103,12 +105,37 @@ window.initExercise = function(data) {
     }
 };
 
+// --- HEADER & METADATA RENDERER ---
 function renderHeaderInfo() {
-    const update = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-    update('ex-grade', exData.grade);
-    update('ex-bimester', "BIM " + exData.bimester);
-    update('ex-chapter', "CH " + exData.chapter);
-    update('menu-grade-label', exData.grade ? exData.grade.toUpperCase() : "");
+    const urlParams = new URLSearchParams(window.location.search);
+    const lessonId = urlParams.get('id');
+    
+    let lessonName = "PRACTICE EXERCISE";
+
+    // Bulletproof extraction: Try to match the URL ID. 
+    // If it fails (or if file was renamed), just grab the first available name in the data!
+    if (exData.lessonNames) {
+        if (lessonId && exData.lessonNames[lessonId]) {
+            lessonName = exData.lessonNames[lessonId];
+        } else {
+            const availableNames = Object.values(exData.lessonNames);
+            if (availableNames.length > 0) {
+                lessonName = availableNames[0];
+            }
+        }
+    }
+
+    // Helper to safely update HTML text
+    const update = (id, val) => { 
+        const el = document.getElementById(id); 
+        if (el) el.textContent = val; 
+    };
+    
+    // Update the Top Header
+    update('display-topic', lessonName);
+    
+    // Update the Sidebar Menu subtitle
+    update('menu-topic-label', lessonName);
 }
 
 // --- 4. RANDOMIZER ---
@@ -469,6 +496,7 @@ window.resetSequence = function(bankId, zoneId) {
 };
 
 // --- EXERCISE 7 (Step-by-step TTS & STT Dictation) ---
+// --- EXERCISE 7 (Multiline Textareas & Safe STT Dictation) ---
 function renderType7(item, idx, isDone) {
     const state = getState(7, idx) || { step: 0, answers: {} };
     let currentStep = state.step;
@@ -482,7 +510,7 @@ function renderType7(item, idx, isDone) {
         
         let val = state.answers[i] || '';
         let isStepDone = (i < currentStep) || isDone; 
-        let css = "width:100%; padding:10px; border:2px solid #ccc; border-radius:5px; font-family:'Poppins'; font-weight:bold; margin:0;";
+        let css = "width:100%; padding:10px; border:2px solid #ccc; border-radius:5px; font-family:'Poppins'; font-weight:bold; margin:0; line-height:1.4; resize:vertical; min-height:54px;";
         let hint = "";
         let ttsStr = item.swaps[i].expected.replace(/'/g, "\\'");
 
@@ -501,15 +529,24 @@ function renderType7(item, idx, isDone) {
             ? `Start with: <b>"${item.base_sentence}"</b> <br> Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${item.swaps[i].cue}</span>`
             : `Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${item.swaps[i].cue}</span>`;
 
+        // Only draw the Mic button if the browser supports it
+        let micButtonHtml = (!isStepDone && supportsSpeechRecognition) 
+            ? `<button class="tts-btn" style="padding:10px; height:54px; min-width:44px; background:var(--primary-blue); display:flex; align-items:center; justify-content:center;" onclick="toggleDictation('input-7-${idx}-${i}', this)" title="Speak your answer">🎤</button>` 
+            : '';
+
+        let ttsButtonHtml = isStepDone 
+            ? `<button class="tts-btn" style="padding:10px; height:54px; min-width:44px; display:flex; align-items:center; justify-content:center; background:#d4edda; color:var(--success-green); border:2px solid var(--success-green);" onclick="playTTS('${ttsStr}')">🔊</button>` 
+            : '';
+
         html += `
             <div style="background:#f9f9f9; padding:15px; border-radius:8px; border-left:4px solid var(--primary-blue);">
                 <p style="font-size:0.9rem; margin-bottom:10px;">${instructionText}</p>
-                <div style="display:flex; gap:10px; align-items:center; width:100%;">
+                <div style="display:flex; gap:10px; align-items:flex-start; width:100%;">
                     <div style="flex-grow:1;">
-                        <input type="text" id="input-7-${idx}-${i}" class="drill-input" value="${val}" placeholder="Type or speak sentence..." style="${css}" ${isStepDone ? 'disabled' : ''}>
+                        <textarea id="input-7-${idx}-${i}" class="drill-input" placeholder="Type ${supportsSpeechRecognition ? 'or speak ' : ''}sentence..." rows="2" style="${css}" ${isStepDone ? 'disabled' : ''}>${val}</textarea>
                     </div>
-                    ${!isStepDone ? `<button class="tts-btn" style="padding:10px; height:44px; min-width:44px; background:var(--primary-blue); display:flex; align-items:center; justify-content:center;" onclick="toggleDictation('input-7-${idx}-${i}', this)" title="Speak your answer">🎤</button>` : ''}
-                    ${isStepDone ? `<button class="tts-btn" style="padding:10px; height:44px; min-width:44px; display:flex; align-items:center; justify-content:center; background:#d4edda; color:var(--success-green); border:2px solid var(--success-green);" onclick="playTTS('${ttsStr}')">🔊</button>` : ''}
+                    ${micButtonHtml}
+                    ${ttsButtonHtml}
                 </div>
                 ${hint}
                 ${!isStepDone ? `<button class="item-check-btn" onclick="checkIndividualItem(7, ${idx})" style="margin-top:10px;">Check Step</button>` : ''}
@@ -519,7 +556,7 @@ function renderType7(item, idx, isDone) {
     return html + `</div>`;
 }
 
-// --- EXERCISE 8 (Step-by-step TTS & STT Dictation) ---
+// --- EXERCISE 8 (Multiline Textareas & Safe STT Dictation) ---
 function renderType8(item, idx, isDone) {
     const state = getState(8, idx) || { step: 0, answers: {} };
     let currentStep = state.step;
@@ -529,12 +566,12 @@ function renderType8(item, idx, isDone) {
         if (i >= item.stages.length) continue; 
         let val = state.answers[i] || '';
         let isStepDone = (i < currentStep) || isDone; 
-        let css = "width:100%; padding:10px; border:2px solid #ccc; border-radius:5px; font-family:'Poppins'; margin:0;";
+        let css = "width:100%; padding:10px; border:2px solid #ccc; border-radius:5px; font-family:'Poppins'; margin:0; line-height:1.4; resize:vertical; min-height:54px;";
         let hint = "";
         let ttsStr = item.stages[i].expected.replace(/'/g, "\\'");
 
         if (isStepDone) {
-            if (val === item.stages[i].expected.toLowerCase()) {
+            if (val.toLowerCase() === item.stages[i].expected.toLowerCase()) {
                 css += " border-color:var(--success-green); background:#d4edda; pointer-events:none;";
             } else {
                 css += " border-color:var(--error-red); background:#f8d7da; pointer-events:none;";
@@ -542,16 +579,25 @@ function renderType8(item, idx, isDone) {
             }
         }
 
+        // Only draw the Mic button if the browser supports it
+        let micButtonHtml = (!isStepDone && supportsSpeechRecognition) 
+            ? `<button class="tts-btn" style="padding:10px; height:54px; min-width:44px; background:var(--primary-blue); display:flex; align-items:center; justify-content:center;" onclick="toggleDictation('input-8-${idx}-${i}', this)" title="Speak your answer">🎤</button>` 
+            : '';
+
+        let ttsButtonHtml = isStepDone 
+            ? `<button class="tts-btn" style="padding:10px; height:54px; min-width:44px; display:flex; align-items:center; justify-content:center; background:#d4edda; color:var(--success-green); border:2px solid var(--success-green);" onclick="playTTS('${ttsStr}')">🔊</button>` 
+            : '';
+
         html += `
             <div style="background:#f9f9f9; padding:15px; border-radius:8px; border-left:4px solid var(--primary-blue);">
                 <div style="font-size:0.8rem; font-weight:bold; color:#666; margin-bottom:5px;">STAGE ${i+1}</div>
                 <div style="font-weight:bold; color:var(--accent-orange); margin-bottom:8px;">+ "${item.stages[i].incoming_block}"</div>
-                <div style="display:flex; gap:10px; align-items:center; width:100%;">
+                <div style="display:flex; gap:10px; align-items:flex-start; width:100%;">
                     <div style="flex-grow:1;">
-                        <input type="text" id="input-8-${idx}-${i}" class="drill-input" value="${val}" placeholder="Type or speak sentence..." style="${css}" ${isStepDone ? 'disabled' : ''}>
+                        <textarea id="input-8-${idx}-${i}" class="drill-input" placeholder="Type ${supportsSpeechRecognition ? 'or speak ' : ''}sentence..." rows="2" style="${css}" ${isStepDone ? 'disabled' : ''}>${val}</textarea>
                     </div>
-                    ${!isStepDone ? `<button class="tts-btn" style="padding:10px; height:44px; min-width:44px; background:var(--primary-blue); display:flex; align-items:center; justify-content:center;" onclick="toggleDictation('input-8-${idx}-${i}', this)" title="Speak your answer">🎤</button>` : ''}
-                    ${isStepDone ? `<button class="tts-btn" style="padding:10px; height:44px; min-width:44px; display:flex; align-items:center; justify-content:center; background:#d4edda; color:var(--success-green); border:2px solid var(--success-green);" onclick="playTTS('${ttsStr}')">🔊</button>` : ''}
+                    ${micButtonHtml}
+                    ${ttsButtonHtml}
                 </div>
                 ${hint}
                 ${!isStepDone ? `<button class="item-check-btn" onclick="checkIndividualItem(8, ${idx})" style="margin-top:10px;">Check Stage</button>` : ''}
@@ -671,51 +717,59 @@ window.playUserRecording = function(page, idx) {
 
 
 // --- SPEECH-TO-TEXT (DICTATION) HELPER ---
+// --- SPEECH-TO-TEXT (DICTATION) HELPER ---
 window.activeDictation = null;
 window.toggleDictation = function(inputId, btn) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     
     if (!SpeechRecognition) {
-        alert("Speech Recognition is not supported in this browser. Please use Chrome, Edge, or Safari.");
+        alert("Speech recognition is not supported on this browser.");
         return;
     }
 
-    // If currently listening, stop it
     if (window.activeDictation) {
         window.activeDictation.stop();
         return;
     }
 
     const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US'; // Set to English
+    recognition.lang = 'en-US'; 
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
     recognition.onstart = function() {
         window.activeDictation = recognition;
         btn.style.background = "var(--error-red)";
-        btn.innerHTML = "🛑"; // Change to stop icon while listening
+        btn.innerHTML = "🛑"; 
     };
 
     recognition.onresult = function(event) {
         const transcript = event.results[0][0].transcript;
         const inputEl = document.getElementById(inputId);
         if (inputEl) {
-            inputEl.value = transcript; // Auto-fill the input box with spoken words
+            // Strip the trailing period Safari sometimes adds automatically
+            inputEl.value = transcript.replace(/\.$/, ''); 
         }
     };
 
     recognition.onerror = function(event) {
         console.warn("Speech recognition error:", event.error);
+        if(event.error === 'not-allowed') {
+            alert("Microphone access was denied. Please check your browser permissions.");
+        }
     };
 
     recognition.onend = function() {
         window.activeDictation = null;
         btn.style.background = "var(--primary-blue)";
-        btn.innerHTML = "🎤"; // Reset to mic icon
+        btn.innerHTML = "🎤"; 
     };
 
-    recognition.start();
+    try {
+        recognition.start();
+    } catch (e) {
+        console.error("Speech Recognition failed to start:", e);
+    }
 };
 
 

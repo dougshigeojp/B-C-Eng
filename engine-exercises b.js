@@ -158,16 +158,28 @@ window.initExercise = function(data) {
     }
 };
 
+// --- HEADER & METADATA RENDERER ---
 function renderHeaderInfo() {
-    // Safety check for elements
-    const update = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
+    // 1. Get the current exercise ID from the URL (e.g., "ex-SAMPLE")
+    const urlParams = new URLSearchParams(window.location.search);
+    const lessonId = urlParams.get('id');
+    
+    // 2. Look up the name from the data file, fallback to "Practice Exercise" if not found
+    const lessonName = (exData.lessonNames && lessonId && exData.lessonNames[lessonId]) 
+                        ? exData.lessonNames[lessonId] 
+                        : "PRACTICE EXERCISE";
+
+    // Helper to safely update HTML text
+    const update = (id, val) => { 
+        const el = document.getElementById(id); 
+        if (el) el.textContent = val; 
     };
-    update('ex-grade', exData.grade);
-    update('ex-bimester', "BIM " + exData.bimester);
-    update('ex-chapter', "CH " + exData.chapter);
-    update('menu-grade-label', exData.grade ? exData.grade.toUpperCase() : "");
+    
+    // 3. Update the Top Header
+    update('display-topic', lessonName);
+    
+    // 4. Update the Sidebar Menu subtitle
+    update('menu-topic-label', lessonName);
 }
 
 // 3. RANDOMIZER
