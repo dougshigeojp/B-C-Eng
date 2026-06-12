@@ -2,6 +2,154 @@
  * ENGINE-EXERCISES.js - MASTER V10 (Final Integrated Version)
  */
 
+// ============================================================
+//  SESSION CONFIGURATOR — Initialization & Modal Controller
+//  This block runs before the engine boots. It intercepts
+//  initExercise(), shows the playlist modal, and once the
+//  student picks a track, sets `activePageList` so the ← / →
+//  buttons skip any page NOT in the chosen session.
+// ============================================================
+
+/** Global: ordered list of page numbers the student will navigate.
+ *  Default = all 15 pages. Overwritten when a track is selected. */
+let activePageList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
+/* ---------- Playlist Definitions ---------- */
+const SC_PLAYLISTS = {
+    // Group 1 — By Time
+    time: {
+        complete:  [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        quick:     [2,5,9],
+        homework:  [1,3,6,11,14],
+        mock:      [4,7,8,10,12,13,15]
+    },
+    // Group 2 — By Category
+    category: {
+        receptive:  [1,3,4,5],
+        structural: [2,6,9,10],
+        acoustic:   [11,12,13],
+        generative: [7,8,14,15]
+    }
+};
+
+/* Exercise labels (reused from sidebar) */
+const SC_LABELS = [
+    "Block Harvesting", "Mechanic Identification", "Categorization Sort",
+    "The Deconstruction Drill", "The Block Detective", "Contextual Assembly",
+    "Block Swapping", "The Expansion Drill", "The Connector Bridge",
+    "The Block Jumble", "The Echo-Shadow", "Backchaining",
+    "The Rhythmic Pulse", "The Free Build", "The Next Chapter"
+];
+
+/* ---------- Populate Custom Checkbox List ---------- */
+(function populateCheckboxes() {
+    // Wait for DOM — the HTML block is above the <script> tag,
+    // so the element exists by the time this runs.
+    const list = document.getElementById('sc-checkbox-list');
+    if (!list) return;
+    for (let i = 1; i <= 15; i++) {
+        const item = document.createElement('div');
+        item.className = 'sc-checkbox-item';
+        item.dataset.page = i;
+        item.onclick = function () { toggleCustomCheckbox(this); };
+        item.innerHTML =
+            `<span class="sc-checkbox-box">✓</span>` +
+            `<span class="sc-checkbox-num">${i}</span>` +
+            `<span class="sc-checkbox-label">${SC_LABELS[i - 1]}</span>`;
+        list.appendChild(item);
+    }
+})();
+
+/* ---------- Tab Switching ---------- */
+window.switchConfigTab = function (key) {
+    document.querySelectorAll('.sc-tab').forEach(t => {
+        t.classList.toggle('active', t.id === `sc-tab-${key}`);
+        t.setAttribute('aria-selected', t.id === `sc-tab-${key}`);
+    });
+    document.querySelectorAll('.sc-panel').forEach(p => {
+        p.classList.toggle('active', p.id === `sc-panel-${key}`);
+    });
+};
+
+/* ---------- Preset Selection (Time / Category) ---------- */
+window.selectPreset = function (group, card) {
+    // Deselect siblings
+    card.closest('.sc-radio-group')
+        .querySelectorAll('.sc-radio-card')
+        .forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('input').checked = true;
+
+    // Enable the launch button
+    const btn = document.getElementById(`sc-launch-${group}`);
+    btn.disabled = false;
+    btn.textContent = '🚀 Launch Session';
+};
+
+/* ---------- Custom Checkbox Logic ---------- */
+window.toggleCustomCheckbox = function (item) {
+    item.classList.toggle('checked');
+    updateCustomCount();
+};
+
+window.toggleAllCustom = function () {
+    const items = document.querySelectorAll('.sc-checkbox-item');
+    const allChecked = [...items].every(i => i.classList.contains('checked'));
+    items.forEach(i => i.classList.toggle('checked', !allChecked));
+    document.getElementById('sc-toggle-all').textContent = allChecked ? 'Select All' : 'Clear All';
+    updateCustomCount();
+};
+
+function updateCustomCount() {
+    const checked = document.querySelectorAll('.sc-checkbox-item.checked');
+    const count = checked.length;
+    document.getElementById('sc-custom-count').textContent = `${count} selected`;
+    const btn = document.getElementById('sc-launch-custom');
+    btn.disabled = (count === 0);
+    btn.textContent = count === 0 ? 'Select at least 1 exercise' : `🚀 Launch ${count} Exercise${count > 1 ? 's' : ''}`;
+}
+
+/* ---------- Launch Session ---------- */
+window.launchSession = function (group) {
+    let pages = [];
+
+    if (group === 'time') {
+        const val = document.querySelector('input[name="sc-time"]:checked').value;
+        pages = SC_PLAYLISTS.time[val];
+    } else if (group === 'category') {
+        const val = document.querySelector('input[name="sc-category"]:checked').value;
+        pages = SC_PLAYLISTS.category[val];
+    } else if (group === 'custom') {
+        document.querySelectorAll('.sc-checkbox-item.checked').forEach(item => {
+            pages.push(parseInt(item.dataset.page, 10));
+        });
+        pages.sort((a, b) => a - b);
+    }
+
+    if (pages.length === 0) return;
+
+    // Commit the active page list globally
+    activePageList = pages;
+
+    // Close modal with animation
+    const overlay = document.getElementById('session-configurator-overlay');
+    overlay.classList.add('sc-closing');
+    setTimeout(() => {
+        overlay.remove();
+        document.body.classList.remove('sc-modal-open');
+    }, 340);
+
+    // Now let the engine render the first active page
+    if (typeof window._scPendingInit === 'function') {
+        window._scPendingInit();
+    }
+};
+
+/* ---------- Intercept Body Scroll on Load ---------- */
+// The modal HTML is already in the DOM.  Lock scroll immediately.
+document.body.classList.add('sc-modal-open');
+
+
 // --- 1. GLOBAL VARIABLES ---
 let exData = null;
 let activeSet = {};      
@@ -81,11 +229,17 @@ window.playTextarea = function(id) {
 // --- 3. INITIALIZATION ---
 window.initExercise = function(data) {
     exData = data;
+
+    // Dashboard pages bypass the Session Configurator entirely
     if (data.isDashboard) {
         document.body.classList.remove('exercise-mode');
         document.body.classList.add('dashboard-view'); 
         const uiCluster = document.getElementById('ui-cluster');
         if (uiCluster) uiCluster.style.display = 'none';
+        // Remove the modal if present (dashboards don't need it)
+        const overlay = document.getElementById('session-configurator-overlay');
+        if (overlay) overlay.remove();
+        document.body.classList.remove('sc-modal-open');
         renderExerciseDashboard();
         return;
     }
@@ -93,15 +247,28 @@ window.initExercise = function(data) {
     document.body.classList.remove('dashboard-view');
     document.body.classList.add('exercise-mode');
 
-    try {
-        generateRandomSet(); 
-        renderHeaderInfo();
-        renderSidebar();
-        startTimer();
-        showPage(1);
-        setupNavListeners();
-    } catch (err) {
-        console.error("Engine Crash:", err);
+    // Store the actual boot sequence so launchSession() can trigger it
+    // after the student picks a playlist.
+    function bootEngine() {
+        try {
+            generateRandomSet(); 
+            renderHeaderInfo();
+            renderSidebar();
+            startTimer();
+            showPage(activePageList[0]);  // Start on the FIRST active page
+            setupNavListeners();
+        } catch (err) {
+            console.error("Engine Crash:", err);
+        }
+    }
+
+    // If the modal is still on screen, defer boot.
+    const overlay = document.getElementById('session-configurator-overlay');
+    if (overlay) {
+        window._scPendingInit = bootEngine;
+    } else {
+        // Modal was already dismissed (e.g. page reload after selection)
+        bootEngine();
     }
 };
 
@@ -1013,21 +1180,45 @@ window.checkIndividualItem = function(page, idx) {
 // --- 8. NAVIGATION, UI, AND STATE ---
 
 function showPage(p, shouldScroll = true) {
-    if(p < 1 || p > 16) return;
+    // --- RESULT PAGE sentinel: one past the last active page ---
+    const RESULT_PAGE = 16;
+    const isResult = (p === RESULT_PAGE);
+
+    if (p < 1 || p > RESULT_PAGE) return;
     const isNewPage = (p !== currentPage);
     currentPage = p;
     const container = document.getElementById('lesson-content');
     const uiCluster = document.getElementById('ui-cluster'); 
     if (!container) return;
 
-    container.innerHTML = (p === 16) ? renderResultPage() : renderExercisePage(p);
+    container.innerHTML = isResult ? renderResultPage() : renderExercisePage(p);
     
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
 
-    if (nextBtn) { nextBtn.disabled = (p === 16); nextBtn.onclick = () => showPage(currentPage + 1, true); }
-    if (prevBtn) { prevBtn.disabled = (p === 1); prevBtn.onclick = () => showPage(currentPage - 1, true); }
-    if (uiCluster) { uiCluster.style.visibility = (p === 16) ? 'hidden' : 'visible'; uiCluster.style.pointerEvents = (p === 16) ? 'none' : 'auto'; }
+    // --- Navigation now respects activePageList ---
+    const idx = activePageList.indexOf(p);
+    const isFirstActive = (idx === 0);
+    const isLastActive  = (idx === activePageList.length - 1);
+
+    if (nextBtn) {
+        nextBtn.disabled = isResult;
+        nextBtn.onclick = () => {
+            if (isLastActive) { showPage(RESULT_PAGE, true); }
+            else if (idx >= 0) { showPage(activePageList[idx + 1], true); }
+        };
+    }
+    if (prevBtn) {
+        prevBtn.disabled = isFirstActive || isResult;
+        prevBtn.onclick = () => {
+            if (isResult) { showPage(activePageList[activePageList.length - 1], true); }
+            else if (idx > 0) { showPage(activePageList[idx - 1], true); }
+        };
+    }
+    if (uiCluster) {
+        uiCluster.style.visibility = isResult ? 'hidden' : 'visible';
+        uiCluster.style.pointerEvents = isResult ? 'none' : 'auto';
+    }
     
     renderSidebar();
 
@@ -1059,7 +1250,8 @@ function checkPageCompletion(page) {
         pageStatus[page] = true;
         renderSidebar();
     }
-    if(pageStatus.slice(1, 16).every(Boolean)) {
+    // Check if ALL pages in the *active* playlist are done
+    if(activePageList.every(pg => pageStatus[pg])) {
         clearInterval(timerInterval);
         isSessionFinished = true;
     }
@@ -1079,8 +1271,9 @@ function renderSidebar() {
         "The Rhythmic Pulse", "The Free Build", "The Next Chapter"
     ];
 
-    labels.forEach((label, idx) => {
-        const p = idx + 1;
+    // Only show sidebar entries for pages in the active playlist
+    activePageList.forEach(p => {
+        const label = labels[p - 1];
         const isDone = pageStatus[p];
         const isActive = (currentPage === p);
         const li = document.createElement('li');
@@ -1119,17 +1312,18 @@ function renderResultPage() {
     let totalQuestions = 0;
     let totalCorrect = 0;
 
-    for (let p = 1; p <= 15; p++) {
+    // Only tally scores from pages in the active playlist
+    activePageList.forEach(p => {
         if (itemScores[p]) {
             Object.keys(itemScores[p]).forEach(key => {
                 totalQuestions++;
                 totalCorrect += itemScores[p][key];
             });
         }
-    }
+    });
 
     const percentage = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
-    const pagesCompleted = pageStatus.filter(p => p === true).length;
+    const pagesCompleted = activePageList.filter(p => pageStatus[p] === true).length;
 
     return `
         <div class="area-box" style="text-align:center; padding:50px 20px;">
@@ -1138,7 +1332,7 @@ function renderResultPage() {
             <p style="color: #666; margin-bottom: 30px;">Activity finished! Here is your performance summary:</p>
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
                 <div class="stat-box" style="width:120px;">
-                    <div class="stat-num">${pagesCompleted}/15</div>
+                    <div class="stat-num">${pagesCompleted}/${activePageList.length}</div>
                     <div style="font-size:0.6rem; color:#999; font-weight:bold; text-transform:uppercase;">Steps Done</div>
                 </div>
                 <div class="stat-box" style="width:120px; border-color: var(--accent-orange);">

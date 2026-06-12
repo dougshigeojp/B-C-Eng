@@ -2081,3 +2081,494 @@ body.dashboard-view #ui-cluster {
     text-decoration-color: var(--error-red);
     text-decoration-thickness: 3px;
 }
+
+
+
+/* ============================================================
+   SESSION CONFIGURATOR MODAL
+   Appears on load. Lets students choose an exercise playlist.
+   Uses existing brand variables for visual consistency.
+   ============================================================ */
+
+/* --- Overlay (Full-viewport backdrop with blur) --- */
+#session-configurator-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 27, 42, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: scOverlayIn 0.4s ease;
+    padding: 20px;
+}
+
+@keyframes scOverlayIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* --- Overlay CLOSING animation --- */
+#session-configurator-overlay.sc-closing {
+    animation: scOverlayOut 0.35s ease forwards;
+}
+@keyframes scOverlayOut {
+    to { opacity: 0; transform: scale(0.97); }
+}
+
+/* --- Modal Container --- */
+#session-configurator-modal {
+    background: var(--white);
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;            /* ← Mobile safeguard */
+    border-radius: 20px;
+    box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: scModalIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scModalIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --- Modal Header --- */
+.sc-header {
+    text-align: center;
+    padding: 28px 24px 18px;
+    background: linear-gradient(
+        135deg,
+        var(--primary-blue) 0%,
+        #004d8f 100%
+    );
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle decorative glow */
+.sc-header::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(211,47,47,0.18) 0%, transparent 70%);
+    top: -80px;
+    right: -60px;
+    pointer-events: none;
+}
+
+.sc-icon {
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+    animation: scBounce 1.2s ease infinite;
+}
+
+@keyframes scBounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+}
+
+.sc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.45rem;
+    letter-spacing: -0.3px;
+    margin: 0;
+    color: var(--white);
+}
+
+.sc-subtitle {
+    margin: 4px 0 0;
+    font-size: 0.82rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* --- Tab Bar --- */
+.sc-tabs {
+    display: flex;
+    background: var(--bg-light);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 0;
+}
+
+.sc-tab {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.25s, box-shadow 0.25s;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.sc-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: transparent;
+    transition: background 0.25s;
+}
+
+.sc-tab:hover {
+    color: var(--primary-blue);
+}
+
+.sc-tab.active {
+    color: var(--primary-blue);
+}
+
+.sc-tab.active::after {
+    background: var(--accent-red);
+}
+
+/* --- Tab Panels --- */
+.sc-panel {
+    display: none;
+    padding: 20px 24px 24px;
+    overflow-y: auto;           /* ← Scrollable content zone */
+    flex: 1;
+    animation: scFadeSlide 0.3s ease;
+}
+
+.sc-panel.active {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes scFadeSlide {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Radio Card (Preset Playlists) --- */
+.sc-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.sc-radio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 2px solid #e8ecf0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--white);
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.sc-radio-card:hover {
+    border-color: var(--primary-blue);
+    background: #f0f6ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
+}
+
+.sc-radio-card.selected {
+    border-color: var(--primary-blue);
+    background: linear-gradient(135deg, #e8f2ff 0%, #f0f6ff 100%);
+    box-shadow:
+        0 4px 16px rgba(0, 51, 102, 0.12),
+        inset 0 0 0 1px rgba(0, 51, 102, 0.06);
+}
+
+/* Custom radio dot */
+.sc-radio-dot {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccd3db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 2px;
+}
+
+.sc-radio-dot::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sc-radio-card.selected .sc-radio-dot {
+    border-color: var(--primary-blue);
+}
+
+.sc-radio-card.selected .sc-radio-dot::after {
+    transform: scale(1);
+}
+
+.sc-radio-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.sc-radio-info strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+}
+
+.sc-radio-desc {
+    width: 100%;
+    margin: 2px 0 0 32px;
+    font-size: 0.78rem;
+    color: #888;
+    line-height: 1.3;
+}
+
+/* Badges */
+.sc-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sc-badge-time {
+    background: rgba(211, 47, 47, 0.1);
+    color: var(--accent-red);
+}
+
+.sc-badge-cat {
+    background: rgba(0, 51, 102, 0.08);
+    color: var(--primary-blue);
+}
+
+/* --- Launch Button --- */
+.sc-launch-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: auto;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--accent-red) 0%, #b71c1c 100%);
+    box-shadow: 0 4px 18px rgba(211, 47, 47, 0.25);
+}
+
+.sc-launch-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(211, 47, 47, 0.35);
+}
+
+.sc-launch-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.sc-launch-btn:disabled {
+    background: #d0d5db;
+    color: #9ba3ad;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* --- Custom Tab: Header Row --- */
+.sc-custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eef1f4;
+}
+
+.sc-custom-count {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.sc-toggle-all-btn {
+    padding: 5px 14px;
+    border: 1.5px solid var(--primary-blue);
+    background: transparent;
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sc-toggle-all-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+/* --- Custom Tab: Checkbox List --- */
+.sc-checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+    overflow-y: auto;
+    max-height: 340px;         /* ← Keeps the list scrollable */
+    padding-right: 4px;
+}
+
+/* Scrollbar for the checkbox list */
+.sc-checkbox-list::-webkit-scrollbar { width: 5px; }
+.sc-checkbox-list::-webkit-scrollbar-track { background: transparent; }
+.sc-checkbox-list::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 10px;
+}
+
+.sc-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1.5px solid #e8ecf0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--white);
+    user-select: none;
+}
+
+.sc-checkbox-item:hover {
+    border-color: var(--primary-blue);
+    background: #f5f8ff;
+}
+
+.sc-checkbox-item.checked {
+    border-color: var(--primary-blue);
+    background: #edf3ff;
+}
+
+/* Custom checkbox visual */
+.sc-checkbox-box {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccd3db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 0.7rem;
+    color: transparent;
+}
+
+.sc-checkbox-item.checked .sc-checkbox-box {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: white;
+}
+
+.sc-checkbox-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: var(--accent-red);
+    min-width: 22px;
+    text-align: center;
+}
+
+.sc-checkbox-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- Responsive: Small Screens --- */
+@media (max-width: 600px) {
+    #session-configurator-overlay {
+        padding: 10px;
+        align-items: flex-start;   /* Anchor to top on small phones */
+        padding-top: 20px;
+    }
+
+    #session-configurator-modal {
+        max-height: 90vh;
+        border-radius: 16px;
+    }
+
+    .sc-header {
+        padding: 20px 16px 14px;
+    }
+
+    .sc-title {
+        font-size: 1.2rem;
+    }
+
+    .sc-tab {
+        font-size: 0.68rem;
+        padding: 10px 6px;
+    }
+
+    .sc-panel {
+        padding: 16px 16px 20px;
+    }
+
+    .sc-radio-card {
+        padding: 12px;
+    }
+
+    .sc-radio-info strong {
+        font-size: 0.85rem;
+    }
+
+    .sc-radio-desc {
+        margin-left: 32px;
+        font-size: 0.74rem;
+    }
+
+    .sc-checkbox-list {
+        max-height: 260px;
+    }
+}
+
+/* --- Utility: Prevent body scroll while modal is open --- */
+body.sc-modal-open {
+    overflow: hidden !important;
+}
