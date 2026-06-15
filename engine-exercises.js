@@ -155,6 +155,7 @@ let exData = null;
 let activeSet = {};      
 let userState = {};      
 let itemStatus = {};     
+let showTranslations = false;     
 let pageStatus = new Array(16).fill(false); 
 let currentPage = 1;
 let totalPages = 15;
@@ -346,10 +347,26 @@ function renderExercisePage(pageNum) {
 
     const safeInstruction = getExerciseInstructions(pageNum).replace(/'/g, "\\'").replace(/"/g, "&quot;");
 
+    let toggleHtml = "";
+    if (pageNum === 7 || pageNum === 8) {
+        toggleHtml = `
+            <div class="translation-toggle-container">
+                <span class="toggle-label">turn on/off translations</span>
+                <label class="switch">
+                    <input type="checkbox" id="translation-toggle" ${showTranslations ? 'checked' : ''} onchange="toggleTranslations(this.checked)">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        `;
+    }
+
     html += `<div class="exercise-instructions" style="background-color: #fdfbf7; padding: 15px; border-left: 4px solid var(--accent-orange); border-radius: 8px; margin-top: 15px; margin-bottom: 30px; color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 5px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 5px; flex-wrap: wrap; gap: 10px;">
                     <strong style="color: var(--accent-orange); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">How to do it</strong> 
-                    <button class="tts-btn" style="padding: 4px 10px; font-size: 0.8rem; background: var(--primary-blue);" onclick="playTTS('${safeInstruction}')">🔊 Listen</button>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        ${toggleHtml}
+                        <button class="tts-btn" style="padding: 4px 10px; font-size: 0.8rem; background: var(--primary-blue);" onclick="playTTS('${safeInstruction}')">🔊 Listen</button>
+                    </div>
                 </div>
                 ${getExerciseInstructions(pageNum)}
              </div>`;
@@ -692,9 +709,10 @@ function renderType7(item, idx, isDone) {
             }
         }
 
+        const currentCue = (showTranslations && item.swaps[i].cue_pt) ? item.swaps[i].cue_pt : item.swaps[i].cue;
         let instructionText = (i === 0) 
-            ? `Start with: <b>"${item.base_sentence}"</b> <br> Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${item.swaps[i].cue}</span>`
-            : `Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${item.swaps[i].cue}</span>`;
+            ? `Start with: <b>"${item.base_sentence}"</b> <br> Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${currentCue}</span>`
+            : `Swap cue: <span style="background:var(--selected-orange); padding:2px 6px; border-radius:4px; color:var(--accent-red);">${currentCue}</span>`;
 
         // Only draw the Mic button if the browser supports it
         let micButtonHtml = (!isStepDone && supportsSpeechRecognition) 
@@ -746,6 +764,8 @@ function renderType8(item, idx, isDone) {
             }
         }
 
+        const currentIncoming = (showTranslations && item.stages[i].incoming_block_pt) ? item.stages[i].incoming_block_pt : item.stages[i].incoming_block;
+
         // Only draw the Mic button if the browser supports it
         let micButtonHtml = (!isStepDone && supportsSpeechRecognition) 
             ? `<button class="tts-btn" style="padding:10px; height:54px; min-width:44px; background:var(--primary-blue); display:flex; align-items:center; justify-content:center;" onclick="toggleDictation('input-8-${idx}-${i}', this)" title="Speak your answer">🎤</button>` 
@@ -758,7 +778,7 @@ function renderType8(item, idx, isDone) {
         html += `
             <div style="background:#f9f9f9; padding:15px; border-radius:8px; border-left:4px solid var(--primary-blue);">
                 <div style="font-size:0.8rem; font-weight:bold; color:#666; margin-bottom:5px;">STAGE ${i+1}</div>
-                <div style="font-weight:bold; color:var(--accent-orange); margin-bottom:8px;">+ "${item.stages[i].incoming_block}"</div>
+                <div style="font-weight:bold; color:var(--accent-orange); margin-bottom:8px;">+ "${currentIncoming}"</div>
                 <div style="display:flex; gap:10px; align-items:flex-start; width:100%;">
                     <div style="flex-grow:1;">
                         <textarea id="input-8-${idx}-${i}" class="drill-input" placeholder="Type ${supportsSpeechRecognition ? 'or speak ' : ''}sentence..." rows="2" style="${css}" ${isStepDone ? 'disabled' : ''}>${val}</textarea>
@@ -1447,3 +1467,25 @@ async function checkExerciseAvailability(id) {
         }
     } catch(e) { btn.textContent = 'in development'; }
 }
+
+// --- TRANSLATION TOGGLE STATE CONTROLLER ---
+window.toggleTranslations = function(checked) {
+    // Save current active input values so we don't lose typed progress on re-render
+    if (currentPage === 7 || currentPage === 8) {
+        const data = activeSet[currentPage];
+        if (data) {
+            data.forEach((item, idx) => {
+                const state = getState(currentPage, idx) || { step: 0, answers: {} };
+                const step = state.step;
+                const inputEl = document.getElementById(`input-${currentPage}-${idx}-${step}`);
+                if (inputEl) {
+                    if (!userState[currentPage]) userState[currentPage] = {};
+                    if (!userState[currentPage][idx]) userState[currentPage][idx] = { step: 0, answers: {} };
+                    userState[currentPage][idx].answers[step] = inputEl.value;
+                }
+            });
+        }
+    }
+    showTranslations = checked;
+    showPage(currentPage, false);
+};
